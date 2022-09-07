@@ -53,7 +53,7 @@
 						<div class="hnf_header_searchForm wrap">
 							<form class="header_search">
 								<img class="lense" src="${cpath }/IKEA_image/lense.svg">
-								<span></span><input type="text" name="search" placeholder="검색어 입력"><span class="camera_btn">
+								<input type="text" name="search" placeholder="검색어 입력"><span class="camera_btn">
 									<button type="submit"><img src="${cpath }/IKEA_image/camera.svg"></button>
 								</span>
 							</form>
@@ -62,13 +62,13 @@
 					<div class="hnf_loginUI wrap">
 						<div class="hnf_login_container">
 							<div class="hnf_login_profile">
-								<c:if test="${not empty loginInfo.member_name }">
+								<c:if test="${not empty loginInfo}">
 									<a href="${cpath }/member/logout">
 										<span id="profile_span"><img src="${cpath }/IKEA_image/login.svg"><span>Hej! ${loginInfo.member_name }</span></span>
 									</a>
 									<a href="${cpath }/member/accountManagement" class="hnf_account">계정관리</a>
 								</c:if>
-								<c:if test="${empty loginInfo.member_name }">
+								<c:if test="${empty loginInfo}">
 									<li><a href="${cpath }/member/login">로그인하기 또는 회원가입</a>
 								</c:if>
 							</div>

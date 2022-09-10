@@ -436,15 +436,10 @@ button {
 .popup_entire li {
     cursor: pointer;
 }
-.draw_memo {
-    width: 259px;
-    height: 300px;
+.list_image > img {
+    width: 250px;
     background-color: #2ca756;
 }
-
-/* main section *//* main section *//* main section */
-/* main section *//* main section *//* main section */
-/* main section *//* main section *//* main section */
 #leng {
     width: calc(100% - 17%);
     margin: 0 auto;

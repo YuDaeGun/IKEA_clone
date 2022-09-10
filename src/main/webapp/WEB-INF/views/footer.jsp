@@ -131,13 +131,11 @@
 					<div class="popupmenu_depth1">
 						<h1>모든 제품</h1>
 						<ul class="popupmenu_depth2">
-							<li id="IKEA 여름상품" onclick="getSubCategory(event)">IKEA 여름상품</li>
 							<li id="가구" onclick="getSubCategory(event)">가구</li>
 							<li id="침대/매트리스" onclick="getSubCategory(event)">침대/매트리스</li>
-							<li id="화분" onclick="getSubCategory(event)">화분</li>
+							<li id="조명" onclick="getSubCategory(event)">조명</li>
 							<li id="수납/정리" onclick="getSubCategory(event)">수납/정리</li>
 							<li id="러그/매트/데크" onclick="getSubCategory(event)">러그/매트/데크</li>
-							<li id="홈데코/장식품" onclick="getSubCategory(event)">홈데코/장식품</li>
 						</ul>
 					</div>
 					<div class="popupmenu_depth1">
@@ -168,35 +166,27 @@
 				<div class="popupmenu_depth2_wrap">
 					<div class="popupmenu_depth3">
 						<div class="popupmenu_depth3_menu">
-							<h3>IKEA 여름상품</h3>
-							<ul id="IKEA 여름상품Sub"></ul>
-						</div>
-						<div class="popupmenu_depth3_menu">
 							<h3>가구</h3>
 							<ul id="가구Sub"></ul>
-							<div class="draw_memo"></div>
+							<div class="list_image"><img src="${cpath }/IKEA_image/furnitureList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
 							<h3>침대/매트리스</h3>
 							<ul id="침대/매트리스Sub"></ul>
-							<div class="draw_memo"></div>
+							<div class="list_image"><img src="${cpath }/IKEA_image/mattressList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
-							<h3>화분</h3>
-							<ul id="화분Sub"></ul>
-							<div class="draw_memo"></div>
+							<h3>조명</h3>
+							<ul id="조명Sub"></ul>
+							<div class="list_image"><img src="${cpath }/IKEA_image/lightList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
 							<h3>수납/정리</h3>
 							<ul id="수납/정리Sub"></ul>
 						</div>
 						<div class="popupmenu_depth3_menu">
-							<h3>러그/매트</h3>
+							<h3>러그/매트/데크</h3>
 							<ul id="러그/매트/데크Sub"></ul>
-						</div>
-						<div class="popupmenu_depth3_menu">
-							<h3>홈데코/장식품</h3>
-							<ul id="홈데코/장식품Sub"></ul>
 						</div>
 					</div>
 				</div>

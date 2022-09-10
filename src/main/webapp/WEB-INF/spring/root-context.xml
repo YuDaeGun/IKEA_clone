@@ -28,6 +28,7 @@
 	</bean>	
 
 	<mybatis-spring:scan base-package="com.ikea.product" />
+	<mybatis-spring:scan base-package="com.ikea.member" />
 	<context:component-scan base-package="com.ikea.service" />
 	
 </beans>

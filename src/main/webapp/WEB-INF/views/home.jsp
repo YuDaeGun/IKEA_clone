@@ -178,7 +178,6 @@
                     <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>
                     <div class="swiper-scrollbar"></div>
                 </div>
-            </div>
             </section>
             <section class="home_sect7">
                 <div class="sect7_teaser">

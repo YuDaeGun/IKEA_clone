@@ -19,15 +19,19 @@ var sect2_teaser = new Swiper(".sect2_teaser", {
 	},
 });
 
-var sect3_teaser = new Swiper(".sect3_teaser", {
-	slidesPerView : 3.5,
-	spaceBetween : 30,
-	slidesPerGroup : 3,
-	freeMode : true,
-	scrollbar : {
-		el : ".swiper-scrollbar",
-	},
-});
+async function newProductListSwiper() {
+	await selectNewProducts();	// newProductList.js
+	var sect3_teaser = new Swiper(".sect3_teaser", {
+	    slidesPerView: 3.5,
+	    spaceBetween: 30,
+	    slidesPerGroup: 3,
+	    freeMode: true,
+	    scrollbar: {
+	    	el: ".swiper-scrollbar",
+	    },
+    });
+};
+newProductListSwiper()
 
 var slide_icon = new Swiper(".slide_icon", {
 	slidesPerView : 6.5,

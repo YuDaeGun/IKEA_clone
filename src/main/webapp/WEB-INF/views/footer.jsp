@@ -197,5 +197,6 @@
 
 	<script src="${cpath }/resources/js/header.js"></script>
 	<script src="${cpath }/resources/js/swiper.js"></script>
+		
 </body>
 </html>

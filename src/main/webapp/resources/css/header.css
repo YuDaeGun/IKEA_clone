@@ -619,7 +619,7 @@ button {
     object-fit: cover;
     height: 548px;
 }
-.sect3_slide.swiper-slide img {
+.sect3_teaser_img img {
     width: 347px;
     height: 347px;
 }
@@ -792,8 +792,6 @@ button {
 .sect6-slide.swiper-slide {
     text-align: center;
     background: #fff;
-
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -809,12 +807,6 @@ button {
     position: relative;
     margin-bottom: 30px;
 }
-
-.sect6-slide.swiper-slide:nth-child(2) {
-    background-color: #00853E;
-    height: 309px;
-}
-
 .sect6-slide.swiper-slide img {
     display: block;
     width: 232px;

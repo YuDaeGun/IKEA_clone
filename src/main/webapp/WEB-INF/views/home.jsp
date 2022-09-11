@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
-
+   
     <main>
         <article id="leng">
             <section class="home_sect1">
@@ -22,6 +22,27 @@
                     <div class="grid_small2"><img class="grid_img" src="${cpath }/IKEA_image/sect1_right2.avif"></div>
                 </div>
             </section>
+            
+            <section class="home_sect6">
+                <div class="sect6_title">
+                    <h2>카테고리별 제품 찾기</h2>
+                </div>
+                <div class="swiper sect6_slide_icon">
+                    <div class="swiper-wrapper">
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/수납정리.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/침대매트리스.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/소파.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/조명.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/게임용가구.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/식탁책상.png"></div>
+                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/러그매트데크.png"></div>
+                    </div>
+                    <div class="swiper-button-next"><img src="${cpath }/IKEA_image/rightArrow.png"></div>
+                    <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </section>
+            
             <section class="home_sect2">
                 <div class="sect_title">
                     <h2 class="sect_h2">진행 중인 이벤트 및 프로모션</h2>
@@ -158,27 +179,6 @@
                 </div>
             </section>
 
-            <section class="home_sect6">
-                <div class="sect6_title">
-                    <h2>지속가능한 내일을 위한 솔루션</h2>
-                </div>
-                <div class="swiper sect6_slide_icon">
-                    <div class="swiper-wrapper">
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_a.avif"></div>
-                        <div class="sect6-slide swiper-slide"><span class="sect6-slide_icon">집에서 지속가능한 생활을 실천할 수 있는 아이디어</span></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_c.avif"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_d.avif"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_e.avif"></div> 
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_f.avif"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_g.webp"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_i.avif"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/sect6_j.avif"></div>
-                    </div>
-                    <div class="swiper-button-next"><img src="${cpath }/IKEA_image/rightArrow.png"></div>
-                    <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>
-                    <div class="swiper-scrollbar"></div>
-                </div>
-            </section>
             <section class="home_sect7">
                 <div class="sect7_teaser">
                     <div class="sect7_teaser_first"><img src="${cpath }/IKEA_image/sect7_sopa.webp"></div>
@@ -231,7 +231,7 @@
                     <div class="sect10_service_container">
                         <a href="#none">
                             <div class="sect10_service_teaser">
-                                <img src="${cpath }/IKEA_image/노란하트풍선.avif">
+                                <img src="${cpath }/IKEA_image/main_1.avif">
                             </div>
                             <div class="sect10_service_main">
                                 <div class="sect10_service_content">
@@ -246,7 +246,7 @@
                     <div class="sect10_service_container">
                         <a href="#none">
                             <div class="sect10_service_teaser">
-                                <img src="${cpath }/IKEA_image/포트기.avif">
+                                <img src="${cpath }/IKEA_image/main_2.avif">
                             </div>
                             <div class="sect10_service_main">
                                 <div class="sect10_service_content">
@@ -261,7 +261,7 @@
                     <div class="sect10_service_container">
                         <a href="#none">
                             <div class="sect10_service_teaser">
-                                <img src="${cpath }/IKEA_image/안경쓴누나.avif">
+                                <img src="${cpath }/IKEA_image/main_3.avif">
                             </div>
                             <div class="sect10_service_main">
                                 <div class="sect10_service_content">
@@ -277,5 +277,7 @@
             </section>
         </article>
     </main>
+    
+	<script src="${cpath }/resources/js/newProductList.js"></script>
 	
 <%@ include file="footer.jsp" %>

@@ -38,10 +38,10 @@ CREATE TABLE PRODUCT (
     PRODUCT_LENGTH          NUMBER, -- 상품 길이(cm) (미입력 시 -> 0)
     PRODUCT_WIDTH           NUMBER, -- 상품 너비(cm)
     PRODUCT_HEIGHT          NUMBER, -- 상품 높이(cm)
+    PRODUCT_STAR			NUMBER, -- 별점평균
     PRODUCT_COLOR           VARCHAR2(50),               -- 상품 색상
     PRODUCT_PRICE           NUMBER          NOT NULL,   -- 상품 가격
     PRODUCT_STOCK           NUMBER          NOT NULL,   -- 상품 재고
-    PRODUCT_SALEQUANTITY    NUMBER          DEFAULT 0,  -- 상품 판매량
     PRODUCT_REGDATE         DATE            DEFAULT SYSDATE     -- 상품 등록일
 );
 
@@ -68,7 +68,6 @@ CREATE TABLE PRODUCT_CATEGORY (
 CREATE TABLE PRODUCT_REVIEW (
     REVIEW_IDX              NUMBER          DEFAULT REVIEW_SEQ.NEXTVAL PRIMARY KEY,     -- 상품 리뷰 인덱스
     REVIEW_PI               NUMBER          NOT NULL,   -- FK : 상품 인덱스
-    PARENT_REVIEW           NUMBER          NOT NULL,   -- 상위 리뷰 인덱스(대댓글 구현을 위함). 상위 리뷰가 없을 시(최상위 리뷰일 시) -> 0
     REVIEW_WRITER           VARCHAR2(20)    NOT NULL,   -- 리뷰 작성자
     REVIEW_TITLE            VARCHAR2(50)    NOT NULL,	-- 리뷰 제목
     REVIEW_POINT_ASSEMBLY   NUMBER          DEFAULT -1,   -- 평가 1 : 손쉬운 조립 / 설  (해당 항목에 대한 평가가 없을 시 -1 EX) 식물은 조립에 대한 평가가 없다)
@@ -308,3 +307,10 @@ COMMIT;
 
 SELECT CATEGORY_NAME FROM PRODUCT_CATEGORY WHERE CATEGORY_REF IS NULL;
 SELECT CATEGORY_NAME FROM PRODUCT_CATEGORY WHERE CATEGORY_REF = '화분';
+
+
+INSERT INTO PRODUCT VALUES (PRODUCT_SEQ.NEXTVAL, '가구', '게임용가구', '게임용책상', '상품명', '상세구성', '간단설명', '상세설명', 180, 200.5, 0, '화이트', 49800, 10, SYSDATE);
+INSERT INTO PRODUCT VALUES (PRODUCT_SEQ.NEXTVAL, '가구', '게임용가구', '게임용책상', '상품명2', '상세구성', '간단설명', '상세설명', 180, 200.5, 0, '화이트', 49800, 10, SYSDATE);
+
+INSERT INTO PRODUCT_IMAGE VALUES (IMAGE_SEQ.NEXTVAL, 1, 'utespelare-gaming-desk-black__0997874_pe822843_s5.jpg', 'utespelare-gaming-desk-black__0985179_pe816538_s5.jpg', 'Y', SYSDATE);
+INSERT INTO PRODUCT_IMAGE VALUES (IMAGE_SEQ.NEXTVAL, 2, 'utespelare-gaming-desk-black__0985179_pe816538_s5.jpg', 'utespelare-gaming-desk-black__0997874_pe822843_s5.jpg', 'Y', SYSDATE);

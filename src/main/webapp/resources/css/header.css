@@ -655,8 +655,7 @@ button {
 .sect3_teaser_img .sect3_banner2 {
     opacity: 0;
     transition: opacity 0.5s linear;
-    transition-duration: 0.5s;
-
+    transition-duration: 0.3s;
 }
 .sect3_teaser_img:hover .sect3_banner2 {
     opacity: 1;

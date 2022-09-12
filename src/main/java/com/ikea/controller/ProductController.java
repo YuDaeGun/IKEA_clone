@@ -28,7 +28,7 @@ public class ProductController {
 		return ps.getSubCategory(ref.replaceAll("_", "/"));
 	}
 	
-	@GetMapping("/project1")
+	@GetMapping("/newProductList")
 	@ResponseBody
 	public List<ProductAndImageDTO> list() {
 		return ps.newProductList();

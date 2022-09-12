@@ -8,7 +8,7 @@
                 <div class="sect1_title">
                     <div class="sect1_title_info">
                         <h2 class="sect_h2">스마트한 수납 솔루션 최대 15% OFF</h2>
-                        <span>7월 21일부터 8월 9일까지, 스마트한 수납 솔루션 제품들을 최대 15% 할인된 가격으로 만나요! 작은 차이가 만드는 큰 변화를 경험해 보세요.</span>
+                        <span>8월 21일부터 9월 9일까지, 스마트한 수납 솔루션 제품들을 최대 15% 할인된 가격으로 만나요! 작은 차이가 만드는 큰 변화를 경험해 보세요.</span>
                     </div>
                     <div class="sect1_title_sale">
                         <button class="sect1_title_salebtn"><span>할인 제품 보기</span></button>

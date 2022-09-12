@@ -1,29 +1,25 @@
 'use strict';
 
 function convert(dto) {
-    // console.log("dto",dto)
     const item = document.createElement('div')
-    // item.classList.add('item')
     item.classList.add('sect3_slide')
     item.classList.add('swiper-slide')
     
     const sect3_teaser_container = document.createElement('div')
-    // const productLink = document.createElement('a')
     const sect3_teaser_img = document.createElement('div')
     const sect3_teaser_content = document.createElement('div') 
 
     sect3_teaser_img.classList.add('sect3_teaser_img')
     sect3_teaser_content.classList.add('sect3_teaser_content')
     sect3_teaser_container.classList.add('sect3_teaser_container')
-    // productLink.setAttribute('href','www.naver.com')
     item.innerHTML = ''
     sect3_teaser_container.appendChild(sect3_teaser_img)
     sect3_teaser_container.appendChild(sect3_teaser_content)
     item.appendChild(sect3_teaser_container)
     const rating = `${dto.product_star}`
     
-    sect3_teaser_img.innerHTML += `<img id="hover_img" class="sect3_banner1" src="${cpath}/IKEA_productImage/${dto.image_filename1}">`
-    sect3_teaser_img.innerHTML += `<img id="hover_img" class="sect3_banner2" src="${cpath}/IKEA_productImage/${dto.image_filename2}">`
+	sect3_teaser_img.innerHTML += `<img id="hover_img" class="sect3_banner1" src="${cpath}/IKEA_productImage/${dto.image_filename1}">`
+    sect3_teaser_img.innerHTML += `<a href="https://www.naver.com/"><img id="hover_img" class="sect3_banner2" src="${cpath}/IKEA_productImage/${dto.image_filename2}"></a>`
     	
     sect3_teaser_content.innerHTML += `<div class="sect3_product_name"><h3>${dto.product_name}</h3></div>
         <div class="sect3_product_desc"><span>${dto.product_desc}, ${dto.product_length}x${dto.product_width}cm</span></div>                                                 
@@ -43,7 +39,7 @@ function convert(dto) {
 }
 async function selectNewProducts(event) {
 	const wrapper = document.querySelector('.sect3_main .swiper-wrapper')
-    const url = cpath + '/project1'
+    const url = cpath + '/newProductList'
     await fetch(url)
     .then(resp => resp.json())
     .then(json => {

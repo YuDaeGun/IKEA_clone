@@ -24,17 +24,17 @@
 					<br>
 					<div class="family_img">
 						<div class="family_img1">
-							<div class="signup_img1"></div>
-							<div class="signup_img2"></div>
-							<div class="signup_img3"></div>
-							<div class="signup_img4"></div>
+							<div class="signup_img1" style="background-image: url(${cpath }/IKEA_image/joinpage_1.jpg)"></div>
+							<div class="signup_img2" style="background-image: url(${cpath }/IKEA_image/joinpage_2.jpg)"></div>
+							<div class="signup_img3" style="background-image: url(${cpath }/IKEA_image/joinpage_3.jpg)"></div>
+							<div class="signup_img4" style="background-image: url(${cpath }/IKEA_image/joinpage_4.jpg)"></div>
 						</div>
 						<div class="family_img2">
-							<div class="signup_img5"></div>
-							<div class="signup_img6"></div>
-							<div class="signup_img7"></div>
-							<div class="signup_img8"></div>
-							<div class="signup_img9"></div>
+							<div class="signup_img5" style="background-image: url(${cpath }/IKEA_image/joinpage_5.jpg)"></div>
+							<div class="signup_img6" style="background-image: url(${cpath }/IKEA_image/joinpage_6.jpg)"></div>
+							<div class="signup_img7" style="background-image: url(${cpath }/IKEA_image/joinpage_7.jpg)"></div>
+							<div class="signup_img8" style="background-image: url(${cpath }/IKEA_image/joinpage_8.jpg)"></div>
+							<div class="signup_img9" style="background-image: url(${cpath }/IKEA_image/joinpage_9.jpg)"></div>
 						</div>
 					</div>
 				</div>

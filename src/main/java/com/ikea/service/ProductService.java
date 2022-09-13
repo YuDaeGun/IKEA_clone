@@ -26,4 +26,12 @@ public class ProductService {
 	public List<ProductAndImageDTO> newProductList() {
 		return pdao.newProductList();
 	}
+	
+	public ProductAndImageDTO productSelectOne(int product_idx) {
+		return pdao.productSelectOne(product_idx);
+	}
+
+	public List<ProductAndImageDTO> imageSelect(int product_idx) {
+		return pdao.imageSelect(product_idx);
+	}
 }

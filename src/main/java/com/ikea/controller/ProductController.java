@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ikea.product.ProductAndImageDTO;
 import com.ikea.service.ProductService;
@@ -32,5 +33,15 @@ public class ProductController {
 	@ResponseBody
 	public List<ProductAndImageDTO> list() {
 		return ps.newProductList();
+	}
+	
+	@GetMapping("/product/view/{product_idx}")
+	public ModelAndView productView(@PathVariable int product_idx) {
+		
+		ModelAndView mav = new ModelAndView("/product/view");
+		mav.addObject("product", ps.productSelectOne(product_idx));
+		mav.addObject("imageList", ps.imageSelect(product_idx));
+		return mav;
+		
 	}
 }

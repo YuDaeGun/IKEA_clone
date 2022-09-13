@@ -52,7 +52,8 @@
 						<div class="hnf_header_searchForm wrap">
 							<form class="header_search">
 								<img class="lense" src="${cpath }/IKEA_image/lense.svg">
-								<input type="text" name="search" placeholder="검색어 입력"><span class="camera_btn">
+								<input type="text" name="search" placeholder="검색어 입력">
+								<span class="camera_btn">
 									<button type="submit"><img src="${cpath }/IKEA_image/camera.svg"></button>
 								</span>
 							</form>

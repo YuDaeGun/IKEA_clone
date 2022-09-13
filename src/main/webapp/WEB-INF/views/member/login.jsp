@@ -1,20 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="cpath" value="${pageContext.request.contextPath }" />
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<title>IKEA_로그인</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link type="text/css" rel="stylesheet" href="${cpath }/resources/css/member.css">
-	<script>const cpath = '${cpath}'</script>
-	<script src="${cpath }/resources/js/member.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-</head>
-<body>
+    pageEncoding="UTF-8"%>
+<%@ include file="header.jsp" %>
+
 	<main>
 	<div class="root">
 		<div class="left">
@@ -54,8 +41,7 @@
 						<div class="pwbt">
 							<div>
 								<div id="d1">
-									<input id="password" type="password" class="password_input_vi"
-										autocomplete="current-password" name="member_pw" required>
+									<input id="password" type="password" class="password_input_vi" autocomplete="current-password" name="member_pw" required>
 										<img id="b1" class="eye_visible" src="${cpath }/IKEA_image/pw_show.svg">
 								</div>
 							</div>
@@ -75,12 +61,12 @@
 	</div>
 	</main>
 	
-<script>
-	const b1 = document.getElementById('b1')
-	const password = document.getElementById('password')
-
-	b1.addEventListener('click', chan)
-</script>
+	<script>
+		const b1 = document.getElementById('b1')
+		const password = document.getElementById('password')
+	
+		b1.addEventListener('click', chan)
+	</script>
 
 </body>
 </html>

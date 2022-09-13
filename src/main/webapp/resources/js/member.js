@@ -1,4 +1,4 @@
-'use strict';	// 엄격한 모드
+'use strict';
 
 function openCloseAnswer() {
   const answerId = this.id.replace('que', 'ans');
@@ -13,108 +13,64 @@ function openCloseAnswer() {
 }
 
 
-function sample4_execDaumPostcode() {
-	new daum.Postcode(
-			{
-				oncomplete : function(data) {
-					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+function daumPostcode() {
+	new daum.Postcode({
+		oncomplete : function(data) {
+			var roadAddr = data.roadAddress; // 도로명 주소 변수
+			var extraRoadAddr = ''; // 참고 항목 변수
 
-					// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-					var roadAddr = data.roadAddress; // 도로명 주소 변수
-					var extraRoadAddr = ''; // 참고 항목 변수
+			// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+			// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+			if (data.bname !== ''
+					&& /[동|로|가]$/g.test(data.bname)) {
+				extraRoadAddr += data.bname;
+			}
+			// 건물명이 있고, 공동주택일 경우 추가한다.
+			if (data.buildingName !== ''
+					&& data.apartment === 'Y') {
+				extraRoadAddr += (extraRoadAddr !== '' ? ', '
+						+ data.buildingName : data.buildingName);
+			}
+			// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+			if (extraRoadAddr !== '') {
+				extraRoadAddr = ' (' + extraRoadAddr + ')';
+			}
 
-					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-					if (data.bname !== ''
-							&& /[동|로|가]$/g.test(data.bname)) {
-						extraRoadAddr += data.bname;
-					}
-					// 건물명이 있고, 공동주택일 경우 추가한다.
-					if (data.buildingName !== ''
-							&& data.apartment === 'Y') {
-						extraRoadAddr += (extraRoadAddr !== '' ? ', '
-								+ data.buildingName : data.buildingName);
-					}
-					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-					if (extraRoadAddr !== '') {
-						extraRoadAddr = ' (' + extraRoadAddr + ')';
-					}
+			// 우편번호와 주소 정보를 해당 필드에 넣는다.
+			document.getElementById("daum_postcode").value = data.zonecode;
+			document.getElementById("daum_roadAddress").value = roadAddr;
+			document.getElementById("daum_jibunAddress").value = data.jibunAddress;
 
-					// 우편번호와 주소 정보를 해당 필드에 넣는다.
-					document.getElementById('sample4_postcode').value = data.zonecode;
-					document.getElementById("sample4_roadAddress").value = roadAddr;
-					document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+			// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+			if (roadAddr !== '') {
+				document.getElementById("daum_extraAddress").value = extraRoadAddr;
+			} else {
+				document.getElementById("daum_extraAddress").value = '';
+			}
 
-					// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-					if (roadAddr !== '') {
-						document.getElementById("sample4_extraAddress").value = extraRoadAddr;
-					} else {
-						document.getElementById("sample4_extraAddress").value = '';
-					}
+			var guideTextBox = document.getElementById("guide");
+			// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+			if (data.autoRoadAddress) {
+				var expRoadAddr = data.autoRoadAddress
+						+ extraRoadAddr;
+				guideTextBox.innerHTML = '(예상 도로명 주소 : '
+						+ expRoadAddr + ')';
+				guideTextBox.style.display = 'block';
 
-					var guideTextBox = document.getElementById("guide");
-					// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-					if (data.autoRoadAddress) {
-						var expRoadAddr = data.autoRoadAddress
-								+ extraRoadAddr;
-						guideTextBox.innerHTML = '(예상 도로명 주소 : '
-								+ expRoadAddr + ')';
-						guideTextBox.style.display = 'block';
-
-					} else if (data.autoJibunAddress) {
-						var expJibunAddr = data.autoJibunAddress;
-						guideTextBox.innerHTML = '(예상 지번 주소 : '
-								+ expJibunAddr + ')';
-						guideTextBox.style.display = 'block';
-					} else {
-						guideTextBox.innerHTML = '';
-						guideTextBox.style.display = 'none';
-					}
-				}
-			}).open();
+			} else if (data.autoJibunAddress) {
+				var expJibunAddr = data.autoJibunAddress;
+				guideTextBox.innerHTML = '(예상 지번 주소 : '
+						+ expJibunAddr + ')';
+				guideTextBox.style.display = 'block';
+			} else {
+				guideTextBox.innerHTML = '';
+				guideTextBox.style.display = 'none';
+			}
+		}
+	}).open();
 }
 
-
-// 1) 어떤 요소에 이벤트를 걸어야 하는가?
-
-        
-        
-//        emx.addEventListener('blur' , (event) => {
-//        
-//           console.log(event.target.value)
-//           console.log(typeof(event.target.value))
-//           const eN = event.target.value
-//           
-//           fetch(cpath + '/emCheck' ,{
-//              method : 'POST',
-//              body: eN,
-//              headers: {
-//                 'Content-Type' : 'application/text; charset=utf-8'
-//              }
-//           })
-//           .then(resp => resp.text())
-//           .then(text => {
-//              
-//              if(text == '1'){
-//                 emCheckMessage.innerText = '사용 가능한 이메일 입니다'
-//                 emCheckMessage.style.color = 'blue'
-//                 emCheckMessage.style.fontWeight = 'bold'
-//              }
-//              if(text == '0') {
-//                 emCheckMessage.innerText = '이미 등록된 이메일 입니다'
-//                 emCheckMessage.style.color = 'red'
-//                 emCheckMessage.style.fontWeight = 'bold'
-//                 event.target.select()
-//                 
-//                 
-//              }
-//              
-//           })
-//           
-//        })
-        
-         function sample4_execDaumPostcode() {
+function sample4_execDaumPostcode() {
     new daum.Postcode({
         oncomplete: function(data) {
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -168,11 +124,10 @@ function sample4_execDaumPostcode() {
         }
     }).open();
 }
-	
-	
+
 function checkPassword1(event) {
     let pw = document.getElementById('new_pw').value;
-    let sc = ["!","@","#","$","%"];
+    let sc = ["!","@","#","$","%","^","&","*"];
     let check_SC = 0;
     
     for(let i=0;i < sc.length; i++){
@@ -180,7 +135,6 @@ function checkPassword1(event) {
             check_SC = 1;
         }
     }
-    
     if(pw.length < 8 || pw.length > 16){
         document.getElementById('check1').innerHTML='비밀번호는 8글자 이상, 16글자 이하만 이용 가능합니다.';
         document.getElementById('check1').style.color='red';

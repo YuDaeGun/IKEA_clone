@@ -9,7 +9,6 @@ const depth2Wrap = document.querySelector(".popupmenu_depth2_wrap")
 const eventmenu = document.querySelector('.eventmenu')
 const allmenu_dim = document.querySelector('.allmenu_dim')
 const backspace = document.querySelector('.backspace_popup')
-const product_depth = document.querySelector('.product_depth')
 
 hnf_hamburger.addEventListener('click', () => {
     allmenu_popup.style.display = 'flex'

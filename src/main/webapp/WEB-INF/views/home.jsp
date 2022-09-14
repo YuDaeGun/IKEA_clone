@@ -27,7 +27,7 @@
                 <div class="sect6_title">
                     <h2>카테고리별 제품 찾기</h2>
                 </div>
-                <div class="swiper sect6_slide_icon">
+                <div class="swiper sect6_slide">
                     <div class="swiper-wrapper">
                         <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/수납정리.png"></div>
                         <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/침대매트리스.png"></div>
@@ -143,6 +143,7 @@
                         </div>
                         <div class="swiper-button-next"><img src="${cpath }/IKEA_image/rightArrow.png"></div>
                         <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>
+                     	<div class="swiper-scrollbar"></div>
                     </div>
                 </div>
             </section>
@@ -154,10 +155,46 @@
                 <div class="sect3_product"></div>
                 <div class="sect3_main">
                     <div class="swiper sect3_teaser">
-                        <div class="swiper-wrapper"></div>
-                        <div class="swiper-scrollbar"></div>
-                    </div>
-                </div>
+						<div class="swiper-wrapper">
+							<c:forEach var="p" items="${newProducts }">
+								<div class="sect3_slide swiper-slide">
+									<div class="sect3_teaser_container">
+										<div class="sect3_teaser_img">
+											<img src="${cpath }/IKEA_productImage/${p.image_filename1 }">
+											<a href="${cpath }/product/view/${p.product_idx }">
+												<img id="hover_img" class="sect3_banner2" src="/home/IKEA_productImage/${p.image_filename2 }">
+											</a>
+										</div>
+										<div class="sect3_teaser_content">
+											<div class="sect3_product_name">
+												<h3>${p.product_name }</h3>
+											</div>
+											<div class="sect3_product_desc">
+												<span>${p.product_desc }</span>
+											</div>
+											<div class="sect3_product_price">
+												<span>￦</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
+											</div>
+											<div class="sect3_product_star">
+												<span id="rating">
+									            	<img src="${cpath }/IKEA_image/${p.product_star >= 1 ? 'star.jpg' : p.product_star >= 0.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+									            	<img src="${cpath }/IKEA_image/${p.product_star >= 2 ? 'star.jpg' : p.product_star >= 1.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+									            	<img src="${cpath }/IKEA_image/${p.product_star >= 3 ? 'star.jpg' : p.product_star >= 2.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+									            	<img src="${cpath }/IKEA_image/${p.product_star >= 4 ? 'star.jpg' : p.product_star >= 3.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+									            	<img src="${cpath }/IKEA_image/${p.product_star >= 5 ? 'star.jpg' : p.product_star >= 4.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+												</span>
+												<span>(${p.product_star })</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+		                    </div>
+							<div class="swiper-button-next"><img src="${cpath }/IKEA_image/rightArrow.png"></div>
+		                    <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>
+							<div class="swiper-scrollbar"></div>
+		                </div>
+					</div>
             </section>
 
             <section class="home_sect5">
@@ -190,7 +227,7 @@
                     <h2>다양한 IKEA 서비스</h2>
                 </div>
                 <div class="sect8_icon">
-                    <div class="swiper sect8_slide_icon">
+                    <div class="swiper sect8_slide">
                         <div class="swiper-wrapper">
                             <div class="sect8-slide swiper-slide">
                                 <img src="${cpath }/IKEA_image/truckicon.webp">

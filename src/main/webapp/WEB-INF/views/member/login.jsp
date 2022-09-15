@@ -40,8 +40,8 @@
 						비밀번호<br>
 						<div class="pwbt">
 							<div>
-								<div id="d1">
-									<input id="password" type="password" class="password_input_vi" autocomplete="current-password" name="member_pw" required>
+								<div class="d1">
+									<input id="password" type="password" class="password_input_vi" name="member_pw" required>
 										<img id="b1" class="eye_visible" src="${cpath }/IKEA_image/pw_show.svg">
 								</div>
 							</div>
@@ -53,6 +53,7 @@
 								<div id="loginCheckMessage"></div>
 							</button>
 						</div>
+					</div>
 				</form>
 				<p class="testtt">IKEA 계정이 없으신가요? 지금 바로 만들어보세요.</p>
 				<div><a class="join_member" href="join">개인회원 가입하기</a></div>

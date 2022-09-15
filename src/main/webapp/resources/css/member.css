@@ -189,6 +189,7 @@ div.login_act {
 .username {
 	width: 448px;
 	height: 48px;
+	box-sizing: border-box;
 }
 .password {
 	width: 510px;
@@ -196,8 +197,30 @@ div.login_act {
 	border-style: 1px solid black;
 }
 .password_input_vi {
+	all: unset;
+	width: 412px;
+	height: 48px;
+}
+.phone_number2 {
+	all: unset;
+	width: 412px;
+	height: 48px;
+}
+.d1 {
 	width: 448px;
 	height: 48px;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+.phone_numberdiv {
+	width: 448px;
+	height: 48px;
+	border: 1px solid black;
+	margin-bottom: 40px;
+	box-sizing: border-box;
+}
+.KR_number {
+	font-size: 25px;
 }
 .oneCode {
 	color: black;
@@ -555,21 +578,6 @@ div.join_act {
 input[type=radio] {
 	cursor: pointer;
 }
-.name2 {
-	width: 448px;
-	height: 48px;
-	margin-bottom: 40px;
-	font-size: 25px;
-}
-.birth1 {
-	margin-bottom: 40px;	
-}
-.birth2 {
-	width: 448px;
-	height: 48px;
-	font-size: 26px;
-	text-align: center;
-}
 .age_caution {
 	width: 30px;
 	margin-left: 490px;
@@ -586,62 +594,31 @@ input[type=radio] {
 	display: none;
 }
 .phone_number2 {
-	width: 380px;
+	width: 341px;
 	height: 48px;
-	margin-bottom: 40px;
 	font-size: 25px;
 }
-.gender2 {
-	width: 448px;
-	height: 48px;
-	font-size: 26px;
-	margin-bottom: 40px;
+.birth1 {
+	margin-bottom: 20px;
 }
-.street_address2 {
+.join_inputbox {
 	width: 448px;
 	height: 48px;
 	margin-bottom: 40px;
 	font-size: 25px;
+	box-sizing: border-box;
 }
-.jibun_address2 {
+.join_inputbirth {
 	width: 448px;
 	height: 48px;
-	margin-bottom: 40px;
 	font-size: 25px;
+	box-sizing: border-box;	
 }
-.details_address2 {
+.join_inputpw {
 	width: 448px;
 	height: 48px;
-	margin-bottom: 40px;
 	font-size: 25px;
-}
-.extra_address2 {
-	width: 448px;
-	height: 48px;
-	margin-bottom: 40px;
-	font-size: 25px;
-}
-.postnum2 {
-	width: 448px;
-	height: 48px;
-	margin-bottom: 40px;
-	font-size: 25px;
-}
-.preference_store2 {
-	width: 448px;
-	height: 48px;
-	margin-bottom: 40px;
-	font-size: 26px;
-}
-.email_address2 {
-	width: 448px;
-	height: 48px;
-	margin-bottom: 40px;
-}
-.join_pw2 {
-	width: 448px;
-	height: 48px;
-	font-size: 26px;
+	box-sizing: border-box;
 }
 .receive {
 	zoom: 2.5;
@@ -1039,7 +1016,4 @@ fieldset {
 }
 .impo {
 	margin-bottom: 30px;
-}
-#check1, #check2 {
-	margin-bottom: 30px;	
 }

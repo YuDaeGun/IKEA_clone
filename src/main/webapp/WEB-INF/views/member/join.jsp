@@ -51,18 +51,20 @@
 			</div>
 			<form method="POST">
 				<div class="name">이름<br>
-					<input name="member_name" type="text" class="name2">
+					<input name="member_name" type="text" class="join_inputbox">
 				</div>
 				<div class="birth1">생일<br>
-					<input name="member_birth" type="date" class="birth2"><br>
+					<input name="member_birth" type="date" class="join_inputbirth"><br>
 					YYYY-MM-DD
 				</div>
 				<div class="phone_number1">휴대폰<br>
-					<span class="KR_number">KR(+82)</span>
-					<input name="member_pnum" type="tel" class="phone_number2">
+					<div class="phone_numberdiv">
+						<span class="KR_number">&nbsp;KR(+82)</span>
+						<input name="member_pnum" type="tel" class="phone_number2">
+					</div>
 				</div>
-				<div class="gender1">성별(선택사항)<br>
-					<select name="member_gender" class="gender2">
+				<div class="gender1">성별 (선택 사항)<br>
+					<select name="member_gender" class="join_inputbox">
 						<option value="M">남성</option>
 						<option value="F">여성</option>
 						<option value="X">응답거부</option>
@@ -71,24 +73,24 @@
 
 				<div class="find_post"><br>
 					<input type="button" class="find_postnum" onclick="daumPostcode()" value="우편번호 찾기"><br>
-					<input type="text" name="member_zipcode" class="postnum2" id="daum_postcode" placeholder="우편번호" required="required"><br>
-					<input type="text" name="member_address" class="street_address2" id="daum_roadAddress" placeholder="도로명주소" required="required"><br>
-					<input type="text" name="member_address" class="jibun_address2" id="daum_jibunAddress" placeholder="지번주소"><br>
+					<input type="text" name="member_zipcode" class="join_inputbox" id="daum_postcode" placeholder="우편번호" required="required"><br>
+					<input type="text" name="member_address" class="join_inputbox" id="daum_roadAddress" placeholder="도로명주소" required="required"><br>
+					<input type="text" name="member_address" class="join_inputbox" id="daum_jibunAddress" placeholder="지번주소"><br>
 					<span id="guide" style="color: #999; display: none"></span>
-					<input type="text" name="member_detailsaddress" class="details_address2" id="daum_detailAddress" placeholder="상세주소"><br>
-					<input type="hidden" name="member_detailsaddress" class="extra_address2" id="daum_extraAddress" placeholder="참고항목"><br>
+					<input type="text" name="member_detailsaddress" class="join_inputbox" id="daum_detailAddress" placeholder="상세주소"><br>
+					<input type="hidden" name="member_detailsaddress" class="join_inputbox" id="daum_extraAddress" placeholder="참고항목"><br>
 				</div>
 
 				<div class="email_address1">이메일<br>
-					<input name="member_email" id="emcheck" type="email" class="email_address2" required="required">
+					<input name="member_email" id="emcheck" type="email" class="join_inputbox" required="required">
 					<div id="emCheckMessage"></div>
 				</div>
 				<div class="join_pw1">비밀번호<br>
-					<input id="new_pw" name="member_pw" type="password" class="join_pw2" required="required">
+					<input id="new_pw" name="member_pw" type="password" class="join_inputpw" required="required">
 					<div id="check1" class="impo">*특수문자(!@#$%^&*)를 포함한 8~16글자</div>
 				</div>
 				<div class="join_pw1">비밀번호 확인<br>
-					<input id="new_pw_re" name="remember_pw" type="password" class="join_pw2" required="required">
+					<input id="new_pw_re" name="remember_pw" type="password" class="join_inputpw" required="required">
 					<div id="check2" class="impo"></div>
 				</div>
 				<div class="join_success1">
@@ -106,10 +108,7 @@
 		const emx = document.getElementById('emcheck')
 		const emCheckMessage = document.getElementById('emCheckMessage')
 		const new_pw = document.getElementById('new_pw')
-		console.log(new_pw)
-	
 		const new_pw_re = document.getElementById('new_pw_re')
-		console.log(new_pw_re)
 	
 	 	const pw_reset_bt = document.getElementById('pw_reset_bt')
 		new_pw.addEventListener('blur', checkPassword1)

@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	
+	<script src = "http://code.jquery.com/jquery-latest.js"></script> 
+	
 	<link type='text/css' rel="stylesheet" href="${cpath }/resources/css/header.css">
 	<script>const cpath = '${cpath}'</script>
 </head>
@@ -95,14 +97,19 @@
 					</ul>
 					<ul class="hnf_cont_nav_ul2">
 						<li>
-							<button class="hnf_nav_btn">
-								<span><img src="${cpath }/IKEA_image/truck2.svg"><span>우편 번호 입력</span></span>
-							</button>
+							<a class="hnf_nav_btn" href="${cpath }/product/insertForm">
+								<span class="adminpage">상품 추가</span>
+							</a>
 						</li>
 						<li>
-							<button class="hnf_nav_btn">
+							<a class="hnf_nav_btn" href="#none">
+								<span><img src="${cpath }/IKEA_image/truck2.svg"><span>우편 번호 입력</span></span>
+							</a>
+						</li>
+						<li>
+							<a class="hnf_nav_btn" href="#none">
 								<span><img src="${cpath }/IKEA_image/offline.svg"><span>매장 찾기</span></span>
-							</button>
+							</a>
 						</li>
 					</ul>
 				</nav>

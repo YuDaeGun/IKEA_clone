@@ -170,7 +170,7 @@
 												<h3>${p.product_name }</h3>
 											</div>
 											<div class="sect3_product_desc">
-												<span>${p.product_desc }</span>
+												<span>${p.product_desc }, ${p.product_length } x ${p.product_width }cm</span>
 											</div>
 											<div class="sect3_product_price">
 												<span>￦</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>

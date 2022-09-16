@@ -42,7 +42,7 @@
 							<div>
 								<div class="d1">
 									<input id="password" type="password" class="password_input_vi" name="member_pw" required>
-										<img id="b1" class="eye_visible" src="${cpath }/IKEA_image/pw_show.svg">
+									<img id="b1" class="eye_visible" src="${cpath }/IKEA_image/pw_show.svg">
 								</div>
 							</div>
 							<a href="IKEA_Pw_find" class="find_pw">비밀번호 찾기</a>

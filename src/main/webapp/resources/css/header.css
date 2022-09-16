@@ -266,6 +266,9 @@ button {
 .hnf_cont_nav_ul li:first-child {
     padding-left: 0;
 }
+.adminpage {
+	color: red;
+}
 .hnf_cont_nav_ul2 {
     list-style: none;
     display: flex;
@@ -275,11 +278,8 @@ button {
     justify-content: flex-end;
     font-size: 13px;
 }
-.hnf_cont_nav_ul2 li:last-child {
+.hnf_nav_btn {
     margin-left: 36px;
-}
-.hnf_nav_btn{
-    margin-left: 8px;
     background: none;
     border: none;
     cursor: pointer;
@@ -613,15 +613,10 @@ button {
     background-size: cover;
     width: 347px;
 }
-
 .sect3_slide.swiper-slide {
     display: block;
     object-fit: cover;
     height: 548px;
-}
-.sect3_teaser_img img {
-    width: 347px;
-    height: 347px;
 }
 .sect3_teaser_container {
     position: relative;
@@ -649,7 +644,7 @@ button {
 }
 .sect3_teaser_img img {
     position: absolute;
-    width: 366px;
+    width: 347px;
     height: 347px;
 }
 .sect3_teaser_img .sect3_banner2 {

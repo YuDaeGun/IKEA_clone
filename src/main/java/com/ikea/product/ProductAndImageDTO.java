@@ -36,8 +36,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductAndImageDTO {
 	private String product_largecategory, product_mediumcategory, product_smallcategory, 
 		product_name, product_desc, product_summary, product_details, product_color, product_price_String;
-	private int product_idx, product_price, product_stock;
-	private double product_length, product_width, product_height, product_star;
+	private int product_idx, product_length, product_width, product_height, product_price, product_stock;
+	private double product_star;
 	private Date product_regdate;
 	
 	private String image_filename1, image_filename2, image_isthumbnail;
@@ -106,6 +106,24 @@ public class ProductAndImageDTO {
 	public void setProduct_idx(int product_idx) {
 		this.product_idx = product_idx;
 	}
+	public int getProduct_length() {
+		return product_length;
+	}
+	public void setProduct_length(int product_length) {
+		this.product_length = product_length;
+	}
+	public int getProduct_width() {
+		return product_width;
+	}
+	public void setProduct_width(int product_width) {
+		this.product_width = product_width;
+	}
+	public int getProduct_height() {
+		return product_height;
+	}
+	public void setProduct_height(int product_height) {
+		this.product_height = product_height;
+	}
 	public int getProduct_price() {
 		return product_price;
 	}
@@ -117,24 +135,6 @@ public class ProductAndImageDTO {
 	}
 	public void setProduct_stock(int product_stock) {
 		this.product_stock = product_stock;
-	}
-	public double getProduct_length() {
-		return product_length;
-	}
-	public void setProduct_length(double product_length) {
-		this.product_length = product_length;
-	}
-	public double getProduct_width() {
-		return product_width;
-	}
-	public void setProduct_width(double product_width) {
-		this.product_width = product_width;
-	}
-	public double getProduct_height() {
-		return product_height;
-	}
-	public void setProduct_height(double product_height) {
-		this.product_height = product_height;
 	}
 	public double getProduct_star() {
 		return product_star;

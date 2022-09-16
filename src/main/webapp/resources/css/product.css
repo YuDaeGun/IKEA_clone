@@ -1,0 +1,81 @@
+@charset "utf-8";
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.inputProduct {
+    display: flex;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    font-size: 15px;
+}
+.insert_wrap {
+	margin-left: 216px;
+}
+.insert_wrap h1{
+	margin: auto;
+	font-size: 23px;
+	margin-right: 20px;
+}
+
+.inputChild {
+	width: 285px;
+}
+.inputChild input {
+	width: 235px;
+	height: 20px;
+    font-size: 17px;
+}
+#inputProductPrice {
+	text-align: right;
+	width: 220px;
+}
+#inputProductStock, #inputProductLength, #inputProductWidth, #inputProductHeight {
+    width: 70px;
+}
+.inputProduct {
+	width: 570px;
+}
+.inputProduct textarea {
+	width: 570px;
+	box-sizing: border-box;
+}
+.selectInputChild {
+	width: 190px;
+}
+.section1 select {
+	width: 170px;
+}
+.section1 input {
+	width: 170px;
+}
+.section3 > .inputChild:first-child {
+	display: flex;
+}
+.section4 > .inputChild:nth-child(2) {
+	display: flex;
+	justify-content: space-between;
+}
+.section4 > .inputChild:nth-child(2) > div {
+	width: 80px;
+}
+.section7 img {
+	height: 180px;
+}
+.section8 {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	width: 680px;
+}
+.thumbnailMassege {
+	margin-top: -27px;
+	text-align: center;
+}
+.section9 {
+	display: flex;
+	justify-content: space-between;
+}
+
+

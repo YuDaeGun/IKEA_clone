@@ -6,30 +6,30 @@
     <article id="detail_container">
         <nav class="navigation">
             <ol class="detail_category">
-                <li class="detail_category_item"><a href="#none"><span>${product.product_largecategory}</span></a></li>
+                <li class="detail_category_item"><a href="#none"><span>${p.product_largecategory}</span></a></li>
                 <li>&nbsp;>&nbsp;</li>
-                <li class="detail_category_item"><a href="#none"><span>${product.product_mediumcategory}</span></a></li>
+                <li class="detail_category_item"><a href="#none"><span>${p.product_mediumcategory}</span></a></li>
                 <li>&nbsp;>&nbsp;</li>
-                <li class="detail_category_item"><a href="#none"><span>${product.product_smallcategory}</span></a></li>
+                <li class="detail_category_item"><a href="#none"><span>${p.product_smallcategory}</span></a></li>
                 <li>&nbsp;>&nbsp;</li>
-                <li class="detail_category_item"><a href="#none"><span>${product.product_name}</span></a></li>
+                <li class="detail_category_item"><a href="#none"><span>${p.product_name}</span></a></li>
             </ol>
         </nav>
         
         <div class="view">
             <div class="view_container">
                 <section class="view_sect1_wrap">
-					<c:forEach var="image" items="${imageList}">
-						<img class="view_sect1_teaser" src="${cpath }/IKEA_productImage/${image.image_filename1 }">
-						<c:if test="${image.image_isthumbnail == 'Y' }">
-							<img class="view_sect1_teaser" src="${cpath }/IKEA_productImage/${image.image_filename2 }">
+					<c:forEach var="i" items="${imageList}">
+						<img class="view_sect1_teaser" src="${cpath }/IKEA_productImage/${i.image_filename1 }">
+						<c:if test="${i.image_isthumbnail == 'Y' }">
+							<img class="view_sect1_teaser" src="${cpath }/IKEA_productImage/${i.image_filename2 }">
 						</c:if>
 					</c:forEach>
                 </section>
         
                 <section class="view_sect2">
                 	<p class="view_sect2_intro">
-                        ${product.product_details}
+                        ${p.product_details}
                     </p>
                     <div class="view_sect2_infomation">
                         <span>제품설명</span>
@@ -44,31 +44,35 @@
                 </section>
             </div>
             
-            <!-- 오른쪽 정보 -->
             <div class="view_module">
                 <div class="view_module_container">
                     <div class="view_module_top">
                         <div class="view_module_section">
-                            <h1 class="view_module_title">${product.product_name}</h1>
-                            <span class="view_module_mini">${product.product_smallcategory},${product.product_color},${product.product_width}x${product.product_height}cm</span>
+                            <h1 class="view_module_title">${p.product_name}</h1>
+                            <span class="view_module_mini">
+                            	${p.product_smallcategory}
+                            	<c:if test="${p.product_color != null}">, ${p.product_color}</c:if>
+                            	<c:if test="${p.product_length != null}">, ${p.product_length}</c:if>
+                            	<c:if test="${p.product_width != null}">x ${p.product_width}cm</c:if>
+                           	</span>
                         </div>
-                        <div class="view_module_price">￦<fmt:formatNumber value="${product.product_price}"/></div>
+                        <div class="view_module_price">￦<fmt:formatNumber value="${p.product_price}"/></div>
                     </div>
                     <div class="view_module_point">
 			            <span id="rating">
-			            	<img src="${cpath }/IKEA_image/${product.product_star >= 1 ? 'star.jpg' : product.product_star >= 0.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
-			            	<img src="${cpath }/IKEA_image/${product.product_star >= 2 ? 'star.jpg' : product.product_star >= 1.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
-			            	<img src="${cpath }/IKEA_image/${product.product_star >= 3 ? 'star.jpg' : product.product_star >= 2.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
-			            	<img src="${cpath }/IKEA_image/${product.product_star >= 4 ? 'star.jpg' : product.product_star >= 3.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
-			            	<img src="${cpath }/IKEA_image/${product.product_star >= 5 ? 'star.jpg' : product.product_star >= 4.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+			            	<img src="${cpath }/IKEA_image/${p.product_star >= 1 ? 'star.jpg' : p.product_star >= 0.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+			            	<img src="${cpath }/IKEA_image/${p.product_star >= 2 ? 'star.jpg' : p.product_star >= 1.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+			            	<img src="${cpath }/IKEA_image/${p.product_star >= 3 ? 'star.jpg' : p.product_star >= 2.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+			            	<img src="${cpath }/IKEA_image/${p.product_star >= 4 ? 'star.jpg' : p.product_star >= 3.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
+			            	<img src="${cpath }/IKEA_image/${p.product_star >= 5 ? 'star.jpg' : p.product_star >= 4.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
 			            </span>
-                        <span>(${product.product_star})</span>
+                        <span>(${p.product_star})</span>
                     </div>
                     <div class="view_module_caption"><img src="${cpath }/IKEA_image/infoicon.png" alt=""><span>매트리스와 침구는 별도구매입니다</span></div>
                     <div class="view_module_standards">
                         <div class="view_module_standards_text">
                             <h3>규격 선택</h3>
-                            <span>${product.product_width}x${product.product_height}cm</span>
+                            <span>${p.product_width}x${p.product_height}cm</span>
                         </div>
                         <div class="view_module_arrow">
                             <img src="${cpath }/IKEA_image/arrow.svg" alt="">

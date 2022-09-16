@@ -15,7 +15,7 @@ var sect2_teaser = new Swiper(".sect2_teaser", {
 });
 
 var sect3_slide = new Swiper(".sect3_teaser", {
-	slidesPerView : 4.5,
+	slidesPerView : 4.3,
 	spaceBetween : 30,
 	slidesPerGroup : 3,
 	freeMode : true,

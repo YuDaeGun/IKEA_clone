@@ -11,7 +11,7 @@
                      	다양한 멤버 전용 혜택을 누리세요.
                     </p>
                     <p><a href="#none">자세히 보기</a></p>
-                    <a class="footer_ikea_join" href="#none">IKEA Family 가입하기</a>
+                    <a class="footer_ikea_join" href="${cpath }/member/login">IKEA Family 가입하기</a>
                 </div>
                 <div class="footer_main_right">
                     <ul class="footer_right_big">

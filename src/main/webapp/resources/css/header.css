@@ -640,12 +640,14 @@ button {
     margin-right: 3px;
 }
 .sect3_teaser_img {
+	margin: auto;
     position: relative;
 }
 .sect3_teaser_img img {
     position: absolute;
-    width: 347px;
-    height: 347px;
+   	width: 347px;
+	height: 347px;
+    object-fit: cover;
 }
 .sect3_teaser_img .sect3_banner2 {
     opacity: 0;

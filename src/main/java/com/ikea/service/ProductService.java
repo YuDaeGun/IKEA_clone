@@ -74,12 +74,12 @@ public class ProductService {
 	}
 	@Transactional
 	public int imageModify(List<MultipartFile> imageFileList, int product_idx) throws IllegalStateException, IOException {
-		int image_pi = product_idx;	// 수정 할 상품의 인덱스
+		int image_pi = product_idx;		// 수정 할 상품의 인덱스
 		pdao.deleteOldImage(image_pi);	// 원래 있던 이미지(들) 삭제
 		for (int i = 0; i < imageFileList.size(); i++) {
 			MultipartFile imageFile = imageFileList.get(i);
 			if (imageFile.getSize() == 0) continue;
-
+			
 			SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
 			String today = sdf.format(new Date());
 			String newFileName = UUID.randomUUID().toString().replaceAll("-", "");
@@ -91,12 +91,19 @@ public class ProductService {
 			
 			File dest = new File(imageRepoFolder, newFileName);
 			imageFile.transferTo(dest);
+			
+			if (i == 1) {
+				int image_idx = pdao.getLastImageIdx();	// 마지막에 등록된 이미지의 인덱스
+				pdao.insertFilename2(image_idx, newFileName);
+				continue;
+			}
+
 			ProductAndImageDTO dto = new ProductAndImageDTO();
 			dto.setImage_pi(image_pi);
 			dto.setImage_filename1(newFileName);
-			//
+			dto.setImage_isthumbnail(i == 0 ? "Y" : "N");
+			
 			pdao.imageInsert(dto);
-			if (i == 1) pdao.insertFilename2(image_pi, newFileName);
 		}
 		return 1;
 	}

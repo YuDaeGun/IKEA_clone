@@ -497,39 +497,38 @@ button {
     position: relative;
     width: 100%;
     height: 845px;
-  }
-  .sect2_main {
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  .swiper.sect2_teaser {
-    width: 100%;
-    height: 845px;
-  }
-  .sect2-slide.swiper-slide {
-    text-align: center;
-    background: #fff;
+}
+.sect2_main {
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+.swiper.sect2_teaser {
+	width: 100%;
+	height: 845px;
+}
+.sect2-slide.swiper-slide {
+	text-align: center;
+	background: #fff;
+	
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  .sect2_slide.swiper-slide img {
-    display: block;
-    object-fit: cover;
-  }
+.sect2_slide.swiper-slide img {
+	display: block;
+}
 .sect2_teaser_img {
     height: 512px;
 }

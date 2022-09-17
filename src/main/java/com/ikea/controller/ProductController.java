@@ -79,7 +79,7 @@ public class ProductController {
 		ps.productModify(dto);
 		ps.imageModify(imageFileList, product_idx);
 
-		ModelAndView mav = new ModelAndView("/product/productInsertResult");
+		ModelAndView mav = new ModelAndView("/product/insertResult");
 		mav.addObject("p", ps.productSelectOne(product_idx));
 		mav.addObject("imageList", ps.imageSelect(product_idx));
 		return mav;

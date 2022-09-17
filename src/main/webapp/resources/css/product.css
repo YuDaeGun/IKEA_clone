@@ -60,6 +60,9 @@ label {
 .section4 > .inputChild:nth-child(2) > div {
 	width: 80px;
 }
+.section7 {
+	width: 1000px;
+}
 .section7 img {
 	height: 180px;
 }
@@ -69,13 +72,12 @@ label {
 	justify-content: space-between;
 	width: 680px;
 }
-.thumbnailMassege {
-	margin-top: -27px;
-	text-align: center;
-}
 .section9 {
 	display: flex;
 	justify-content: space-between;
 }
-
+.printImages {
+	display: flex;
+	flex-wrap: wrap;
+}
 

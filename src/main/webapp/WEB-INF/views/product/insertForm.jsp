@@ -86,7 +86,7 @@
 		                </div>
 		                <div>
 			            	<label for="thumbnail2">*대표 이미지2</label>
-			                <input id="thumbnail2" type='file' name='imageFile' accept="image/*" />
+			                <input id="thumbnail2" type='file' name='imageFile' accept="image/*" required />
 			                <div></div>
 		                </div>
 			            <div>

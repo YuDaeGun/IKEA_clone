@@ -77,28 +77,27 @@
 	                </div>
 	            </div>
 	            <div class="inputProduct section7">
-	          	    <c:forEach var="image" items="${imageList}">
-	          	    <div>
+	          	    <div class="printImages">
+		          	    <c:forEach var="image" items="${imageList}">
+		          	    <div>
+	          	    		<img src="${cpath }/IKEA_productImage/${image.image_filename1 }">
+	          	    	</div>
 	          	    	<div>
-	    	      	    	<c:if test="${image.image_isthumbnail == 'Y'}">
-		          	    		<img src="${cpath }/IKEA_productImage/${image.image_filename1 }">
+	    	      	    	<c:if test="${image.image_filename2 != null}">
 		          	    		<img src="${cpath }/IKEA_productImage/${image.image_filename2 }">
 	    	      	    	</c:if>
-	          	    	</div>
-	          	    	<div class="thumbnailMassege">
-	    	      	    	<c:if test="${image.image_isthumbnail == 'Y'}">대표 이미지</c:if>
-			            </div>
+	    	      	    </div>
+			    		</c:forEach>
 		            </div>
-		    		</c:forEach>
 	    		</div>
 	    	</form>
 	        <div class="section8">
 	        	<div>
-		        	<button onclick="location.href='${cpath }/product_list/productInsertForm'">상품 추가등록</button>
-		        	<button onclick="location.href='${cpath }/product_list/productModify/${p.product_idx}'">수정하기</button>
+		        	<button onclick="location.href='${cpath }/product/insertForm'">상품 추가등록</button>
+		        	<button onclick="location.href='${cpath }/product/modifyForm/${p.product_idx}'">수정하기</button>
 	        	</div>
 	        	<div>
-		        	<button onclick="location.href='${cpath }/product_list/product_view/${p.product_idx}'"> 상품 상세 페이지로</button>
+		        	<button onclick="location.href='${cpath }/product/view/${p.product_idx}'"> 상품 상세 페이지로</button>
 	        	</div>
            </div>
 	    </div>

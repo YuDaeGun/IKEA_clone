@@ -84,4 +84,13 @@ public class ProductController {
 		mav.addObject("imageList", ps.imageSelect(product_idx));
 		return mav;
 	}
+	
+	@GetMapping("/product/categoryView/{product_category}")
+	public ModelAndView categoryView(@PathVariable String product_category) {
+		
+		
+		ModelAndView mav = new ModelAndView("/product/categoryView");
+		mav.addObject("productList", ps.categoryView(product_category));
+		return mav;
+	}
 }

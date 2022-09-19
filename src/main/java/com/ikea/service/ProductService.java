@@ -127,4 +127,8 @@ public class ProductService {
 	public List<ProductAndImageDTO> imageSelect(int product_idx) {
 		return pdao.imageSelect(product_idx);
 	}
+
+	public List<ProductAndImageDTO> categoryView(String product_category) {
+		return pdao.categoryView(product_category);
+	}
 }

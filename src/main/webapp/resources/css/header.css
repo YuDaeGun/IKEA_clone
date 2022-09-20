@@ -625,10 +625,10 @@ button {
 }
 .sect3_teaser_content {
     position: absolute;
-    top: 360px;
+    top: 370px;
 }
 .sect3_teaser_container div {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: inherit;
 }
 .sect3_product_price {

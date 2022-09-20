@@ -85,12 +85,27 @@ public class ProductController {
 		return mav;
 	}
 	
-	@GetMapping("/product/categoryView/{product_category}")
-	public ModelAndView categoryView(@PathVariable String product_category) {
-		
-		
+	@GetMapping("/product/categoryView/{large_medium_small}")
+	public ModelAndView categoryView(@PathVariable String large_medium_small) {
 		ModelAndView mav = new ModelAndView("/product/categoryView");
-		mav.addObject("productList", ps.categoryView(product_category));
+
+		String largecate = large_medium_small.split("_")[0];
+		String mediumcate = large_medium_small.split("_")[1];
+		String smallcate = null;
+		mav.addObject("largecate", largecate);
+		mav.addObject("mediumcate", mediumcate);
+
+		if (large_medium_small.split("_").length == 3) {
+			smallcate = large_medium_small.split("_")[2];
+			mav.addObject("smallcate", smallcate);
+			mav.addObject("cateDesc", ps.getCateDesc(smallcate));
+			mav.addObject("productList", ps.smallCateView(smallcate));
+			return mav;
+		}
+		
+		mav.addObject("cateDesc", ps.getCateDesc(mediumcate));
+		mav.addObject("smallcateList", ps.getSubCateWithImage(mediumcate));
+		mav.addObject("productList", ps.mediumCateView(mediumcate));
 		return mav;
 	}
 }

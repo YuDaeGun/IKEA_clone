@@ -71,7 +71,7 @@
 									<a href="${cpath }/member/accountManagement" class="hnf_account">계정관리</a>
 								</c:if>
 								<c:if test="${empty loginInfo}">
-									<li><a href="${cpath }/member/login">로그인하기 또는 회원가입</a>
+									<li><a href="${cpath }/member/login">Hej! 로그인 또는 가입하기</a>
 								</c:if>
 							</div>
 							<div class="hnf_login_btn">
@@ -97,7 +97,7 @@
 					</ul>
 					<ul class="hnf_cont_nav_ul2">
 						<li>
-							<a class="hnf_nav_btn" href="${cpath }/product/categoryView/게임용가구">
+							<a class="hnf_nav_btn" href="${cpath }/product/categoryView/가구_게임용가구">
 								<span class="adminpage">카테고리 뷰</span>
 							</a>
 						</li>

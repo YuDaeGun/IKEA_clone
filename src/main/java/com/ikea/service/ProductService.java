@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ikea.product.CategoryDAO;
+import com.ikea.product.CategoryDTO;
 import com.ikea.product.ProductAndImageDAO;
 import com.ikea.product.ProductAndImageDTO;
 
@@ -115,6 +116,10 @@ public class ProductService {
 	public String[] getSubCategory(String ref) {
 		return cdao.getSubCategory(ref);
 	}
+	
+	public List<CategoryDTO> getSubCateWithImage(String ref) {
+		return cdao.getSubCateWithImage(ref);
+	}
 
 	public String[] getLargeCategory() {
 		return cdao.getLargeCategory();
@@ -128,7 +133,15 @@ public class ProductService {
 		return pdao.imageSelect(product_idx);
 	}
 
-	public List<ProductAndImageDTO> categoryView(String product_category) {
-		return pdao.categoryView(product_category);
+	public List<ProductAndImageDTO> mediumCateView(String product_category) {
+		return pdao.mediumCateView(product_category);
+	}
+
+	public List<ProductAndImageDTO> smallCateView(String product_category) {
+		return pdao.smallCateView(product_category);
+	}
+
+	public String getCateDesc(String category_name) {
+		return cdao.getCateDesc(category_name);
 	}
 }

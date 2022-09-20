@@ -162,7 +162,7 @@
 										<div class="sect3_teaser_img">
 											<img src="${cpath }/IKEA_productImage/${p.image_filename1 }">
 											<a href="${cpath }/product/view/${p.product_idx }">
-												<img id="hover_img" class="sect3_banner2" src="/home/IKEA_productImage/${p.image_filename2 }">
+												<img id="hover_img" class="sect3_banner2" src="${cpath }/IKEA_productImage/${p.image_filename2 }">
 											</a>
 										</div>
 										<div class="sect3_teaser_content">

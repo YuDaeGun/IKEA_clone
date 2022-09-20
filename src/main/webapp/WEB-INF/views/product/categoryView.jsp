@@ -7,58 +7,56 @@
     <article id="list_container">
         <nav class="navigation">
             <ol class="goods_category">
-                <li class="goods_category_item"><a href=""><span>${p.product_largecategory }</span></a></li>
-                <li class="goods_category_item"><a href=""><span>${p.product_mediumcategory }</span></a></li>
+                <li class="goods_category_item"><a href="#none"><span>${largecate }</span></a></li>
+                <li>&nbsp;>&nbsp;</li>
+                <li class="goods_category_item"><a href="#none"><span>${mediumcate }</span></a></li>
+                <c:if test="${smallcate != null }">
+	                <li>&nbsp;>&nbsp;</li>
+	                <li class="goods_category_item"><a href="#none"><span>${smallcate }</span></a></li>                
+                </c:if>
             </ol>
         </nav>
-        <section class="plm_sect1">
-            <div class="plm_sect1_title">
-                <h1 class="plm_title_h2" mediumcategory="${product_mediumcategory}">${product_mediumcategory}</h1>
+        <section class="cateView_sect1">
+            <div class="cateView_sect1_title">
+                <h1 class="cateView_title_h2">${smallcate != null ? smallcate : mediumcate }</h1>
             </div>
-            <div class="plm_sect1_order"></div>
-        </section>
-
-        <section class="plm_sect2">
-            <p class="plm_sect2_intro">
-               	${p.product_details }
-            </p>
-        </section>
-        <section class="plm_sect3">
-            <div class="plm_sect3_filter">
-                <span class="plm_sect3_filter_count">840개 항목</span>
-                <div class="plm_sect3_filter_btn">
-                    <button class="plm_sect3_toggle">제품</button>
-                    <button class="plm_sect3_toggle">공간</button>
-                </div>
+            <div class="cateView_sect1_order">
+            	<c:forEach var="cate" items="${smallcateList }">
+            	<div class="cateItem">
+					<a href="${cpath }/product/categoryView/${largecate }_${mediumcate }_${cate.category_name}">
+						<img src="${cpath }/IKEA_image/${cate.category_image_filename}"><br>
+						${cate.category_name}
+					</a><br>
+				</div>
+            	</c:forEach>
             </div>
-            <div class="plm_sect3_pillOption">
-                <button class="plm_sect3_pill">정렬</button>
-                <button class="plm_sect3_pill">사이즈</button>
-                <button class="plm_sect3_pill">카테고리</button>
-                <button class="plm_sect3_pill">가격</button>
-                <button class="plm_sect3_pill">색상</button>
+            <div>
+            	<p>${cateDesc }</p>
             </div>
         </section>
-        <section class="plm_sect4"></section>
-	        <div class="plm_sect4_productList">
+        
+        <section class="cateView_sect4"></section>
+	        <div class="cateView_sect4_productList">
 				<c:forEach var="p" items="${productList }">
-					<div class="plm_sect4_main">
-						<div class="plm_sect4_teaser_container">
-							<div class="plm_sect4_teaser_img">
-								<img id="hover_img" class="plm_sect4_banner1" src="${cpath }/IKEA_productImage/${p.image_filename1 }">
-								<img id="hover_img" class="plm_sect4_banner2" src="${cpath }/IKEA_productImage/${p.image_filename2 }">
+					<div class="cateView_sect4_main">
+						<div class="cateView_sect4_teaser_container">
+							<div class="cateView_sect4_teaser_img">
+								<img id="hover_img" class="cateView_sect4_banner1" src="${cpath }/IKEA_productImage/${p.image_filename1 }">
+								<a href="${cpath }/product/view/${p.product_idx }">
+									<img id="hover_img" class="cateView_sect4_banner2" src="${cpath }/IKEA_productImage/${p.image_filename2 }">
+								</a>
 							</div>
-							<div class="plm_sect4_teaser_content">
-								<div class="plm_sect4_product_name">
+							<div class="cateView_sect4_teaser_content">
+								<div class="cateView_sect4_product_name">
 									<h3>${p.product_name }</h3>
 								</div>
-	                            <div class="plm_sect4_product_smallcategory">
+	                            <div class="cateView_sect4_product_smallcategory">
 	                            	<span>${p.product_mediumcategory }</span>
 	                            </div>
-	                            <div class="plm_sect4_product_price">
+	                            <div class="cateView_sect4_product_price">
 	                            	<span>￦</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
 	                           	</div>
-	                           	<div class="plm_sect4_product_star">
+	                           	<div class="cateView_sect4_product_star">
 									<span id="rating">
 						            	<img src="${cpath }/IKEA_image/${p.product_star >= 1 ? 'star.jpg' : p.product_star >= 0.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
 						            	<img src="${cpath }/IKEA_image/${p.product_star >= 2 ? 'star.jpg' : p.product_star >= 1.5 ? 'halfstar.jpg' : 'nostar.jpg'}">
@@ -74,8 +72,8 @@
 				</c:forEach>	        
 	        </div>
 	        <div></div>
-        <section class="plm_sect5"></section>
-        <section class="plm_sect6"></section>
+        <section class="cateView_sect5"></section>
+        <section class="cateView_sect6"></section>
     </article>
 
 <%@ include file="../footer.jsp" %>

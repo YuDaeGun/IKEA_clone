@@ -60,13 +60,13 @@ backspace.addEventListener('click', () => {
 function getSubCategory(event) {	    	
 	const subCateId = event.target.id + 'Sub'
 	const subCate = document.getElementById(subCateId)
-	subCate.innerHTML = ''
-	const url = cpath + '/getSubCategory/' + event.target.id.replaceAll('/', '_')
+	subCate.innerHTML = "<li><a href='" + cpath + "/product/categoryView/" + event.target.id + "'>전체보기</a></li>"
+	const url = cpath + '/getSubCategory/' + event.target.id.replaceAll('/', '_') // 수정예정
 	fetch(url).then(resp => resp.json())
 	.then(arr => {
 		for (let i = 0; i < arr.length; i++) {
 			const li = document.createElement('li')
-			li.innerHTML = "<a href='" + cpath + "/productList/" + arr[i].replaceAll('/', '_') + "'>" + arr[i] + "</a>"
+			li.innerHTML = "<a href='" + cpath + "/product/categoryView/" + event.target.id + "_" +arr[i].replaceAll('/', '_') + "'>" + arr[i] + "</a>"
 			subCate.appendChild(li)
 		}
 	})

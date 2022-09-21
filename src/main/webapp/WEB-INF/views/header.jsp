@@ -97,11 +97,6 @@
 					</ul>
 					<ul class="hnf_cont_nav_ul2">
 						<li>
-							<a class="hnf_nav_btn" href="${cpath }/product/categoryView/가구_게임용가구">
-								<span class="adminpage">카테고리 뷰</span>
-							</a>
-						</li>
-						<li>
 							<a class="hnf_nav_btn" href="${cpath }/product/insertForm">
 								<span class="adminpage">상품 추가</span>
 							</a>

@@ -7,23 +7,25 @@
     <article id="list_container">
         <nav class="navigation">
             <ol class="goods_category">
-                <li class="goods_category_item"><a href="#none"><span>${largecate }</span></a></li>
-                <li>&nbsp;>&nbsp;</li>
-                <li class="goods_category_item"><a href="#none"><span>${mediumcate }</span></a></li>
+                <li class="goods_category_item"><a href="${cpath }/product/categoryView/${largecate }"><span>${largecate }</span></a></li>
+                <c:if test="${mediumcate != null }">
+	                <li>&nbsp;>&nbsp;</li>
+	                <li class="goods_category_item"><a href="${cpath }/product/categoryView/${largecate }_${mediumcate }"><span>${mediumcate }</span></a></li>
+                </c:if>
                 <c:if test="${smallcate != null }">
 	                <li>&nbsp;>&nbsp;</li>
-	                <li class="goods_category_item"><a href="#none"><span>${smallcate }</span></a></li>                
+	                <li class="goods_category_item"><a href="${cpath }/product/categoryView/${largecate }_${mediumcate }_${smallcate }"><span>${smallcate }</span></a></li>                
                 </c:if>
             </ol>
         </nav>
         <section class="cateView_sect1">
             <div class="cateView_sect1_title">
-                <h1 class="cateView_title_h2">${smallcate != null ? smallcate : mediumcate }</h1>
+                <h1 class="cateView_title_h2">${smallcate != null ? smallcate : mediumcate != null ? mediumcate : largecate }</h1>
             </div>
             <div class="cateView_sect1_order">
-            	<c:forEach var="cate" items="${smallcateList }">
+            	<c:forEach var="cate" items="${smallcateList != null ? smallcateList : mediumcateList }">
             	<div class="cateItem">
-					<a href="${cpath }/product/categoryView/${largecate }_${mediumcate }_${cate.category_name}">
+					<a href="${cpath }/product/categoryView/${largecate }${mediumcate != null ? '_' : '' }${mediumcate != null ? mediumcate : '' }_${cate.category_name}">
 						<img src="${cpath }/IKEA_image/${cate.category_image_filename}"><br>
 						${cate.category_name}
 					</a><br>

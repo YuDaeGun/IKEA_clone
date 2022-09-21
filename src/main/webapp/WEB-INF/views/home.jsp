@@ -150,7 +150,7 @@
 
             <section class="home_sect3">
                 <div class="sect3_title">
-                    <h2 class="sect_h2">추천 제품</h2>
+                    <h2>추천 제품</h2>
                 </div>
                 <div class="sect3_product"></div>
                 <div class="sect3_main">

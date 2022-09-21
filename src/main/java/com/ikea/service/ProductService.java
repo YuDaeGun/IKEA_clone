@@ -133,10 +133,12 @@ public class ProductService {
 		return pdao.imageSelect(product_idx);
 	}
 
+	public List<ProductAndImageDTO> largeCateView(String product_category) {
+		return pdao.largeCateView(product_category);
+	}
 	public List<ProductAndImageDTO> mediumCateView(String product_category) {
 		return pdao.mediumCateView(product_category);
 	}
-
 	public List<ProductAndImageDTO> smallCateView(String product_category) {
 		return pdao.smallCateView(product_category);
 	}
@@ -144,4 +146,5 @@ public class ProductService {
 	public String getCateDesc(String category_name) {
 		return cdao.getCateDesc(category_name);
 	}
+
 }

@@ -132,10 +132,10 @@
 						<h1>모든 제품</h1>
 						<ul class="popupmenu_depth2">
 							<li id="가구" onclick="getSubCategory(event)">가구</li>
-							<li id="침대/매트리스" onclick="getSubCategory(event)">침대/매트리스</li>
+							<li id="침대・매트리스" onclick="getSubCategory(event)">침대・매트리스</li>
 							<li id="조명" onclick="getSubCategory(event)">조명</li>
-							<li id="수납/정리" onclick="getSubCategory(event)">수납/정리</li>
-							<li id="러그/매트/데크" onclick="getSubCategory(event)">러그/매트/데크</li>
+							<li id="수납・정리" onclick="getSubCategory(event)">수납・정리</li>
+							<li id="러그・매트・데크" onclick="getSubCategory(event)">러그・매트・데크</li>
 						</ul>
 					</div>
 					<div class="popupmenu_depth1">
@@ -171,8 +171,8 @@
 							<div class="list_image"><img src="${cpath }/IKEA_image/furnitureList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
-							<h3>침대/매트리스</h3>
-							<ul id="침대/매트리스Sub"></ul>
+							<h3>침대・매트리스</h3>
+							<ul id="침대・매트리스Sub"></ul>
 							<div class="list_image"><img src="${cpath }/IKEA_image/mattressList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
@@ -181,12 +181,12 @@
 							<div class="list_image"><img src="${cpath }/IKEA_image/lightList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
-							<h3>수납/정리</h3>
-							<ul id="수납/정리Sub"></ul>
+							<h3>수납・정리</h3>
+							<ul id="수납・정리Sub"></ul>
 						</div>
 						<div class="popupmenu_depth3_menu">
-							<h3>러그/매트/데크</h3>
-							<ul id="러그/매트/데크Sub"></ul>
+							<h3>러그・매트・데크</h3>
+							<ul id="러그・매트・데크Sub"></ul>
 						</div>
 					</div>
 				</div>

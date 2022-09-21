@@ -11,7 +11,7 @@ public interface CategoryDAO {
 			+ "ORDER BY CATEGORY_NAME")
 	String[] getSubCategory(String category_ref);
 
-	@Select("SELECT CATEGORY_NAME, CATEGORY_IMAGE_FILENAME FROM PRODUCT_CATEGORY "
+	@Select("SELECT * FROM PRODUCT_CATEGORY "
 			+ "WHERE CATEGORY_REF = #{category_ref}")
 	List<CategoryDTO> getSubCateWithImage(String category_ref);
 	

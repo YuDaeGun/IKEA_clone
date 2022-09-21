@@ -37,7 +37,7 @@ public class ProductController {
 	@GetMapping("/getSubCategory/{ref}")
 	@ResponseBody
 	public String[] getSubCategory(@PathVariable String ref) {
-		return ps.getSubCategory(ref.replaceAll("_", "/"));
+		return ps.getSubCategory(ref);
 	}
 	
 	@GetMapping("/product/view/{product_idx}")
@@ -90,22 +90,34 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView("/product/categoryView");
 
 		String largecate = large_medium_small.split("_")[0];
-		String mediumcate = large_medium_small.split("_")[1];
+		String mediumcate = null;
 		String smallcate = null;
 		mav.addObject("largecate", largecate);
-		mav.addObject("mediumcate", mediumcate);
 
-		if (large_medium_small.split("_").length == 3) {
+		if (large_medium_small.split("_").length == 3) {	// 대,중,소분류 카테고리 모두 받았을 때
+			mediumcate = large_medium_small.split("_")[1];
 			smallcate = large_medium_small.split("_")[2];
 			mav.addObject("smallcate", smallcate);
+			mav.addObject("mediumcate", mediumcate);
+			
 			mav.addObject("cateDesc", ps.getCateDesc(smallcate));
 			mav.addObject("productList", ps.smallCateView(smallcate));
 			return mav;
+		} else if (large_medium_small.split("_").length == 2) {	// 대,중분류 카테고리만 받았을 때
+			mediumcate = large_medium_small.split("_")[1];
+			mav.addObject("mediumcate", mediumcate);
+			
+			mav.addObject("cateDesc", ps.getCateDesc(mediumcate));
+			mav.addObject("productList", ps.mediumCateView(mediumcate));
+			
+			mav.addObject("smallcateList", ps.getSubCateWithImage(mediumcate));
+			return mav;
 		}
+		// 대분류 카테고리만 받았을 때
+		mav.addObject("cateDesc", ps.getCateDesc(largecate));
+		mav.addObject("productList", ps.largeCateView(largecate));
 		
-		mav.addObject("cateDesc", ps.getCateDesc(mediumcate));
-		mav.addObject("smallcateList", ps.getSubCateWithImage(mediumcate));
-		mav.addObject("productList", ps.mediumCateView(mediumcate));
+		mav.addObject("mediumcateList", ps.getSubCateWithImage(largecate));
 		return mav;
 	}
 }

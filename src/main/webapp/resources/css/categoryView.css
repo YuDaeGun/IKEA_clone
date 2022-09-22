@@ -56,6 +56,12 @@ button {
 .cateView_sect1 > div {
 	margin-bottom: 30px;
 }
+.cateView_cateDesc {
+	width: 923px;
+}
+.cateView_cateDesc > p {
+	font-size: 14px;
+}
 .cateView_sect1_order {
     display: flex;
 }
@@ -67,6 +73,7 @@ button {
 .cateItem a {
 	font-weight: normal;
 	color: red;
+	font-size: 14px;
 }
 .cateView_sect4 {
 	margin-top: 20px

@@ -32,7 +32,7 @@
 				</div>
             	</c:forEach>
             </div>
-            <div>
+            <div class="cateView_cateDesc">
             	<p>${cateDesc }</p>
             </div>
         </section>

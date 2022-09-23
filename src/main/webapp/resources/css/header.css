@@ -487,13 +487,17 @@ button {
 	font-size: 13px;
 }
 
+.eventmenu ul:last-child > li > a {
+	font-weight: normal;
+}
+
 .eventmenu li {
 	margin-bottom: 20px;
 }
 
 .allmenu_popupmenu .popupmenu_depth2_wrap.on {
 	visibility: visible;
-	width: 320px;
+	width: 400px;
 }
 
 .allmenu_popupmenu .popupmenu_depth3 {
@@ -533,11 +537,6 @@ button {
 }
 .popup_entire li {
 	cursor: pointer;
-}
-
-.list_image>img {
-	width: 250px;
-	background-color: #2ca756;
 }
 
 #leng {
@@ -645,11 +644,12 @@ button {
 
 .sect2_content_main.base01 {
 	background-color: #0077C8;
-	color: rgba(255, 255, 255, 1) !important;
+	color: rgba(255, 255, 255, 1);
 }
 
 .sect2_content_main.base02 {
 	background-color: #502e73;
+	color: rgba(255, 255, 255, 1);
 }
 
 .sect2_content_main.base03 {
@@ -658,7 +658,7 @@ button {
 
 .sect2_content_main.base04 {
 	background-color: #172A38;
-	color: rgba(255, 255, 255, 1) !important;
+	color: rgba(255, 255, 255, 1);
 }
 
 .sect2_content {

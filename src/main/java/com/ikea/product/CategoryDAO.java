@@ -7,8 +7,7 @@ import org.apache.ibatis.annotations.Select;
 public interface CategoryDAO {
 
 	@Select("SELECT CATEGORY_NAME FROM PRODUCT_CATEGORY "
-			+ "WHERE CATEGORY_REF = #{category_ref} "
-			+ "ORDER BY CATEGORY_NAME")
+			+ "WHERE CATEGORY_REF = #{category_ref} ")
 	String[] getSubCategory(String category_ref);
 
 	@Select("SELECT * FROM PRODUCT_CATEGORY "

@@ -104,35 +104,28 @@
 				</div>
 				<div class="popupmenu_depth1_wrap">
 					<div class="popupmenu_depth1">
-						<h1>모든 제품</h1>
+						<h1>商品一覧</h1>
 						<ul class="popupmenu_depth2">
 							<li id="家具" onclick="getSubCategory(event)">家具</li>
 							<li id="照明" onclick="getSubCategory(event)">照明</li>
 							<li id="収納家具・収納グッズ" onclick="getSubCategory(event)">収納家具・収納グッズ</li>
 						</ul>
 					</div>
-					<div class="popupmenu_depth1">
-						<h1>온라인 쇼룸</h1>
-					</div>
-					<div class="popupmenu_depth1">
-						<h1>홈 액세서리</h1>
-					</div>
+					<div class="popupmenu_depth1"><h1>部屋別</h1></div>
+					<div class="popupmenu_depth1"><h1>いつでも、低価格</h1></div>
+					<div class="popupmenu_depth1"><h1>お買い得情報</h1></div>
 					<div class="eventmenu">
 						<ul>
-							<li><a href="#none">할인 중</a></li>
-							<li><a href="#none">신제품</a></li>
-							<li><a href="#none">아이디어</a></li>
-							<li><a href="#none">새로운 소식</a></li>
-							<li><a href="#none">브랜드 캠페인</a></li>
+							<li><a href="#none">特集一覧</a></li>
+							<li><a href="#none">レストランメニュー</a></li>
 						</ul>
 						<ul>
-							<li><a href="#none">매장안내</a></li>
-							<li><a href="#none">IKEA Family</a></li>
-							<li><a href="#none">IKEA for Business</a></li>
-							<li><a href="#none">IKEA Live</a></li>
-							<li><a href="#none">고객지원</a></li>
-							<li><a href="#none">배송조회</a></li>
-							<li><a href="#none">내 프로필</a></li>
+							<li><a href="#none">IKEA Familyメンバー特別価格</a></li>
+							<li><a href="#none">法人のお客さま</a></li>
+							<li><a href="#none">店舗検索</a></li>
+							<li><a href="#none">配送サービス</a></li>
+							<li><a href="#none">配送状況の確認</a></li>
+							<li><a href="#none">お買い物＆サービス</a></li>
 						</ul>
 					</div>
 				</div>
@@ -141,17 +134,14 @@
 						<div class="popupmenu_depth3_menu">
 							<h3>家具</h3>
 							<ul id="家具Sub"></ul>
-							<div class="list_image"><img src="${cpath }/IKEA_image/furnitureList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
 							<h3>照明</h3>
 							<ul id="照明Sub"></ul>
-							<div class="list_image"><img src="${cpath }/IKEA_image/lightList.png"></div>
 						</div>
 						<div class="popupmenu_depth3_menu">
 							<h3>収納家具・収納グッズ</h3>
 							<ul id="収納家具・収納グッズSub"></ul>
-							<div class="list_image"><img src="${cpath }/IKEA_image/mattressList.png"></div>
 						</div>
 					</div>
 				</div>

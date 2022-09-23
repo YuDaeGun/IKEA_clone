@@ -13,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 	
 	<!-- swiper : https://swiperjs.com/get-started -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -28,20 +29,20 @@
 		<div id="hnf_value" class="wrap">
 			<div class="hnf_message wrap">
 				<div class="hnf_message_inner">
-					<a href="#none"><img src="${cpath }/IKEA_image/Truck.svg"><span>새로운 배송 요금</span></a>
+					<a href="#none"><img src="${cpath }/IKEA_image/Truck.svg"><span>小物配送サービスがお手ごろ料金に！￥500～</span></a>
 				</div>
 				<div class="hnf_message_inner">
-					<a href="#none"><img src="${cpath }/IKEA_image/telephone.svg"><span>실시간 주문 서비스</span></a>
+					<a href="#none"><img src="${cpath }/IKEA_image/telephone.svg"><span>電話・チャット注文サービス</span></a>
 				</div>
 				<div class="hnf_message_inner">
-					<a href="#none"><img src="${cpath }/IKEA_image/basket.svg"><span>IKEA 인기제품</span></a>
+					<a href="#none"><img src="${cpath }/IKEA_image/basket.svg"><span>IKEA 人気商品</span></a>
 				</div>
 			</div>
 		</div>
 		<div class="hnf_hamburger">
 			<div class="hnf_header_aside wrap">
 				<button type="button" class="hnf_btn_hamburger"><span><img src="${cpath }/IKEA_image/hamburger.svg"></span></button>
-				<button type="button" class="hnf_btn_menu"><span>메뉴</span></button>
+				<button type="button" class="hnf_btn_menu"><span>メニュー</span></button>
 			</div>
 		</div>
 		<div class="wrap">
@@ -54,7 +55,7 @@
 						<div class="hnf_header_searchForm wrap">
 							<form class="header_search">
 								<img class="lense" src="${cpath }/IKEA_image/lense.svg">
-								<input type="text" name="search" placeholder="검색어 입력">
+								<input type="text" name="search" placeholder="商品・コンテンツを検索">
 								<span class="camera_btn">
 									<button type="submit"><img src="${cpath }/IKEA_image/camera.svg"></button>
 								</span>
@@ -71,7 +72,7 @@
 									<a href="${cpath }/member/accountManagement" class="hnf_account">계정관리</a>
 								</c:if>
 								<c:if test="${empty loginInfo}">
-									<li><a href="${cpath }/member/login">Hej! 로그인 또는 가입하기</a>
+									<li><a href="${cpath }/member/login">ログイン・新規入会</a>
 								</c:if>
 							</div>
 							<div class="hnf_login_btn">
@@ -90,25 +91,25 @@
 			<div class="hnf_cont_2nd">
 				<nav class="hnf_cont_nav">
 					<ul class="hnf_cont_nav_ul">
-						<li><a href="#none">모든 제품</a></li>
-						<li><a href="#none">온라인 쇼룸</a></li>
-						<li><a href="#none">홈 액세서리</a></li>
-						<li><a href="#none">서비스</a></li>
+						<li><a href="#none">商品一覧</a></li>
+						<li><a href="#none">部屋別</a></li>
+						<li><a href="#none">いつでも、低価格</a></li>
+						<li><a href="#none">お買い得情報</a></li>
 					</ul>
 					<ul class="hnf_cont_nav_ul2">
 						<li>
 							<a class="hnf_nav_btn" href="${cpath }/product/insertForm">
-								<span class="adminpage">상품 추가</span>
+								<span class="adminpage">商品追加</span>
 							</a>
 						</li>
 						<li>
 							<a class="hnf_nav_btn" href="#none">
-								<span><img src="${cpath }/IKEA_image/truck2.svg"><span>우편 번호 입력</span></span>
+								<span><img src="${cpath }/IKEA_image/truck2.svg"><span>郵便番号を入力</span></span>
 							</a>
 						</li>
 						<li>
 							<a class="hnf_nav_btn" href="#none">
-								<span><img src="${cpath }/IKEA_image/offline.svg"><span>매장 찾기</span></span>
+								<span><img src="${cpath }/IKEA_image/offline.svg"><span>ストアを選択</span></span>
 							</a>
 						</li>
 					</ul>

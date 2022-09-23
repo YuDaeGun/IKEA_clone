@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
     letter-spacing: 0px;
     margin: 0;
     padding: 0;
@@ -65,10 +65,12 @@ button {
 .cateView_sect1_order {
     display: flex;
 }
-.cateItem img {
+.cateItem {
 	width: 182px;
-	height: 102px;
     margin-right: 20px;
+}
+.cateItem img {
+	height: 102px;
 }
 .cateItem a {
 	font-weight: normal;

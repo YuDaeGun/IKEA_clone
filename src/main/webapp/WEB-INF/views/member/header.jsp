@@ -9,9 +9,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IKEA_clone</title>
+	<!-- google font : https://fonts.google.com/noto/specimen/Noto+Sans+KR -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 
-<!-- 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-	
+	<script src = "http://code.jquery.com/jquery-latest.js"></script> 
+
 	<link type="text/css" rel="stylesheet" href="${cpath }/resources/css/member.css">
 	<script>const cpath = '${cpath}'</script>
 

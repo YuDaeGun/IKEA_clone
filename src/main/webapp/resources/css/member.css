@@ -1,6 +1,10 @@
 @charset 'utf-8';
 * {
+	font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
 	scroll-behavior: smooth;
+}
+p, label {
+	font-size: 15px;
 }
 body {
 	margin: 0;
@@ -22,53 +26,27 @@ a:hover {
 	margin-left: -5px;
 	margin-top: 40px;
 }
-.left {
-	background-color: #0058a3;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	position: relative;
-	width: 40%;
-	min-height: 100vh;
-}
-.back {
-	width: 40px;
-}
-.right {
-	width: 60%;
-	margin-top: 80px;
-	margin-left: 90px;
-	justify-content: space-between;
+.login_logo > a > img {
+	width: 88px;
+	height: 44px;
 }
 .login_main {
-	margin-top: 0px;
+	margin-top: -30px;
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
 	margin-left: 60px;
 	padding: 32px 80px;
 }
-div.login_ex {
-	display: flex;
-	flex-flow: column;
-	align-items: flex-start;
-	justify-content: space-between;
-}
 div.login_ex>.PwFind_big_white {
 	color: white;
 	font-size: 30px;
 	margin-bottom: 40px;
 }
-.login_ex_img {
-	display: flex;
-}
 div.login_ex>.login_white {
 	color: white;
 	font-size: 15px;
-}
-.login_white2 {
-	color: white;
-	font-size: 12px;
+	width: 400px;
 }
 div.login_act {
 	margin-top: 150px;
@@ -109,14 +87,6 @@ div.login_act {
 	text-decoration: underline;
 	color: white;
 }
-.back {
-	align-items: center;
-}
-.backicon {
-	margin-top: 79px;
-	margin-left: 34px;
-	width: 31px;
-}
 body {
 	margin: 0;
 	padding: 0;
@@ -125,10 +95,6 @@ body {
 div.root {
 	display: flex;
 	position: block;
-}
-.login_logo {
-	margin-left: -5px;
-	margin-top: 40px;
 }
 .left {
 	background-color: #0058a3;
@@ -139,23 +105,11 @@ div.root {
 	width: 40%;
 	min-height: 100vh;
 }
-.back {
-	width: 40px;
-}
 .right {
 	width: 60%;
 	margin-top: 80px;
 	margin-left: 90px;
 	justify-content: space-between;
-}
-.login_main {
-	margin-top: 0px;
-	display: flex;
-	flex-flow: column;
-	justify-content: space-between;
-	margin-left: 60px;
-	padding: 32px 80px;
-	position: relative;
 }
 div.login_ex {
 	display: flex;
@@ -163,25 +117,15 @@ div.login_ex {
 	align-items: flex-start;
 	justify-content: space-between;
 }
-div.login_ex>.login_yellow {
-	color: rgb(251, 217, 20);
-	font-size: 30px;
-	margin-bottom: 40px;
+div.login_ex > h1 {
+	color: white;
 }
 .login_ex_img {
 	display: flex;
 }
-div.login_ex>.login_white {
-	color: white;
-	font-size: 15px;
-}
 .login_white2 {
 	color: white;
 	font-size: 12px;
-}
-div.login_act {
-	margin-top: 150px;
-	font-size: 18px;
 }
 .login_act_Id {
 	margin-bottom: 40px;
@@ -257,7 +201,19 @@ div.login_act {
 	cursor: pointer;
 	justify-content: center;
 	border: 0;
-	outline: 0;
+	margin-bottom: 40px;
+}
+.join_bt {
+	width: 448px;
+	height: 58px;
+	border-radius: 30px;
+	background-color: white;
+	border-style: 1px solid black;
+	font-weight: 700;
+	font-size: 17px;
+	text-align: center;
+	cursor: pointer;
+	justify-content: center;
 	margin-bottom: 40px;
 }
 .none_member {
@@ -275,13 +231,20 @@ div.login_act {
 	width: 24px;
 	height: 24px;
 }
-.back {
-	align-items: center;
-}
 .backicon {
 	margin-top: 79px;
 	margin-left: 34px;
-	width: 31px;
+}
+.backicon2 {
+	margin-top: 79px;
+	margin-left: 34px;
+}
+.backicon > img {
+	width: 24px;
+}
+.backicon2 > img {
+	width: 24px;
+	margin-left: -40px;
 }
 .eyes {
 	cursor: pointer;
@@ -398,22 +361,29 @@ div.root {
 	margin-bottom: 0.4rem;
 }
 .back {
+	margin-top: 50px;
 	width: 40px;
 }
 .join_right {
 	width: 60%;
-	margin-top: 80px;
+	margin-top: 55px;
 	margin-left: 90px;
 	justify-content: space-between;
 }
+.join_right > p {
+	font-weight: bold;
+	margin-bottom: 30px;
+}
 .join_main {
+	margin-top: 50px;
+	margin-left: 70px;
 	width: 700px;
 	height: 633px;
 	margin-top: 0px;
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
-	padding: 29px 25px;
+	padding: 40px 0 0 0;
 }
 div.family_join1 {
 	display: flex;
@@ -485,21 +455,6 @@ div.join_act {
 	zoom: 2.5;
 	cursor: pointer;
 }
-.join_bt {
-	width: 550px;
-	height: 70px;
-	border-radius: 30px;
-	background-color: #0058a3;
-	font-weight: 700;
-	font-size: 17px;
-	color: white;
-	text-align: center;
-	cursor: pointer;
-	justify-content: center;
-	border: 0;
-	outline: 0;
-	margin-bottom: 40px;
-}
 .none_member {
 	margin-bottom: 40px;
 }
@@ -529,9 +484,6 @@ div.join_act {
 	width: 24px;
 	height: 24px;
 }
-.back {
-	align-items: center;
-}
 .join_backicon {
 	margin-top: 33px;
 	margin-left: 10px;
@@ -549,13 +501,6 @@ div.join_act {
 	cursor: pointer;
 	list-style: none;
 	margin-bottom: 40px;
-}
-.yorno_join {
-	margin-bottom: 40px;
-	margin-bottom: 1rem;
-	-webkit-padding-start: 0;
-	-webkit-padding-end: 0;
-	font-weight: 700;
 }
 .yorno_radio {
 	display: flex;

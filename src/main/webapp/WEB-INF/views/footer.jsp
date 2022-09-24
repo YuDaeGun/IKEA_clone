@@ -90,12 +90,10 @@
 		<div class="allmenu_popup_container">
 			<div class="allmenu_popup_top">
 				<div class="allmenu_popup_close">
-					<img src="${cpath }/IKEA_image/closepopup.svg" alt="">
+					<img src="${cpath }/IKEA_image/closepopup.svg">
 				</div>
 				<div class="allmenu_popup_logo">
-					<a href="${cpath }/"> <img src="${cpath }/IKEA_image/ikea.svg"
-						alt="">
-					</a>
+					<a href="${cpath }"><img src="${cpath }/IKEA_image/ikea.svg"></a>
 				</div>
 			</div>
 			<div class="allmenu_popupmenu">
@@ -112,7 +110,6 @@
 						</ul>
 					</div>
 					<div class="popupmenu_depth1"><h1>部屋別</h1></div>
-					<div class="popupmenu_depth1"><h1>いつでも、低価格</h1></div>
 					<div class="popupmenu_depth1"><h1>お買い得情報</h1></div>
 					<div class="eventmenu">
 						<ul>

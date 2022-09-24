@@ -6,7 +6,7 @@
 	<div class="root">
 		<div class="join_left">
 			<div class="back">
-				<a href="javascript:history.go(-1)"><img src="${cpath }/IKEA_image/back2.svg" alt="뒤로가기" class="join_backicon"></a>
+				<a class="backicon2" href="javascript:history.go(-1)"><img src="${cpath }/IKEA_image/back2.svg"></a>
 			</div>
 			<div class="join_main">
 				<div class="_img">
@@ -17,11 +17,10 @@
 					</div>
 				</div>
 				<div class="family_join1">
-					<h1 class="join_blue"><span>IKEA Family&nbsp;</span><span class="join_black1">회원가입</span></h1>
+					<h1 class="join_blue"><span>IKEA Family</span><span class="join_black1">に登録する</span></h1>
 					<div class="join_black2">
-						<span>이미 가입하셨나요?&nbsp;</span><a href="${cpath }/member/login" class="join_try">로그인하기</a>
-					</div>
-					<br>
+						<span>既にアカウントをお持ちですか？&nbsp;</span><a href="${cpath }/member/login" class="join_try">ログインする</a>
+					</div><br><br>
 					<div class="family_img">
 						<div class="family_img1">
 							<div class="signup_img1" style="background-image: url(${cpath }/IKEA_image/joinpage_1.jpg)"></div>
@@ -39,19 +38,17 @@
 					</div>
 				</div>
 				<div class="join_black3">
-					<span>IKEA.kr - <a class="cookie_pol_black" href="#none">쿠키정책,</a>
-					<a class="per_info_black" href="#none">개인정보처리방침</a></span>
+					<span>IKEA.jp - <a class="cookie_pol_black" href="#none">クッキー ポリシー、</a>
+					<a class="per_info_black" href="#none">プライバシーポリシー</a></span>
 					<div>© Inter IKEA Systems B.V. 1999-2022</div>
 				</div>
 			</div>
 		</div>
-		<div class="join_right">IKEA Family에 가입하시면 어떤 혜택이 있으신지 궁금하신가요?
-			<div class="yorno_join">
-				<a href="https://www.youtube.com/watch?v=FXpTfsJ8gIA" class="benefit_link" role="button">IKEA Family 혜택 보러가기</a>
-			</div>
+		<div class="join_right"><p>IKEA Family への入会は無料です。</p>
 			<form method="POST">
-				<div class="name">이름<br>
-					<input name="member_name" type="text" class="join_inputbox">
+				<div class="name">
+					<label for="input_name">姓　例：山田</label><br>
+					<input id="input_name" name="member_name" type="text" class="join_inputbox">
 				</div>
 				<div class="birth1">생일<br>
 					<input name="member_birth" type="date" class="join_inputbirth"><br>

@@ -163,9 +163,6 @@ div.login_ex > h1 {
 	margin-bottom: 40px;
 	box-sizing: border-box;
 }
-.KR_number {
-	font-size: 25px;
-}
 .oneCode {
 	color: black;
 }
@@ -489,19 +486,7 @@ div.join_act {
 	margin-left: 10px;
 	width: 30px;
 }
-.find_postnum {
-	background-color: #0058a3;
-	width: 150px;
-	height: 53px;
-	color: white;
-	font-size: 15px;
-	border-radius: 30px;
-	outline: none;
-	border: 0;
-	cursor: pointer;
-	list-style: none;
-	margin-bottom: 40px;
-}
+
 .yorno_radio {
 	display: flex;
 	align-items: center;
@@ -541,28 +526,34 @@ input[type=radio] {
 .phone_number2 {
 	width: 341px;
 	height: 48px;
-	font-size: 25px;
 }
-.birth1 {
+.input_birth_gender {
 	margin-bottom: 20px;
+	display: flex;
+}
+.input_birth_gender > div {
+	margin-right: 50px;
 }
 .join_inputbox {
 	width: 448px;
 	height: 48px;
 	margin-bottom: 40px;
-	font-size: 25px;
+	box-sizing: border-box;
+}
+.join_inputbox_small {
+	width: 200px;
+	height: 48px;
+	margin-bottom: 40px;
 	box-sizing: border-box;
 }
 .join_inputbirth {
-	width: 448px;
+	width: 200px;
 	height: 48px;
-	font-size: 25px;
 	box-sizing: border-box;	
 }
 .join_inputpw {
 	width: 448px;
 	height: 48px;
-	font-size: 25px;
 	box-sizing: border-box;
 }
 .receive {

@@ -46,65 +46,157 @@
 		</div>
 		<div class="join_right"><p>IKEA Family への入会は無料です。</p>
 			<form method="POST">
-				<div class="name">
-					<label for="input_name">姓　例：山田</label><br>
-					<input id="input_name" name="member_name" type="text" class="join_inputbox">
+				<div>
+					<label for="input_lastName">姓　例：山田</label><br>
+					<input id="input_lastName" name="member_name1" class="join_inputbox">
 				</div>
-				<div class="birth1">생일<br>
-					<input name="member_birth" type="date" class="join_inputbirth"><br>
-					YYYY-MM-DD
+				<div>
+					<label for="input_lastName_furigana">姓 (フリガナ)　例：ヤマダ</label><br>
+					<input id="input_lastName_furigana" name="member_name1_furigana" class="join_inputbox">
 				</div>
-				<div class="phone_number1">휴대폰<br>
+				<div>
+					<label for="input_firstName">名　例：太郎</label><br>
+					<input id="input_firstName" name="member_name2" class="join_inputbox">
+				</div>
+				<div>
+					<label for="input_firstName_furigana">名 (フリガナ)　例：タロウ</label><br>
+					<input id="input_firstName_furigana" name="member_name2_furigana" class="join_inputbox">
+				</div>
+				<div class="input_birth_gender">
+					<div>
+						<label for="input_birth">誕生日</label><br>
+						<input id="input_birth" name="member_birth" type="date" class="join_inputbirth"><br>
+						YYYY-MM-DD
+					</div>
+					<div>
+						<label for="input_gender">性別</label><br>
+						<select id="input_gender" name="member_gender" class="join_inputbox_small">
+							<option value="">選択してください</option>
+							<option value="M">男性</option>
+							<option value="F">女性</option>
+							<option value="X">応答拒否</option>
+						</select>
+					</div>
+				</div>
+				<div class="phone_number1">携帯（または固定電話）<br>
 					<div class="phone_numberdiv">
-						<span class="KR_number">&nbsp;KR(+82)</span>
+						<span>&nbsp;JP(+81)</span>
 						<input name="member_pnum" type="tel" class="phone_number2">
 					</div>
 				</div>
-				<div class="gender1">성별 (선택 사항)<br>
-					<select name="member_gender" class="join_inputbox">
-						<option value="M">남성</option>
-						<option value="F">여성</option>
-						<option value="X">응답거부</option>
+				<div>
+					<label for="input_zipcode">郵便番号 (半角)</label><br>
+					<input id="input_zipcode" name="member_zipcode" class="join_inputbox">
+				</div>
+				<div>
+					<label for="input_address1">都道府県</label><br>
+					<select id="input_address1" name="member_address1" class="join_inputbox">
+						<option value="">選択してください</option>
+						<option value="北海道">北海道</option>
+						<option value="青森県">青森県</option>
+						<option value="岩手県">岩手県</option>
+						<option value="宮城県">宮城県</option>
+						<option value="秋田県">秋田県</option>
+						<option value="山形県">山形県</option>
+						<option value="福島県">福島県</option>
+						<option value="茨城県">茨城県</option>
+						<option value="栃木県">栃木県</option>
+						<option value="群馬県">群馬県</option>
+						<option value="埼玉県">埼玉県</option>
+						<option value="千葉県">千葉県</option>
+						<option value="東京都">東京都</option>
+						<option value="神奈川県">神奈川県</option>
+						<option value="新潟県">新潟県</option>
+						<option value="富山県">富山県</option>
+						<option value="石川県">石川県</option>
+						<option value="福井県">福井県</option>
+						<option value="山梨県">山梨県</option>
+						<option value="長野県">長野県</option>
+						<option value="岐阜県">岐阜県</option>
+						<option value="静岡県">静岡県</option>
+						<option value="愛知県">愛知県</option>
+						<option value="三重県">三重県</option>
+						<option value="滋賀県">滋賀県</option>
+						<option value="京都府">京都府</option>
+						<option value="大阪府">大阪府</option>
+						<option value="兵庫県">兵庫県</option>
+						<option value="奈良県">奈良県</option>
+						<option value="和歌山県">和歌山県</option>
+						<option value="鳥取県">鳥取県</option>
+						<option value="島根県">島根県</option>
+						<option value="岡山県">岡山県</option>
+						<option value="広島県">広島県</option>
+						<option value="山口県">山口県</option>
+						<option value="徳島県">徳島県</option>
+						<option value="香川県">香川県</option>
+						<option value="愛媛県">愛媛県</option>
+						<option value="高知県">高知県</option>
+						<option value="福岡県">福岡県</option>
+						<option value="佐賀県">佐賀県</option>
+						<option value="長崎県">長崎県</option>
+						<option value="熊本県">熊本県</option>
+						<option value="大分県">大分県</option>
+						<option value="宮崎県">宮崎県</option>
+						<option value="鹿児島県">鹿児島県</option>
+						<option value="沖縄県">沖縄県</option>
 					</select>
 				</div>
-
-				<div class="find_post"><br>
-					<input type="button" class="find_postnum" onclick="daumPostcode()" value="우편번호 찾기"><br>
-					<input type="text" name="member_zipcode" class="join_inputbox" id="daum_postcode" placeholder="우편번호" required="required"><br>
-					<input type="text" name="member_address" class="join_inputbox" id="daum_roadAddress" placeholder="도로명주소" required="required"><br>
-					<input type="text" name="member_address" class="join_inputbox" id="daum_jibunAddress" placeholder="지번주소"><br>
-					<span id="guide" style="color: #999; display: none"></span>
-					<input type="text" name="member_detailsaddress" class="join_inputbox" id="daum_detailAddress" placeholder="상세주소"><br>
-					<input type="hidden" name="member_detailsaddress" class="join_inputbox" id="daum_extraAddress" placeholder="참고항목"><br>
+				<div>
+					<label for="input_address2">市区町村</label><br>
+					<input id="input_address2" name="input_address2" class="join_inputbox">
 				</div>
-
-				<div class="email_address1">이메일<br>
-					<input name="member_email" id="emcheck" type="email" class="join_inputbox" required="required">
+				<div>
+					<label for="input_address3">丁番地</label><br>
+					<input id="input_address3" name="input_address3" class="join_inputbox">
+				</div>
+				<div>
+					<label for="input_address4">建物名・部屋番号 （オプション）</label><br>
+					<input id="input_address4" name="input_address4" class="join_inputbox">
+				</div>
+				<div>
+					<label for="input_nearbystore">お近くのイケア店舗</label><br>
+					<select id="input_nearbystore" name="member_nearbystore" class="join_inputbox">
+						<option value="">選択してください</option>
+						<option value="IKEA福岡新宮">IKEA福岡新宮</option>
+						<option value="IKEA原宿">IKEA原宿</option>
+						<option value="IKEA神戸">IKEA神戸</option>
+						<option value="IKEA港北">IKEA港北</option>
+						<option value="IKEA長久手">IKEA長久手</option>
+						<option value="IKEA仙台">IKEA仙台</option>
+						<option value="IKEA渋谷">IKEA渋谷</option>
+						<option value="IKEA新宿">IKEA新宿</option>
+						<option value="IKEA新三郷">IKEA新三郷</option>
+						<option value="IKEA立川">IKEA立川</option>
+						<option value="IKEA Tokyo-Bay">IKEA Tokyo-Bay</option>
+						<option value="IKEA鶴浜">IKEA鶴浜</option>
+					</select>
+				</div>
+				<div>
+					<label for="input_email">メールアドレス (ユーザー名)</label><br>
+					<input id="input_email" name="member_email" type="email" class="join_inputbox" required>
 					<div id="emCheckMessage"></div>
 				</div>
-				<div class="join_pw1">비밀번호<br>
-					<input id="new_pw" name="member_pw" type="password" class="join_inputpw" required="required">
+				<div>
+					<label for="input_pw">パスワード</label><br>
+					<input id="input_pw1" name="member_pw" type="password" class="join_inputpw" required>
 					<div id="check1" class="impo">*특수문자(!@#$%^&*)를 포함한 8~16글자</div>
 				</div>
-				<div class="join_pw1">비밀번호 확인<br>
-					<input id="new_pw_re" name="remember_pw" type="password" class="join_inputpw" required="required">
+				<div>
+					<label for="input_pw1">パスワード再入力</label><br>
+					<input id="new_pw_re" name="remember_pw" type="password" class="join_inputpw" required>
 					<div id="check2" class="impo"></div>
 				</div>
 				<div class="join_success1">
-					<button id="pw_reset_bt" type="submit" class="join_success2">가입완료하기</button>
+					<button id="pw_reset_bt" type="submit" class="join_success2">メールアドレスの確認へ進む</button>
 				</div>
 			</form>
 		</div>
 	</div>
 	</main>
-
-	<!-- daum 주소검색 -->
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	
 	<script>
-		const emx = document.getElementById('emcheck')
 		const emCheckMessage = document.getElementById('emCheckMessage')
-		const new_pw = document.getElementById('new_pw')
+		const new_pw = document.getElementById('input_pw1')
 		const new_pw_re = document.getElementById('new_pw_re')
 	
 	 	const pw_reset_bt = document.getElementById('pw_reset_bt')

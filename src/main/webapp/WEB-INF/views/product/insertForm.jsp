@@ -105,13 +105,4 @@
 
 <script src="${cpath }/resources/js/product.js"></script>
 
-<script>
-	window.addEventListener('load', loadHandler)
-	window.addEventListener('load', addMoreImageFile)
-	document.getElementById('addForm').addEventListener('submit', formSubmitHandler)
-	document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener('change', setThumbnail))
-	document.getElementById('largeCategory').addEventListener('change', getSubCategory)
-	document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
-</script>
-
 <%@ include file="../footer.jsp" %>

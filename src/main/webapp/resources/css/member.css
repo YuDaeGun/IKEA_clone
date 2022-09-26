@@ -587,7 +587,6 @@ fieldset {
 	text-align: center;
 	cursor: pointer;
 	justify-content: center;
-	border: 0.5;
 	margin-top: 40px;
 	margin-bottom: 100px;
 }
@@ -950,6 +949,7 @@ fieldset {
 .hidden {
 	display: none;
 }
-.impo {
+.pwCheckMsg {
 	margin-bottom: 30px;
+	font-size:15px;
 }

@@ -66,10 +66,10 @@
 	</main>
 	
 	<script>
-		const b1 = document.getElementById('eyeIcon')
+		const eyeIcon = document.getElementById('eyeIcon')
 		const password = document.getElementById('password')
 	
-		b1.addEventListener('click', chan)
+		eyeIcon.addEventListener('click', changeEye)
 	</script>
 
 </body>

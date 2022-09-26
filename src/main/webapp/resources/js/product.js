@@ -1,3 +1,10 @@
+window.addEventListener('load', loadHandler)
+window.addEventListener('load', addMoreImageFile)
+document.getElementById('addForm').addEventListener('submit', formSubmitHandler)
+document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener('change', setThumbnail))
+document.getElementById('largeCategory').addEventListener('change', getSubCategory)
+document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
+
 // 이미지 추가 (3개씩)
 function addMoreImageFile() {
 	$("#d_file").append("<div class='inputProduct'>")

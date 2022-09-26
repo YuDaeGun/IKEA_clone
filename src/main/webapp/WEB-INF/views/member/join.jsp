@@ -172,22 +172,22 @@
 					</select>
 				</div>
 				<div>
-					<label for="input_email">メールアドレス (ユーザー名)</label><br>
+					<label for="input_email">メールアドレス</label><br>
 					<input id="input_email" name="member_email" type="email" class="join_inputbox" required>
-					<div id="emCheckMessage"></div>
+					<div id="dupCheckMessage"></div>
 				</div>
 				<div>
 					<label for="input_pw">パスワード</label><br>
-					<input id="input_pw1" name="member_pw" type="password" class="join_inputpw" required>
-					<div id="check1" class="impo">*특수문자(!@#$%^&*)를 포함한 8~16글자</div>
+					<input id="input_pw" type="password" class="join_inputpw" required>
+					<div id="pwCheck1" class="pwCheckMsg">*특수문자(!@#$%^&*)를 포함한 8~16글자</div>
 				</div>
 				<div>
-					<label for="input_pw1">パスワード再入力</label><br>
-					<input id="new_pw_re" name="remember_pw" type="password" class="join_inputpw" required>
-					<div id="check2" class="impo"></div>
+					<label for="input_pw_re">パスワード再入力</label><br>
+					<input id="input_pw_re" name="member_pw" type="password" class="join_inputpw" required>
+					<div id="pwCheck2" class="pwCheckMsg"></div>
 				</div>
-				<div class="join_success1">
-					<button id="pw_reset_bt" type="submit" class="join_success2">メールアドレスの確認へ進む</button>
+				<div>
+					<button id="pw_reset_bt" type="submit" class="join_success2">登録完了</button>
 				</div>
 			</form>
 		</div>
@@ -195,13 +195,14 @@
 	</main>
 	
 	<script>
-		const emCheckMessage = document.getElementById('emCheckMessage')
-		const new_pw = document.getElementById('input_pw1')
-		const new_pw_re = document.getElementById('new_pw_re')
+		const dupCheckMessage = document.getElementById('dupCheckMessage')
+		const input_pw = document.getElementById('input_pw')
+		const input_pw_re = document.getElementById('input_pw_re')
 	
 	 	const pw_reset_bt = document.getElementById('pw_reset_bt')
-		new_pw.addEventListener('blur', checkPassword1)
-		new_pw_re.addEventListener('blur', checkPassword2)
+	 	
+		input_pw.addEventListener('blur', pwChecker1)
+		input_pw_re.addEventListener('keyup', pwChecker2)
 	 	pw_reset_bt.addEventListener('click', allCheck)
 	</script>
 

@@ -7,20 +7,26 @@ import java.sql.Date;
 //	MEMBER_IDX              NUMBER          DEFAULT MEMBER_SEQ.NEXTVAL PRIMARY KEY,     -- 고객 인덱스
 //	MEMBER_EMAIL            VARCHAR2(40)    UNIQUE NOT NULL,  -- ID역할
 //	MEMBER_PW               VARCHAR2(200)   NOT NULL,
-//	MEMBER_NAME             VARCHAR2(20)    NOT NULL,
+//	MEMBER_NAME1            VARCHAR2(20)    NOT NULL,   -- 姓
+//	MEMBER_NAME1_FURIGANA   VARCHAR2(20)    NOT NULL,   -- 姓(フリガナ)
+//	MEMBER_NAME2            VARCHAR2(20)    NOT NULL,   -- 名
+//	MEMBER_NAME2_FURIGANA   VARCHAR2(20)    NOT NULL,   -- 名(フリガナ)
 //	MEMBER_BIRTH            DATE            NOT NULL,
 //	MEMBER_PNUM             VARCHAR2(20)    NOT NULL,   -- 전화번호
 //	MEMBER_ZIPCODE          VARCHAR2(20)    NOT NULL,   -- 우편번호
-//	MEMBER_ADDRESS1         VARCHAR2(200)   NOT NULL,   -- 주소 (API이용시 자동으로 담기는 부분)
-//	MEMBER_ADDRESS2         VARCHAR2(100),              -- 상세주소와 참고사항
+//	MEMBER_ADDRESS1         VARCHAR2(200)   NOT NULL,   -- 都道府県
+//	MEMBER_ADDRESS2         VARCHAR2(100),              -- 市区町村
+//	MEMBER_ADDRESS3         VARCHAR2(100),              -- 丁番地
+//	MEMBER_ADDRESS4         VARCHAR2(100),              -- 建物名・部屋番号 （オプション）
+//	MEMBER_NEARBYSTORE      VARCHAR2(100),              -- 近くのイケア店舗
 //	MEMBER_GENDER           CHAR(1)         CHECK(MEMBER_GENDER IN ('M', 'F', 'X')), -- 성별('M' = 남, 'F' = 여, 'X' = 응답거부) 
 //	MEMBER_ISDELETED        CHAR(1)         DEFAULT 'N' CHECK(MEMBER_ISDELETED IN ('Y', 'N')), -- 'Y' -> 삭제됨
 //	MEMBER_REGDATE          DATE            DEFAULT SYSDATE   -- 회원 가입일
 
 public class MemberDTO {
-	
-	private String member_email, member_pw, member_name, member_pnum, member_zipcode, 
-		member_address1, member_address2, member_gender, member_isdeleted;
+	private String member_email, member_pw, member_name1, member_name1_furigana, member_name2, member_name2_furiganaString,
+		member_pnum, member_zipcode, member_address1, member_address2, member_address3, member_address4, member_nearbystore,
+		member_gender, member_isdeleted;
 	private int member_idx;
 	private Date member_birth, member_regdate;
 	
@@ -36,11 +42,29 @@ public class MemberDTO {
 	public void setMember_pw(String member_pw) {
 		this.member_pw = member_pw;
 	}
-	public String getMember_name() {
-		return member_name;
+	public String getMember_name1() {
+		return member_name1;
 	}
-	public void setMember_name(String member_name) {
-		this.member_name = member_name;
+	public void setMember_name1(String member_name1) {
+		this.member_name1 = member_name1;
+	}
+	public String getMember_name1_furigana() {
+		return member_name1_furigana;
+	}
+	public void setMember_name1_furigana(String member_name1_furigana) {
+		this.member_name1_furigana = member_name1_furigana;
+	}
+	public String getMember_name2() {
+		return member_name2;
+	}
+	public void setMember_name2(String member_name2) {
+		this.member_name2 = member_name2;
+	}
+	public String getMember_name2_furiganaString() {
+		return member_name2_furiganaString;
+	}
+	public void setMember_name2_furiganaString(String member_name2_furiganaString) {
+		this.member_name2_furiganaString = member_name2_furiganaString;
 	}
 	public String getMember_pnum() {
 		return member_pnum;
@@ -65,6 +89,24 @@ public class MemberDTO {
 	}
 	public void setMember_address2(String member_address2) {
 		this.member_address2 = member_address2;
+	}
+	public String getMember_address3() {
+		return member_address3;
+	}
+	public void setMember_address3(String member_address3) {
+		this.member_address3 = member_address3;
+	}
+	public String getMember_address4() {
+		return member_address4;
+	}
+	public void setMember_address4(String member_address4) {
+		this.member_address4 = member_address4;
+	}
+	public String getMember_nearbystore() {
+		return member_nearbystore;
+	}
+	public void setMember_nearbystore(String member_nearbystore) {
+		this.member_nearbystore = member_nearbystore;
 	}
 	public String getMember_gender() {
 		return member_gender;

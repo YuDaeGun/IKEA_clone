@@ -143,15 +143,15 @@
 				</div>
 				<div>
 					<label for="input_address2">市区町村</label><br>
-					<input id="input_address2" name="input_address2" class="join_inputbox">
+					<input id="input_address2" name="member_address2" class="join_inputbox">
 				</div>
 				<div>
 					<label for="input_address3">丁番地</label><br>
-					<input id="input_address3" name="input_address3" class="join_inputbox">
+					<input id="input_address3" name="member_address3" class="join_inputbox">
 				</div>
 				<div>
 					<label for="input_address4">建物名・部屋番号 （オプション）</label><br>
-					<input id="input_address4" name="input_address4" class="join_inputbox">
+					<input id="input_address4" name="member_address4" class="join_inputbox">
 				</div>
 				<div>
 					<label for="input_nearbystore">お近くのイケア店舗</label><br>
@@ -179,7 +179,7 @@
 				<div>
 					<label for="input_pw">パスワード</label><br>
 					<input id="input_pw" type="password" class="join_inputpw" required>
-					<div id="pwCheck1" class="pwCheckMsg">*특수문자(!@#$%^&*)를 포함한 8~16글자</div>
+					<div id="pwCheck1" class="pwCheckMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 				</div>
 				<div>
 					<label for="input_pw_re">パスワード再入力</label><br>
@@ -187,7 +187,13 @@
 					<div id="pwCheck2" class="pwCheckMsg"></div>
 				</div>
 				<div>
-					<button id="pw_reset_bt" type="submit" class="join_success2">登録完了</button>
+					<input type="checkbox" required>私は<a href="#none">プライバシーポリシー</a>を読み、同意しました。
+				</div>
+				<div>
+					<input type="checkbox" required>読んで了解しました。<a href="#none">利用規約</a>
+				</div>
+				<div>
+					<button id="complete" type="submit" class="join_complete">登録完了</button>
 				</div>
 			</form>
 		</div>
@@ -199,11 +205,11 @@
 		const input_pw = document.getElementById('input_pw')
 		const input_pw_re = document.getElementById('input_pw_re')
 	
-	 	const pw_reset_bt = document.getElementById('pw_reset_bt')
+	 	const complete = document.getElementById('complete')
 	 	
 		input_pw.addEventListener('blur', pwChecker1)
 		input_pw_re.addEventListener('keyup', pwChecker2)
-	 	pw_reset_bt.addEventListener('click', allCheck)
+	 	complete.addEventListener('click', allCheck)
 	</script>
 
 </body>

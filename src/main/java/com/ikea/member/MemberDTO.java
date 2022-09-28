@@ -24,12 +24,11 @@ import java.sql.Date;
 //	MEMBER_REGDATE          DATE            DEFAULT SYSDATE   -- 회원 가입일
 
 public class MemberDTO {
-	private String member_email, member_pw, member_name1, member_name1_furigana, member_name2, member_name2_furiganaString,
+	private String member_email, member_pw, member_name1, member_name1_furigana, member_name2, member_name2_furigana,
 		member_pnum, member_zipcode, member_address1, member_address2, member_address3, member_address4, member_nearbystore,
 		member_gender, member_isdeleted;
 	private int member_idx;
 	private Date member_birth, member_regdate;
-	
 	public String getMember_email() {
 		return member_email;
 	}
@@ -60,11 +59,11 @@ public class MemberDTO {
 	public void setMember_name2(String member_name2) {
 		this.member_name2 = member_name2;
 	}
-	public String getMember_name2_furiganaString() {
-		return member_name2_furiganaString;
+	public String getMember_name2_furigana() {
+		return member_name2_furigana;
 	}
-	public void setMember_name2_furiganaString(String member_name2_furiganaString) {
-		this.member_name2_furiganaString = member_name2_furiganaString;
+	public void setMember_name2_furigana(String member_name2_furigana) {
+		this.member_name2_furigana = member_name2_furigana;
 	}
 	public String getMember_pnum() {
 		return member_pnum;

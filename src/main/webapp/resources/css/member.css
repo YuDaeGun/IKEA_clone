@@ -6,6 +6,9 @@
 p, label {
 	font-size: 15px;
 }
+a {
+	color: inherit;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -14,10 +17,6 @@ body {
 div.root {
 	display: flex;
 	position: block;
-}
-a {
-	text-decoration: inherit;
-	color: inherit;
 }
 a:hover {
 	text-decoration: underline;
@@ -576,7 +575,7 @@ fieldset {
 .contact-group-children {
 	margin-left: 2.5rem;
 }
-.join_success2 {
+.join_complete {
 	width: 452px;
 	height: 53px;
 	border-radius: 30px;

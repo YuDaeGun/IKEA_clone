@@ -53,9 +53,6 @@ function pwChecker2(event) {
 }
 
 function allCheck(event) {
-    const input_pw = document.getElementById('input_pw')
-    const input_pw_re = document.getElementById('input_pw_re')
-    
     if (input_pw.value == input_pw_re.value) {
     	alert('登録成功')
     } else {

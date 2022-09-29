@@ -550,7 +550,7 @@ input[type=radio] {
 	height: 48px;
 	box-sizing: border-box;	
 }
-.join_inputpw {
+.join_inputbox2 {
 	width: 448px;
 	height: 48px;
 	box-sizing: border-box;
@@ -575,7 +575,7 @@ fieldset {
 .contact-group-children {
 	margin-left: 2.5rem;
 }
-.join_complete {
+.join_submit_button {
 	width: 452px;
 	height: 53px;
 	border-radius: 30px;
@@ -948,7 +948,7 @@ fieldset {
 .hidden {
 	display: none;
 }
-.pwCheckMsg {
+.checkMsg {
 	margin-bottom: 30px;
 	font-size:15px;
 }

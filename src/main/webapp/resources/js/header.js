@@ -1,5 +1,6 @@
 'use strict';
 
+// メインページの2段モーダル
 const body_overflow = document.querySelector('body')
 const hnf_hamburger = document.querySelector('.hnf_hamburger')
 const allmenu_popup = document.querySelector('.allmenu_popup')
@@ -9,10 +10,6 @@ const depth2Wrap = document.querySelector('.popupmenu_depth2_wrap')
 const eventmenu = document.querySelector('.eventmenu')
 const allmenu_dim = document.querySelector('.allmenu_dim')
 const backspace = document.querySelector('.backspace_popup')
-
-allmenu_dim.addEventListener('click', popup_close)
-allmenu_popup_close.addEventListener('click', popup_close)
-
 
 hnf_hamburger.addEventListener('click', () => {
     allmenu_popup.style.display = 'flex'
@@ -36,7 +33,7 @@ depth1.forEach((item, i) => {
         })
     })
 })
-popup_close = () => {
+const popup_close = () => {
     allmenu_popup.style.display = 'none'
     body_overflow.style.overflowY = 'scroll'
     depth1.forEach((dep1) => {
@@ -47,6 +44,9 @@ popup_close = () => {
     backspace.style.display = 'none'
     eventmenu.style.display = 'block'
 }
+
+allmenu_dim.addEventListener('click', popup_close)
+allmenu_popup_close.addEventListener('click', popup_close)
 
 backspace.addEventListener('click', () => {
     depth2Wrap.classList.remove('on')

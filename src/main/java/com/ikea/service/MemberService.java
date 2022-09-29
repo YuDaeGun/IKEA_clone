@@ -22,9 +22,8 @@ public class MemberService {
 		return row;		
 	}
 
-	public String emailDupCheck(String member_email) {
-		String row = dao.emailDupCheck(member_email);
-		System.out.println("서비스 중복확인 : " + row);
-		return row;
+	public MemberDTO emailDupCheck(String member_email) {
+		MemberDTO dto = dao.emailDupCheck(member_email);
+		return dto;
 	}
 }

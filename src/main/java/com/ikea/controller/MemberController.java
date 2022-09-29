@@ -29,22 +29,17 @@ public class MemberController {
 	@PostMapping("/join")
 	public ModelAndView join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
 		ModelAndView mav = new ModelAndView("alert");
-		mav.addObject("msg", "登録失敗。入力情報をもう一度確認してください。");
-		if (dto.getMember_pw().equals(dto.getMember_pw_re())) {
-			mes.join(dto);
-			mav.addObject("msg", "登録完了。ログインページに移動します。");
-			mav.addObject("url", "member/login");
-		}
+		int row = mes.join(dto);
+		mav.addObject("msg", "登録完了。ログインページに移動します。");
+		mav.addObject("url", "member/login");
 		return mav;
 	}
 	
-	@GetMapping("/emailDupCheck/{email}")
+	@GetMapping("/emailDupCheck/{member_email}")
 	@ResponseBody
-	public String emailDupCheck(@PathVariable String email) {
-		System.out.println("실행되나?");
-		String row = mes.emailDupCheck(email);
-		System.out.println("컨트롤러 중복 확인 : " + row);
-		return row;
+	public MemberDTO emailDupCheck(@PathVariable String member_email) {
+		MemberDTO dto = mes.emailDupCheck(member_email.replace("_", "."));
+		return dto;
 	}
 }
 

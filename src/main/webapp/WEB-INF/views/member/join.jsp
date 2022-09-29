@@ -48,29 +48,29 @@
 			<form method="POST">
 				<div>
 					<label for="input_lastName">姓　例：山田</label><br>
-					<input id="input_lastName" name="member_name1" class="join_inputbox">
+					<input id="input_lastName" name="member_name1" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_lastName_furigana">姓 (フリガナ)　例：ヤマダ</label><br>
-					<input id="input_lastName_furigana" name="member_name1_furigana" class="join_inputbox">
+					<input id="input_lastName_furigana" name="member_name1_furigana" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_firstName">名　例：太郎</label><br>
-					<input id="input_firstName" name="member_name2" class="join_inputbox">
+					<input id="input_firstName" name="member_name2" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_firstName_furigana">名 (フリガナ)　例：タロウ</label><br>
-					<input id="input_firstName_furigana" name="member_name2_furigana" class="join_inputbox">
+					<input id="input_firstName_furigana" name="member_name2_furigana" class="join_inputbox" required>
 				</div>
 				<div class="input_birth_gender">
 					<div>
 						<label for="input_birth">誕生日</label><br>
-						<input id="input_birth" name="member_birth" type="date" class="join_inputbirth"><br>
+						<input id="input_birth" name="member_birth" type="date" class="join_inputbirth" required><br>
 						YYYY-MM-DD
 					</div>
 					<div>
 						<label for="input_gender">性別</label><br>
-						<select id="input_gender" name="member_gender" class="join_inputbox_small">
+						<select id="input_gender" name="member_gender" class="join_inputbox_small" required>
 							<option value="">選択してください</option>
 							<option value="M">男性</option>
 							<option value="F">女性</option>
@@ -81,16 +81,16 @@
 				<div class="phone_number1">携帯（または固定電話）<br>
 					<div class="phone_numberdiv">
 						<span>&nbsp;JP(+81)</span>
-						<input name="member_pnum" type="tel" class="phone_number2">
+						<input name="member_pnum" type="tel" class="phone_number2" required>
 					</div>
 				</div>
 				<div>
 					<label for="input_zipcode">郵便番号 (半角)</label><br>
-					<input id="input_zipcode" name="member_zipcode" class="join_inputbox">
+					<input id="input_zipcode" name="member_zipcode" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_address1">都道府県</label><br>
-					<select id="input_address1" name="member_address1" class="join_inputbox">
+					<select id="input_address1" name="member_address1" class="join_inputbox" required>
 						<option value="">選択してください</option>
 						<option value="北海道">北海道</option>
 						<option value="青森県">青森県</option>
@@ -143,11 +143,11 @@
 				</div>
 				<div>
 					<label for="input_address2">市区町村</label><br>
-					<input id="input_address2" name="member_address2" class="join_inputbox">
+					<input id="input_address2" name="member_address2" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_address3">丁番地</label><br>
-					<input id="input_address3" name="member_address3" class="join_inputbox">
+					<input id="input_address3" name="member_address3" class="join_inputbox" required>
 				</div>
 				<div>
 					<label for="input_address4">建物名・部屋番号 （オプション）</label><br>
@@ -155,7 +155,7 @@
 				</div>
 				<div>
 					<label for="input_nearbystore">お近くのイケア店舗</label><br>
-					<select id="input_nearbystore" name="member_nearbystore" class="join_inputbox">
+					<select id="input_nearbystore" name="member_nearbystore" class="join_inputbox" required>
 						<option value="">選択してください</option>
 						<option value="IKEA福岡新宮">IKEA福岡新宮</option>
 						<option value="IKEA原宿">IKEA原宿</option>
@@ -173,19 +173,18 @@
 				</div>
 				<div>
 					<label for="input_email">メールアドレス</label><br>
-					<input id="input_email" name="member_email" type="email" class="join_inputbox" required>
-					<div id="mailCheckMessage"></div>
-					<!-- 메일 중복확인 -->
+					<input id="input_email" name="member_email" type="email" class="join_inputbox2" required>
+					<div id="mailCheck" class="checkMsg"></div>
 				</div>
 				<div>
 					<label for="input_pw">パスワード</label><br>
-					<input id="input_pw" name="member_pw" type="password" class="join_inputpw" required>
-					<div id="pwCheck1" class="pwCheckMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
+					<input id="input_pw" name="member_pw" type="password" class="join_inputbox2" required>
+					<div id="pwCheck1" class="checkMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 				</div>
 				<div>
 					<label for="input_pw_re">パスワード再入力</label><br>
-					<input id="input_pw_re" name="member_pw_re" type="password" class="join_inputpw" required>
-					<div id="pwCheck2" class="pwCheckMsg"></div>
+					<input id="input_pw_re" name="member_pw_re" type="password" class="join_inputbox2" required>
+					<div id="pwCheck2" class="checkMsg"></div>
 				</div>
 				<div>
 					<input type="checkbox" required>私は<a href="#none">プライバシーポリシー</a>を読み、同意しました。
@@ -194,7 +193,7 @@
 					<input type="checkbox" required>読んで了解しました。<a href="#none">利用規約</a>
 				</div>
 				<div>
-					<button type="submit" class="join_complete">登録完了</button>
+					<button id="join_complete" type="submit" class="join_submit_button">登録完了</button>
 				</div>
 			</form>
 		</div>
@@ -205,10 +204,12 @@
 		const input_email = document.getElementById('input_email')
 		const input_pw = document.getElementById('input_pw')
 		const input_pw_re = document.getElementById('input_pw_re')
+		const join_complete = document.getElementById('join_complete')
 		
-		input_email.addEventListener('blur', emailChecker)
-		input_pw.addEventListener('blur', pwChecker1)
+		input_email.addEventListener('keyup', emailChecker)
+		input_pw.addEventListener('keyup', pwChecker1)
 		input_pw_re.addEventListener('keyup', pwChecker2)
+		join_complete.addEventListener('click', submitHandler)	// submit 버튼 클릭 시 동작
 	</script>
 
 </body>

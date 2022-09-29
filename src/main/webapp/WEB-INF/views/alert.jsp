@@ -12,14 +12,11 @@
 	const msg = '${msg}'
 	const url = '${url}'
 	
-	console.log(msg)
-	console.log(url)
-	console.log('${cpath}')
+	console.log('msg :' + msg)
+	console.log('url :' + url)
 	
 	alert(msg)
-	
-	if (url != null) location.href = '${cpath}/' + url
-	history.go(-1)
+	location.href = '${cpath}/' + url
 </script>
 
 </body>

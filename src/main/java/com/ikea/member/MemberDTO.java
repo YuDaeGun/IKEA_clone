@@ -24,11 +24,12 @@ import java.sql.Date;
 //	MEMBER_REGDATE          DATE            DEFAULT SYSDATE   -- 회원 가입일
 
 public class MemberDTO {
-	private String member_email, member_pw, member_pw_re, member_name1, member_name1_furigana, member_name2, member_name2_furigana,
+	private String member_email, member_pw, member_name1, member_name1_furigana, member_name2, member_name2_furigana,
 		member_pnum, member_zipcode, member_address1, member_address2, member_address3, member_address4, member_nearbystore,
 		member_gender, member_isdeleted;
 	private int member_idx;
 	private Date member_birth, member_regdate;
+	
 	public String getMember_email() {
 		return member_email;
 	}
@@ -40,12 +41,6 @@ public class MemberDTO {
 	}
 	public void setMember_pw(String member_pw) {
 		this.member_pw = member_pw;
-	}
-	public String getMember_pw_re() {
-		return member_pw_re;
-	}
-	public void setMember_pw_re(String member_pw_re) {
-		this.member_pw_re = member_pw_re;
 	}
 	public String getMember_name1() {
 		return member_name1;

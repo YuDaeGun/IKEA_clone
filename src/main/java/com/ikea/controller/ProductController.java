@@ -46,7 +46,6 @@ public class ProductController {
 		mav.addObject("p", ps.productSelectOne(product_idx));
 		mav.addObject("imageList", ps.imageSelect(product_idx));
 		return mav;
-		
 	}
 	
 	@GetMapping("/product/insertForm")

@@ -174,16 +174,17 @@
 				<div>
 					<label for="input_email">メールアドレス</label><br>
 					<input id="input_email" name="member_email" type="email" class="join_inputbox" required>
-					<div id="dupCheckMessage"></div>
+					<div id="mailCheckMessage"></div>
+					<!-- 메일 중복확인 -->
 				</div>
 				<div>
 					<label for="input_pw">パスワード</label><br>
-					<input id="input_pw" type="password" class="join_inputpw" required>
+					<input id="input_pw" name="member_pw" type="password" class="join_inputpw" required>
 					<div id="pwCheck1" class="pwCheckMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 				</div>
 				<div>
 					<label for="input_pw_re">パスワード再入力</label><br>
-					<input id="input_pw_re" name="member_pw" type="password" class="join_inputpw" required>
+					<input id="input_pw_re" name="member_pw_re" type="password" class="join_inputpw" required>
 					<div id="pwCheck2" class="pwCheckMsg"></div>
 				</div>
 				<div>
@@ -193,7 +194,7 @@
 					<input type="checkbox" required>読んで了解しました。<a href="#none">利用規約</a>
 				</div>
 				<div>
-					<button id="complete" type="submit" class="join_complete">登録完了</button>
+					<button type="submit" class="join_complete">登録完了</button>
 				</div>
 			</form>
 		</div>
@@ -201,15 +202,13 @@
 	</main>
 	
 	<script>
-		const dupCheckMessage = document.getElementById('dupCheckMessage')
+		const input_email = document.getElementById('input_email')
 		const input_pw = document.getElementById('input_pw')
 		const input_pw_re = document.getElementById('input_pw_re')
-	
-	 	const complete = document.getElementById('complete')
-	 	
+		
+		input_email.addEventListener('blur', emailChecker)
 		input_pw.addEventListener('blur', pwChecker1)
 		input_pw_re.addEventListener('keyup', pwChecker2)
-	 	complete.addEventListener('click', allCheck)
 	</script>
 
 </body>

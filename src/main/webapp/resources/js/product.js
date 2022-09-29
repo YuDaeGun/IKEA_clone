@@ -5,7 +5,7 @@ document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener(
 document.getElementById('largeCategory').addEventListener('change', getSubCategory)
 document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
 
-// 이미지 추가 (3개씩)
+// イメージ追加欄を追加(3個ずつ)
 function addMoreImageFile() {
 	$("#d_file").append("<div class='inputProduct'>")
 	for (let i = 0; i < 3; i++) {
@@ -14,7 +14,7 @@ function addMoreImageFile() {
 	$("#d_file").append("</div>")
 }
 
-// 가격 자동 콤마
+// 価格に自動的にコンマ(,)を挿入
 function inputNumberFormat(obj) {
     obj.value = comma(uncomma(obj.value));
 }
@@ -27,7 +27,7 @@ function uncomma(str) {
     return str.replace(/[^\d]+/g, '');
 }
 
-// 길이, 너비, 높이 미입력 시 -> 0
+// length, width, heightを空欄に提出する際、自動的に -> 0
 function formSubmitHandler(event) {
 	event.preventDefault()
 	event.target.querySelectorAll('input[type="number"]').forEach(input => {
@@ -37,7 +37,7 @@ function formSubmitHandler(event) {
 	event.target.submit()
 }
 
-// 이미지 미리보기
+// イメージ preview
 function setThumbnail(event) {
 	var reader = new FileReader()
 
@@ -54,15 +54,14 @@ function setThumbnail(event) {
     reader.readAsDataURL(event.target.files[0])
 }
 
-// 상품 등록 선택지 최상위 카테고리 출력
+// 商品追加ページの選択肢に最上位カテゴリーを出力
 function loadHandler(event) {
 	const largeCategory = document.getElementById('largeCategory')
-	largeCategory.innerHTML = '<option value="">-- 선택해 주세요 --</option>'
+	largeCategory.innerHTML = '<option value="">-- 選択してください --</option>'
 	
 	const url = cpath + '/getLargeCategory'
 	fetch(url).then(resp => resp.json())
 	.then(arr => {
-		console.log(arr)
 		for (let i = 0; i < arr.length; i++) {
 			const option = document.createElement('option')
 			option.innerText = arr[i]
@@ -71,14 +70,14 @@ function loadHandler(event) {
 	})
 }
 
-// 상품 등록 선택지 하위 카테고리 출력
+// 商品追加ページの選択肢に下位カテゴリーを出力
 function getSubCategory(event) {
 	let subCategory = document.getElementById('smallCategory')
 	if (event.target.id == 'largeCategory') {
 		subCategory.innerHTML = ''
 		subCategory = document.getElementById('mediumCategory')
 	}
-	subCategory.innerHTML = '<option value="">-- 선택해 주세요 --</option>'
+	subCategory.innerHTML = '<option value="">-- 選択してください --</option>'
 		
 	const catename = event.target.value
 	
@@ -93,15 +92,15 @@ function getSubCategory(event) {
 	})
 }
 
-// 상품 수정 선택지 카테고리 출력
+// 商品修正ページの選択肢にカテゴリーを出力
 function loadHandler2(largecate, midiumcate, smallcate) {
 	
 	const largeCategory = document.getElementById('largeCategory')
-	largeCategory.innerHTML = '<option value="">-- 선택해 주세요 --</option>'
+	largeCategory.innerHTML = '<option value="">-- 選択してください --</option>'
 	const mediumCategory = document.getElementById('mediumCategory')
-	mediumCategory.innerHTML = '<option value="">-- 선택해 주세요 --</option>'
+	mediumCategory.innerHTML = '<option value="">-- 選択してください --</option>'
 	const smallCategory = document.getElementById('smallCategory')
-	smallCategory.innerHTML = '<option value="">-- 선택해 주세요 --</option>'
+	smallCategory.innerHTML = '<option value="">-- 選択してください --</option>'
 	
 	let url = cpath + '/getLargeCategory'
 	fetch(url).then(resp => resp.json())
@@ -137,9 +136,3 @@ function loadHandler2(largecate, midiumcate, smallcate) {
 		}
 	})
 }
-
-
-
-
-
-

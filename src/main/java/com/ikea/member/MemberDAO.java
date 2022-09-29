@@ -1,6 +1,7 @@
 package com.ikea.member;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -12,5 +13,8 @@ public interface MemberDAO {
 			+ "#{member_address1}, #{member_address2}, #{member_address3}, #{member_address4}, #{member_nearbystore}, "
 			+ "#{member_gender}, 'N', SYSDATE)")
 	int insert(MemberDTO dto);
+
+	@Select("SELECT * FROM MEMBER WHERE MEMBER_EMAIL = #{member_email}")
+	String emailDupCheck(String member_email);
 	
 }

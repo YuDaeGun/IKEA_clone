@@ -82,16 +82,12 @@ function submitHandler(event) {
 	const pw1 = document.getElementById('pwCheck1').style.color
 	const pw2 = document.getElementById('pwCheck2').style.color
 	
-	console.log(mail)
-	console.log(pw1)
-	console.log(pw2)
-	
-	if (mail == 'red') {
+	if (input_email.value != '' && mail != 'blue') {
 		alert('メールアドレスをもう一度確認してください')
 		event.preventDefault()
 		return
 	}
-	if (pw1 == 'red' || pw2 == 'red') {
+	if (pw1 != 'blue' || pw2 != 'blue') {
 		alert('パスワードをもう一度確認してください')
 		event.preventDefault()
 		return

@@ -48,7 +48,7 @@
 			<form method="POST">
 				<div>
 					<label for="input_lastName">姓　例：山田</label><br>
-					<input id="input_lastName" name="member_name1" class="join_inputbox" required>
+					<input id="input_lastName" name="member_name1" class="join_inputbox" autofocus required>
 				</div>
 				<div>
 					<label for="input_lastName_furigana">姓 (フリガナ)　例：ヤマダ</label><br>
@@ -207,9 +207,10 @@
 		const join_complete = document.getElementById('join_complete')
 		
 		input_email.addEventListener('keyup', emailChecker)
+		input_email.addEventListener('blur', emailChecker)
 		input_pw.addEventListener('keyup', pwChecker1)
 		input_pw_re.addEventListener('keyup', pwChecker2)
-		join_complete.addEventListener('click', submitHandler)	// submit 버튼 클릭 시 동작
+		join_complete.addEventListener('click', submitHandler)
 	</script>
 
 </body>

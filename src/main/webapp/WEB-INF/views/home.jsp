@@ -113,13 +113,14 @@
                 </div>
                 <div class="swiper sect6_slide">
                     <div class="swiper-wrapper">
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/수납정리.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/침대매트리스.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/소파.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/조명.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/게임용가구.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/식탁책상.png"></div>
-                        <div class="sect6-slide swiper-slide"><img src="${cpath }/IKEA_image/러그매트데크.png"></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/家具_ベッド"><img src="${cpath }/IKEA_image/ベッド.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/家具_ソファ"><img src="${cpath }/IKEA_image/ソファ.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/家具_椅子・チェア"><img src="${cpath }/IKEA_image/椅子・チェア.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/収納家具・収納グッズ_棚・ラック"><img src="${cpath }/IKEA_image/棚・ラック.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/収納家具・収納グッズ_チェスト・引き出し収納"><img src="${cpath }/IKEA_image/チェスト・引き出し収納.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/収納家具・収納グッズ_テレビ台・テレビボード"><img src="${cpath }/IKEA_image/テレビ台・テレビボード.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/照明_照明器具・ランプ"><img src="${cpath }/IKEA_image/照明器具・ランプ.png"></a></div>
+                        <div class="sect6-slide swiper-slide"><a href="${cpath }/product/categoryView/照明_イルミネーションライト"><img src="${cpath }/IKEA_image/イルミネーションライト.png"></a></div>
                     </div>
                     <div class="swiper-button-next"><img src="${cpath }/IKEA_image/rightArrow.png"></div>
                     <div class="swiper-button-prev"><img src="${cpath }/IKEA_image/leftArrow.png"></div>

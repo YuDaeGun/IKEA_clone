@@ -1,6 +1,6 @@
 'use strict';
 
-// メインページの2段モーダル
+// mainpage2段モーダル
 const body_overflow = document.querySelector('body')
 const hnf_hamburger = document.querySelector('.hnf_hamburger')
 const allmenu_popup = document.querySelector('.allmenu_popup')

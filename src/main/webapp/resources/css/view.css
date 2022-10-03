@@ -1,12 +1,11 @@
 @charset 'utf-8';
-
 * {
-    font-family: 'Noto Sans KR', sans-serif;
-    letter-spacing: 0px;
-    margin: 0;
-    padding: 0;
-    z-index: 0;
-    box-sizing: inherit;
+	font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
+	letter-spacing: 0px;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+	box-sizing: inherit;
 }
 li {
     list-style: none;
@@ -51,6 +50,9 @@ body {
     margin-right: 4px;
     font-style: inherit;
 }
+.detail_category_item a{
+	color: red;
+}
 .view {
     display: flex;
 }
@@ -74,13 +76,17 @@ body {
     height: 137px;
     margin-bottom: 48px;
 }
-
 .view_sect2_infomation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
+    padding: 40px 0 20px 0;
     border-bottom: 1px solid #dfdfdf;
+}
+details > summary::marker {
+	font-size:0;
+}
+details > summary > img {
+	position: absolute;
+	margin-left: 1020px;
+	margin-top: -30px;
 }
 .view_sect2_infomation:first-child {
     border-top: 1px solid #dfdfdf;
@@ -130,12 +136,10 @@ body {
     padding: 0 16px 0 24px;
     margin-right: 8px;
 }
-
 .view_sect3_pill:hover {
     background-color: #dfdfdf;
 }
 .view_module {
-
     padding: 0 40px;
     width: 439px;
 
@@ -150,18 +154,20 @@ body {
     width: 439px;
     height: 64px;
 }
-
 .view_module_section {
     box-sizing: border-box;
-    width: 370px;
+    width: 439px;
 }
 .view_module_mini {
-    font-size: 12px;
+	width: 439px;
+    font-size: 15px;
 }
 .view_module_point {
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 20px;
     margin-bottom: 24px;
+	border-bottom: 1px solid #dfdfdf;
 }
 .fa-solid {
     color: #ddd;
@@ -172,38 +178,16 @@ body {
 .fa-star-half-stroke {
     color: rgb(255, 204, 0);
 }
-
-/* 오른쪽 정보란 *//* 오른쪽 정보란 */
-/* 오른쪽 정보란 *//* 오른쪽 정보란 */
-/* 오른쪽 정보란 *//* 오른쪽 정보란 */
 .view_module_caption {
-    border-bottom: 1px solid #dfdfdf;
-    margin-bottom: 24px;
     padding-bottom: 24px;
     color: #484848;
     display: flex;
     align-items: center;
 }
-.view_module_caption img {
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-}
 .view_module_caption span {
     font-size: 13px;
     color: #484848;
     height: 18px;
-}
-.view_module_standards {
-    display: flex;
-    justify-content: space-between;
-    height: 90px;
-}
-.view_module_standards_text h3 {
-    font-size: 15px;
-}
-.view_module_standards_text span {
-    font-size: 13px;
 }
 .view_module_buy h4 {
     margin-bottom: 10px;
@@ -227,10 +211,15 @@ body {
 .view_module_delivery:first-child {
     border-bottom: 1px solid #dfdfdf;
 }
-.view_module_buyMeans span:last-child {
+.view_module_buyMeans a {
     color: #484848;
     font-size: 14px;
     text-decoration: underline;
+    font-weight: normal;
+}
+.view_module_buyMeans span:nth-child(3) {
+    color: #484848;
+    font-size: 14px;
 }
 .view_module_buyIcon {
     width: 24px;
@@ -253,7 +242,7 @@ body {
 .view_module_btnLeft span {
     font-weight: bold;
     font-size: 16px;
-    color: #fff;
+    color: red;
 }
 .view_module_btnRight {
     display: flex;
@@ -268,4 +257,11 @@ body {
 .view_module_btnRight img {
     width: 24px;
     height: 24px;
+}
+.view_module_title {
+	font-size: 21px;
+}
+.showPrice {
+	font-size: 30px;
+	font-weight: bold;
 }

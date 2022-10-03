@@ -79,7 +79,9 @@
 								<img src="${cpath }/IKEA_image/like.svg">
 							</div>
 							<div class="hnf_login_btn">
-								<img src="${cpath }/IKEA_image/basket2.svg">
+								<a href="${cpath }/product/cart">
+									<img src="${cpath }/IKEA_image/basket2.png">
+								</a>
 							</div>
 						</div>
 					</div>

@@ -5,7 +5,7 @@ document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener(
 document.getElementById('largeCategory').addEventListener('change', getSubCategory)
 document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
 
-// イメージ追加欄を追加(3個ずつ)
+//	イメージ追加欄を追加(3個ずつ)
 function addMoreImageFile() {
 	$("#d_file").append("<div class='inputProduct'>")
 	for (let i = 0; i < 3; i++) {
@@ -14,7 +14,7 @@ function addMoreImageFile() {
 	$("#d_file").append("</div>")
 }
 
-// 価格に自動的にコンマ(,)を挿入
+//	価格に自動的にコンマ(,)を挿入
 function inputNumberFormat(obj) {
     obj.value = comma(uncomma(obj.value));
 }
@@ -27,7 +27,7 @@ function uncomma(str) {
     return str.replace(/[^\d]+/g, '');
 }
 
-// length, width, heightを空欄に提出する際、自動的に -> 0
+//	length, width, heightを空欄に提出する際、自動的に -> 0
 function formSubmitHandler(event) {
 	event.preventDefault()
 	event.target.querySelectorAll('input[type="number"]').forEach(input => {
@@ -37,7 +37,7 @@ function formSubmitHandler(event) {
 	event.target.submit()
 }
 
-// イメージ preview
+//	イメージ preview
 function setThumbnail(event) {
 	var reader = new FileReader()
 
@@ -54,7 +54,7 @@ function setThumbnail(event) {
     reader.readAsDataURL(event.target.files[0])
 }
 
-// 商品追加ページの選択肢に最上位カテゴリーを出力
+//	商品追加ページの選択肢に最上位カテゴリーを出力
 function loadHandler(event) {
 	const largeCategory = document.getElementById('largeCategory')
 	largeCategory.innerHTML = '<option value="">-- 選択してください --</option>'
@@ -70,7 +70,7 @@ function loadHandler(event) {
 	})
 }
 
-// 商品追加ページの選択肢に下位カテゴリーを出力
+//	商品追加ページの選択肢に下位カテゴリーを出力
 function getSubCategory(event) {
 	let subCategory = document.getElementById('smallCategory')
 	if (event.target.id == 'largeCategory') {
@@ -92,7 +92,7 @@ function getSubCategory(event) {
 	})
 }
 
-// 商品修正ページの選択肢にカテゴリーを出力
+//	商品修正ページの選択肢にカテゴリーを出力
 function loadHandler2(largecate, midiumcate, smallcate) {
 	
 	const largeCategory = document.getElementById('largeCategory')
@@ -135,4 +135,17 @@ function loadHandler2(largecate, midiumcate, smallcate) {
 			smallCategory.appendChild(option)
 		}
 	})
+}
+//	矢印の方向転換
+function changeArrow(event) {
+	if (event.target.className == "img1") {
+		event.target.classList.remove("img1");
+		event.target.classList.add("img2");
+		event.target.setAttribute("src", cpath + "/IKEA_image/arrow4.png")
+	} else {
+		event.target.classList.remove("img2");
+		event.target.classList.add("img1");
+		event.target.setAttribute("src", cpath + "/IKEA_image/arrow3.png")
+		
+	}
 }

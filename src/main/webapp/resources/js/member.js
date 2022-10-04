@@ -11,7 +11,7 @@ function openCloseAnswer() {
         document.getElementById(this.id + '-toggle').textContent = '닫기';
     }
 }
-//目玉アイコンをクリックすると、パスワードを表示<->非表示
+//	目玉アイコンをクリックすると、パスワードを表示<->非表示
 function changeEye(event) {
     if (password.getAttribute("type") == "password") {
         password.setAttribute("type", "text")
@@ -21,7 +21,7 @@ function changeEye(event) {
         eyeIcon.setAttribute("src", cpath + "/IKEA_image/pw_show.svg")
     }
 }
-// email重複チェック
+//	メールアドレス重複チェック
 function emailChecker(event) {
 	const email = document.getElementById('input_email').value;
 	
@@ -36,7 +36,7 @@ function emailChecker(event) {
     		document.getElementById('mailCheck').style.color = 'red';
     })
 }
-// パスワードの制約条件チェック
+//	パスワードの制約条件チェック
 function pwChecker1(event) {
 	document.getElementById('input_pw_re').value = ''
 	document.getElementById('pwCheck2').innerHTML = ''
@@ -64,7 +64,7 @@ function pwChecker1(event) {
 	document.getElementById('pwCheck1').innerHTML = '使用可能';
 	document.getElementById('pwCheck1').style.color = 'blue';
 }
-// 再入力パスワードか原本パスワードと一致するかチェック
+//	再入力パスワードか原本パスワードと一致するかチェック
 function pwChecker2(event) {
     if (document.getElementById('input_pw').value != '' && document.getElementById('input_pw_re').value != '') {
         if (document.getElementById('input_pw').value == document.getElementById('input_pw_re').value) {
@@ -76,7 +76,7 @@ function pwChecker2(event) {
         document.getElementById('pwCheck2').style.color = 'red';
     }
 }
-// メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない
+//	メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない
 function submitHandler(event) {
 	const mail = document.getElementById('mailCheck').style.color
 	const pw1 = document.getElementById('pwCheck1').style.color

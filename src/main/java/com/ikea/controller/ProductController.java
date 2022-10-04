@@ -25,7 +25,7 @@ public class ProductController {
 	@RequestMapping("/")
 	public ModelAndView newProductList() {
 		ModelAndView mav = new ModelAndView("/home");
-		mav.addObject("newProducts", ps.newProductList());
+		mav.addObject("newProducts", ps.newProductList());	// 신상품 10개
 		return mav;
 	}
 
@@ -43,8 +43,9 @@ public class ProductController {
 	@GetMapping("/product/view/{product_idx}")
 	public ModelAndView productView(@PathVariable int product_idx) {
 		ModelAndView mav = new ModelAndView("/product/view");
-		mav.addObject("p", ps.productSelectOne(product_idx));
-		mav.addObject("imageList", ps.imageSelect(product_idx));
+		mav.addObject("p", ps.productSelectOne(product_idx));		// 해당 상품
+		mav.addObject("imageList", ps.imageSelect(product_idx));	// 해당상품의 이미지(들)
+		mav.addObject("newProducts", ps.newProductList());	// 신상품 10개
 		return mav;
 	}
 	

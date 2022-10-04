@@ -252,6 +252,4 @@
         </article>
     </main>
     
-	<script src="${cpath }/resources/js/newProductList.js"></script>
-	
 <%@ include file="footer.jsp" %>

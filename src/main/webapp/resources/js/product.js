@@ -138,14 +138,16 @@ function loadHandler2(largecate, midiumcate, smallcate) {
 }
 //	矢印の方向転換
 function changeArrow(event) {
-	if (event.target.className == "img1") {
-		event.target.classList.remove("img1");
-		event.target.classList.add("img2");
-		event.target.setAttribute("src", cpath + "/IKEA_image/arrow4.png")
+	const toggleImage = document.getElementById('toggleImage')
+	
+	if (toggleImage.className == "img1") {
+		toggleImage.classList.remove("img1");
+		toggleImage.classList.add("img2");
+		toggleImage.setAttribute("src", cpath + "/IKEA_image/arrow4.png")
 	} else {
-		event.target.classList.remove("img2");
-		event.target.classList.add("img1");
-		event.target.setAttribute("src", cpath + "/IKEA_image/arrow3.png")
+		toggleImage.classList.remove("img2");
+		toggleImage.classList.add("img1");
+		toggleImage.setAttribute("src", cpath + "/IKEA_image/arrow3.png")
 		
 	}
 }

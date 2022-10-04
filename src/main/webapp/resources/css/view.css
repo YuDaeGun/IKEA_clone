@@ -11,9 +11,6 @@ li {
     list-style: none;
     cursor: pointer;
 }
-img {
-    cursor: pointer;
-}
 a {
     text-decoration: none;
     font-weight: bold;
@@ -26,11 +23,7 @@ a:hover {
 button {
     cursor: pointer;
 }
-body {
-/*     position: relative; */
-}
 #detail_container {
-/*     position: absolute; */
     width: calc(100% - 17%);
     margin: 0 auto;
     margin-left: 215px;
@@ -77,23 +70,26 @@ body {
     margin-bottom: 48px;
 }
 .view_sect2_infomation {
-    padding: 40px 0 20px 0;
+    padding: 40px 0;
     border-bottom: 1px solid #dfdfdf;
 }
 details > summary::marker {
 	font-size:0;
 }
-details > summary > img {
-	position: absolute;
-	margin-left: 1020px;
-	margin-top: -30px;
+details > summary {
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
 }
-.view_sect2_infomation:first-child {
-    border-top: 1px solid #dfdfdf;
+.red {
+	color: red;
 }
 .view_sect2_infomation span {
     font-weight: bold;
     font-size: 24px;
+}
+.viewPageNewProduct {
+	margin-bottom: 50px;
 }
 .view_sect2_infomation img {
     width: 32px;

@@ -52,15 +52,15 @@
 		                </div>
 		                <div class="inputChild">
 			                <div>
-			                    <label for="inputProductLength">長さ</label>
+			                    <label for="inputProductLength">長さ(cm)</label>
 			                    <input id="inputProductLength" type="number" name="product_length">
 			                </div>
 			                <div>                    
-			                    <label for="inputProductWidth">幅</label>
+			                    <label for="inputProductWidth">幅(cm)</label>
 			                    <input id="inputProductWidth" type="number" name="product_width">
 			                </div>
 			                <div>                    
-			                    <label for="inputProductHeight">高さ</label>
+			                    <label for="inputProductHeight">高さ(cm)</label>
 			                    <input id="inputProductHeight" type="number" name="product_height">
 			                </div>
 		                </div>
@@ -90,7 +90,7 @@
 			                <div></div>
 		                </div>
 			            <div>
-			                <br><input type="button" value="より多くの画像" onclick="addMoreImageFile()"><br>
+			                <br><input type="button" value="より多くのイメージ" onclick="addMoreImageFile()"><br>
 			            </div>
 		            </div>
 	          	    <div id="d_file"></div>

@@ -73,6 +73,10 @@ button {
     padding: 40px 0;
     border-bottom: 1px solid #dfdfdf;
 }
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
+}  
 details > summary::marker {
 	font-size:0;
 }

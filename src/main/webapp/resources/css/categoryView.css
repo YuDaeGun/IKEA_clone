@@ -80,7 +80,8 @@ button {
 	margin-top: 20px
 }
 .cateView_sect4_main {
-	margin: 12px;
+	padding: 12px;
+	border-bottom: 1px solid #dfdfdf;
 }
 .cateView_sect4_productList {
 	display: flex;

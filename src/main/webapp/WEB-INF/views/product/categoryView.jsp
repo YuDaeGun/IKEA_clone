@@ -53,10 +53,12 @@
 									<h3>${p.product_name }</h3>
 								</div>
 	                            <div class="cateView_sect4_product_smallcategory">
-	                            	<span>${p.product_mediumcategory }</span>
+	                            	<span>${p.product_desc }
+	                            		<c:if test="${p.product_length != 0}">, ${p.product_length }x${p.product_width } cm</c:if>
+                            		</span>
 	                            </div>
 	                            <div class="cateView_sect4_product_price">
-	                            	<span>￦</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
+	                            	<span>¥</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
 	                           	</div>
 	                           	<div class="cateView_sect4_product_star">
 									<span id="rating">

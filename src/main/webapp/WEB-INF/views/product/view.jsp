@@ -44,7 +44,7 @@
                        		<summary><span>サイズ</span><img src="${cpath }/IKEA_image/arrow2.svg"></summary>
                        	</details>
                     </div>
-                    <div class="view_sect2_infomation thisis">
+                    <div class="view_sect2_infomation">
                        	<details>
                        		<summary><span>レビュー</span><img src="${cpath }/IKEA_image/arrow2.svg"></summary>
                        	</details>
@@ -58,10 +58,9 @@
                         <div class="view_module_section">
                             <h1 class="view_module_title">${p.product_name}</h1>
                             <span class="view_module_mini">
-                            	${p.product_smallcategory}
+                            	${p.product_desc}
                             	<c:if test="${p.product_color != null}">, ${p.product_color}</c:if>
-                            	<c:if test="${p.product_length != null}">, ${p.product_length}</c:if>
-                            	<c:if test="${p.product_width != null}">x ${p.product_width}cm</c:if>
+                            	<c:if test="${p.product_length != 0}">, ${p.product_length} x ${p.product_width} cm</c:if>
                            	</span>
                         </div>
                     </div>

@@ -57,11 +57,11 @@
                     <div class="view_module_top">
                         <div class="view_module_section">
                             <h1 class="view_module_title">${p.product_name}</h1>
-                            <span class="view_module_mini">
+                            <span>
                             	${p.product_desc}
                             	<c:if test="${p.product_color != null}">, ${p.product_color}</c:if>
-                            	<c:if test="${p.product_length != 0}">, ${p.product_length} x ${p.product_width} cm</c:if>
                            	</span>
+                           	<c:if test="${p.product_length != 0}"><span>, ${p.product_length} x ${p.product_width} cm</span></c:if>
                         </div>
                     </div>
                     <div class="view_module_price"><span class="showPrice">¥<fmt:formatNumber value="${p.product_price}"/></span></div>

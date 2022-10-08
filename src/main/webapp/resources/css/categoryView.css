@@ -120,7 +120,7 @@ button {
 .cateView_sect4_teaser_img .cateView_sect4_banner2 {
     opacity: 0;
     transition: opacity 0.5s linear;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
 
 }
 .cateView_sect4_teaser_img:hover .cateView_sect4_banner2 {

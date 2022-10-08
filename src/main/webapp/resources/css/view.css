@@ -152,13 +152,13 @@ details > summary {
     display: flex;
     justify-content: space-between;
     width: 439px;
-    height: 64px;
+    height: 75px;
 }
 .view_module_section {
     box-sizing: border-box;
     width: 439px;
 }
-.view_module_mini {
+.view_module_section span {
 	width: 439px;
     font-size: 15px;
 }

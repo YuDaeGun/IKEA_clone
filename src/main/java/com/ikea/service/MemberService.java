@@ -18,12 +18,16 @@ public class MemberService {
 	public int join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
 		String hash = hs.getHash(dto.getMember_pw());
 		dto.setMember_pw(hash);
-		int row = dao.insert(dto);
-		return row;		
+		return dao.insert(dto);		
 	}
 
 	public MemberDTO emailDupCheck(String member_email) {
-		MemberDTO dto = dao.emailDupCheck(member_email);
-		return dto;
+		return dao.emailDupCheck(member_email);
+	}
+
+	public MemberDTO selectOne(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
+		String hash = hs.getHash(dto.getMember_pw());
+		dto.setMember_pw(hash);
+		return dao.selectOne(dto);
 	}
 }

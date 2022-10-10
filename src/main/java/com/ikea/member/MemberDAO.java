@@ -14,4 +14,8 @@ public interface MemberDAO {
 	
 	@Select("SELECT ROWNUM, MEMBER.* FROM MEMBER WHERE MEMBER_EMAIL = #{member_email} AND ROWNUM <= 1")
 	MemberDTO emailDupCheck(String member_email);
+
+	@Select("SELECT * FROM MEMBER WHERE MEMBER_EMAIL = #{member_email} AND MEMBER_PW = #{member_pw} AND MEMBER_ISDELETED != 'Y'")
+	MemberDTO selectOne(MemberDTO dto);
+	
 }

@@ -2,8 +2,12 @@ package com.ikea.controller;
 
 import java.security.NoSuchAlgorithmException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +26,28 @@ public class MemberController {
 
 	@GetMapping("/login")	
 	public void login() {}
+	
+	@PostMapping("/login")
+	public String login(MemberDTO dto, String url,HttpSession session, Model model) throws NoSuchAlgorithmException {
+		MemberDTO login = mes.selectOne(dto);
+		System.out.println("url : " + url);
+		if(login == null) {
+			model.addAttribute("msg", "入力されたメールアドレスまたはパスワードが間違っています。再度お確かめの上ご入力ください。");
+			return "redirect:/member/login";
+		}
+		
+		session.setAttribute("loginInfo", login);
+		session.setMaxInactiveInterval(60 * 60);
+		
+		return "redirect:/"; // + (url == null ? "/" : url);
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "redirect:/member/login";
+		// 로그아웃 얼럿 후 메인으로 이동 시키자
+	}
 	
 	@GetMapping("/join")
 	public void join() {}

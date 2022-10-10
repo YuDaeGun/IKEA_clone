@@ -87,7 +87,7 @@ function submitHandler(event) {
 		event.preventDefault()
 		return
 	}
-	if (pw1 != 'blue' || pw2 != 'blue') {
+	if (pw1 == 'red' || pw2 == 'red') {
 		alert('パスワードをもう一度確認してください')
 		event.preventDefault()
 		return

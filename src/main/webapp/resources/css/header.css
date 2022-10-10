@@ -216,16 +216,41 @@ button {
 .hnf_login_profile a {
 	color: red;
 }
-#profile_span {
+.hnf_login_profile2 {
+	background-color: white;
+	border-radius: 20px;
+	height: 30px;
+	width: 100px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+.hnf_login_profile2:hover {
+	background-color: #f5f5f5;
+	border-radius: 20px;
+	height: 30px;
+	width: 100px;
+	color: red;
+}
+.hnf_login_profile2 a {
+	color: red;
+}
+#loggedInUserMenu {
+	display: flex;
+}
+#profile_div {
 	width: 210px;
 	height: 44px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-#profile_span span {
-	font-weight: bolder;
-	font-size: 14px;
+#profile_div span {
+	font-size: 16px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .hnf_login_btn {
 	width: 40px;

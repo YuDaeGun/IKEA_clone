@@ -64,17 +64,26 @@
 					</div>
 					<div class="hnf_loginUI wrap">
 						<div class="hnf_login_container">
-							<div class="hnf_login_profile">
-								<c:if test="${not empty loginInfo}">
-									<a href="${cpath }/member/logout">
-										<span id="profile_span"><img src="${cpath }/IKEA_image/login.svg"><span>Hej! ${loginInfo.member_name }</span></span>
-									</a>
-									<a href="${cpath }/member/accountManagement" class="hnf_account">계정관리</a>
-								</c:if>
-								<c:if test="${empty loginInfo}">
-									<li><a href="${cpath }/member/login">ログイン・新規入会</a>
-								</c:if>
-							</div>
+							<c:if test="${empty loginInfo}">
+								<div class="hnf_login_profile">
+									<span><a href="${cpath }/member/login">ログイン・新規入会</a></span>
+								</div>
+							</c:if>
+							
+							<c:if test="${not empty loginInfo}">
+							<div>
+								<div id="profile_div"><img src="${cpath }/IKEA_image/login.svg"><span>こんにちは、${loginInfo.member_name1 }さん！</span></div>
+								<div id="loggedInUserMenu">
+									<div class="hnf_login_profile2">
+										<a href="${cpath }/member/accountManagement">マイページ</a>
+									</div>
+									<div class="hnf_login_profile2">
+										<a href="${cpath }/member/logout">ログアウト</a>
+									</div>
+									</div>
+								</div>
+							</c:if>
+							
 							<div class="hnf_login_btn">
 								<img src="${cpath }/IKEA_image/like.svg">
 							</div>

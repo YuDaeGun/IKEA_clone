@@ -34,7 +34,7 @@
 				<form method="POST">
 					<div class="login_act_Id">
 						<label for="input_mail">メールアドレス</label><br>
-						<input id="input_mail" type="text" class="username" name="member_email" required value="${member_email}">
+						<input id="input_mail" type="email" class="username" name="member_email" required value="${member_email}">
 					</div>
 					<div class="login_act_pw">
 						<label for="password">パスワードを入力</label><br>

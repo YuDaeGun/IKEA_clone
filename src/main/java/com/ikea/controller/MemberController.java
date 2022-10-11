@@ -23,35 +23,37 @@ import com.ikea.service.MemberService;
 public class MemberController {
 	
 	@Autowired private MemberService mes;
+	
+	@GetMapping("/alert")
+	public void alert() {}
 
 	@GetMapping("/login")	
 	public void login() {}
-	
 	@PostMapping("/login")
-	public String login(MemberDTO dto, String url,HttpSession session, Model model) throws NoSuchAlgorithmException {
+	public String login(MemberDTO dto, HttpSession session, Model model) throws NoSuchAlgorithmException {
 		MemberDTO login = mes.selectOne(dto);
-		System.out.println("url : " + url);
-		if(login == null) {
-			model.addAttribute("msg", "入力されたメールアドレスまたはパスワードが間違っています。再度お確かめの上ご入力ください。");
-			return "redirect:/member/login";
-		}
 		
+		if(login == null) {
+			model.addAttribute("url", "back");
+			model.addAttribute("msg", "入力されたメールアドレスまたはパスワードが間違っています。再度お確かめの上ご入力ください。");
+			return "member/alert";
+		}
 		session.setAttribute("loginInfo", login);
 		session.setMaxInactiveInterval(60 * 60);
 		
-		return "redirect:/"; // + (url == null ? "/" : url);
+		return "redirect:/";
 	}
 	
 	@GetMapping("/logout")
-	public String logout(HttpServletRequest request) {
+	public String logout(HttpServletRequest request, Model model) {
 		request.getSession().invalidate();
-		return "redirect:/member/login";
-		// 로그아웃 얼럿 후 메인으로 이동 시키자
+		
+		model.addAttribute("msg", "ログアウトされました。メインページに戻ります。");
+		return "member/alert";
 	}
 	
 	@GetMapping("/join")
 	public void join() {}
-	
 	@PostMapping("/join")
 	public ModelAndView join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
 		ModelAndView mav = new ModelAndView("redirect");
@@ -67,5 +69,8 @@ public class MemberController {
 		MemberDTO dto = mes.emailDupCheck(member_email.replace("_", "."));
 		return dto;
 	}
+	
+	@GetMapping("/mypage")
+	public void mypage() {}
 }
 

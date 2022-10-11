@@ -234,10 +234,12 @@ button {
 	color: red;
 }
 .hnf_login_profile2 a {
+	font-size: 14px;
 	color: red;
 }
 #loggedInUserMenu {
 	display: flex;
+	justify-content: space-between;
 }
 #profile_div {
 	width: 210px;
@@ -247,6 +249,7 @@ button {
 	align-items: center;
 }
 #profile_div span {
+	font-weight: bold;
 	font-size: 16px;
 	text-overflow: ellipsis;
 	white-space: nowrap;

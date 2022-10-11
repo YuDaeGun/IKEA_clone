@@ -71,15 +71,15 @@
 							</c:if>
 							
 							<c:if test="${not empty loginInfo}">
-							<div>
-								<div id="profile_div"><img src="${cpath }/IKEA_image/login.svg"><span>こんにちは、${loginInfo.member_name1 }さん！</span></div>
-								<div id="loggedInUserMenu">
-									<div class="hnf_login_profile2">
-										<a href="${cpath }/member/accountManagement">マイページ</a>
-									</div>
-									<div class="hnf_login_profile2">
-										<a href="${cpath }/member/logout">ログアウト</a>
-									</div>
+								<div>
+									<div id="profile_div"><img src="${cpath }/IKEA_image/login.svg"><span>こんにちは、${loginInfo.member_name1 }さん！</span></div>
+									<div id="loggedInUserMenu">
+										<div class="hnf_login_profile2">
+											<a href="${cpath }/member/mypage">マイページ</a>
+										</div>
+										<div class="hnf_login_profile2">
+											<a href="${cpath }/member/logout">ログアウト</a>
+										</div>
 									</div>
 								</div>
 							</c:if>

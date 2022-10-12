@@ -1,15 +1,22 @@
 'use strict';
 
-function openCloseAnswer() {
-    const answerId = this.id.replace('que', 'ans');
+//	編集<->閉じる
+function modifyHandler(event) {
+    const eventElement = document.getElementById(event.target.id)
+    const toggleMenu1 = document.getElementById(event.target.id + '_toggle')
+    const toggleMenu2 = document.getElementById(event.target.id + '_preview')
 
-    if (document.getElementById(answerId).style.display === 'block') {
-        document.getElementById(answerId).style.display = 'none';
-        document.getElementById(this.id + '-toggle').textContent = '수정';
+    console.log(eventElement.id)
+    if (toggleMenu1.style.display == 'block') {
+    	toggleMenu1.style.display = 'none';
+    	toggleMenu2.style.display = 'block';
+    	eventElement.textContent = '編集';
     } else {
-        document.getElementById(answerId).style.display = 'block';
-        document.getElementById(this.id + '-toggle').textContent = '닫기';
+    	toggleMenu1.style.display = 'block';
+    	toggleMenu2.style.display = 'none';
+    	eventElement.textContent = '閉じる';
     }
+    // beforeClick div 관련 수정예정
 }
 //	目玉アイコンをクリックすると、パスワードを表示<->非表示
 function changeEye(event) {

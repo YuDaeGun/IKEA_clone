@@ -14,8 +14,8 @@
 		<div class="profile_tabs_panel">
 			<div class="account_manage_mypage">
 				<div>
-					<div>マイページ</div>
-					<div><small>こちらでは、IKEA Familyの特典をすべてご確認いただけます。</small></div>
+					<p>マイページ</p>
+					<span class="small">こちらでは、IKEA Familyの特典をすべてご確認いただけます。</span>
 				</div>
 				<div>
 					<span><img class="myfamily_go1" src="${cpath }/IKEA_image/go1.svg"></span>
@@ -23,98 +23,89 @@
 			</div>
 			<div class="tab_list">
 				<a href="${cpath }/member/IKEA_Account_Manage">
-					<button class="account_tab_list">계정</button>
-				</a> <a href="${cpath }/member/IKEA_Add_Modify"><button
-						class="account_tab_list">주소</button></a> <a
-					href="${cpath }/member/IKEA_Deleted"><button class="account_tab_list">탈퇴</button></a>
+					<button class="account_tab_list">アカウント</button>
+				</a>
+				<a href="${cpath }/member/IKEA_Add_Modify">
+					<button class="account_tab_list">住所一覧</button>
+				</a>
+				<a href="${cpath }/member/IKEA_Deleted">
+					<button class="account_tab_list">設定</button>
+				</a>
 			</div>
 			<form method="POST">
-
 				<div class="account_manage_list1">
 					<div class="account_info">
-
-						<div>
-							<div class="faq-content">
-
-								<div class="account_manage_info" id="que-1">
-									<div class="account_manage_privacy">
-										<strong>개인정보</strong>
-									</div>
-									<span class="account_modify" id="que-1-toggle">수정</span>
-								</div>
-								<div>
-									<span id="member_name1">${IKEA_Login.member_name }</span>
-								</div>
-								<div id="member_birth1">${IKEA_Login.member_birth }</div>
-								<div id="member_gender1">${IKEA_Login.member_gender}</div>
-								<br>
-								<div class="answer" id="ans-1">
-									<!-- 								<div> -->
-									<!-- 									성 <br> <input class="account_insert" type="text" -->
-									<!-- 										placeholder="안"> -->
-									<!-- 								</div> -->
-									<br> <input type="text" class="hidden"
-										value="${IKEA_Login.member_idx }">
-									<div id="member_name2">
-										이름 <br> <input name="member_name" class="account_insert"
-											type="text" placeholder="${IKEA_Login.member_name }">
-									</div>
-									<br>
-									<div id="member_birth2">
-										생일 <br> <input name="member_birth" class="account_insert"
-											type="date">
-									</div>
-									<br>
-									<div>
-										성별 <br> <select class="account_insert"
-											name="member_gender" id="member_gender2">
-											<option value="M">남자</option>
-											<option value="F">여자</option>
-											<option value="X">응답거부</option>
-										</select>
-									</div>
-
-									<button type="submit" class="family_submit" id="family_submit">
-
-										<span id="save" class="profile__btn__label">저장</span>
-									</button>
-								</div>
+						<div class="faq-content">
+							<div class="account_manage_info">
+								<div><strong>お名前</strong></div>
+								<span class="account_modify" id="modify_name">編集</span>
 							</div>
-
+							<div id="modify_name_preview">
+								<p>${loginInfo.member_name1 } ${loginInfo.member_name2 }</p>
+								<p>${loginInfo.member_birth }</p>
+								<p>${loginInfo.member_gender}</p>
+							</div>
+							<br>
+							<div class="answer" id="modify_name_toggle">
+								<input type="text" class="hidden" value="${loginInfo.member_idx }">
+								<div>姓　例：山田
+									<input name="member_name1" class="account_insert" type="text" value="${loginInfo.member_name1 }">
+								</div><br><br>
+								<div>姓 (フリガナ)　例：ヤマダ
+									<input name="member_name1_furigana" class="account_insert" type="text" value="${loginInfo.member_name1_furigana }">
+								</div><br><br>
+								<div>名　例：太郎
+									<input name="member_name2" class="account_insert" type="text" value="${loginInfo.member_name2 }">
+								</div><br><br>
+								<div>名 (フリガナ)　例：タロウ
+									<input name="member_name2_furigana" class="account_insert" type="text" value="${loginInfo.member_name2_furigana }">
+								</div><br><br>
+								<div id="member_birth2">誕生日 (YYYY-MM-DD)　例：1990-07-03
+									<input name="member_birth" class="account_insert" type="date" value="${loginInfo.member_birth }">
+								</div><br><br>
+								<div>성별
+									<select class="account_insert" name="member_gender" id="member_gender2">
+										<option value="M">남자</option>
+										<option value="F">여자</option>
+										<option value="X">응답거부</option>
+									</select>
+								</div>
+								<button type="submit" class="family_submit" id="family_submit">
+									<span id="save" class="profile__btn__label">저장</span>
+								</button>
+							</div>
 							<hr class="account_manage_line">
 						</div>
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_tel">
-									<strong>연락처</strong>
+									<strong>連絡先</strong>
 								</div>
-								<a href="${cpath}/member/New_Tel" class="account_modify">수정</a>
+								<span class="account_modify" id="modify_pnum">編集</span>
 							</div>
 							<div>
-								<span>+82</span><span>${IKEA_Login.member_pnum }</span>
+								<span>+82</span><span>${loginInfo.member_pnum }</span>
 							</div>
-
 						</div>
 						<hr class="account_manage_line">
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_email">
-									<strong>메일</strong>
+									<strong>メールアドレス</strong>
 								</div>
-								<a href="${cpath}/member/New_Email" class="account_modify">수정</a>
+								<span class="account_modify" id="modify_email">編集</span>
 							</div>
 							<div class="account_manage_email2">
-								<span>${IKEA_Login.member_email }</span>
+								<span>${loginInfo.member_email }</span>
 							</div>
-
 						</div>
 						<hr class="account_manage_line">
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_pw">
-									<strong>비밀번호</strong>
+									<strong>パスワード</strong>
 								</div>
-								<a href="${cpath}/member/IKEA_Pw_Reset" class="account_modify">수정</a>
+								<span class="account_modify" id="modify_pw">編集</span>
 							</div>
 							<div>
 								<span>*******</span>
@@ -144,7 +135,8 @@
 	
 	<script>
 		const items = document.querySelectorAll('.account_manage_info');
-		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		console.log(items)
+		items.forEach(item => item.addEventListener('click', modifyHandler));
 	</script>
 	
 <%@ include file="../footer.jsp" %>

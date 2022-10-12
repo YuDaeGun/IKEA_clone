@@ -3,9 +3,6 @@
 	font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
 	scroll-behavior: smooth;
 }
-p, label {
-	font-size: 15px;
-}
 a {
 	color: inherit;
 }
@@ -13,13 +10,6 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-div.root {
-	display: flex;
-	position: block;
-}
-a:hover {
-	text-decoration: underline;
 }
 .login_logo {
 	margin-left: -5px;
@@ -624,7 +614,8 @@ fieldset {
 	margin-bottom: 50px;
 }
 .account_manage_logout {
-	color: black;
+	font-weight: normal;
+	text-decoration: underline;
 }
 .account_manage_mypage {
 	display: flex;
@@ -638,11 +629,16 @@ fieldset {
 	margin-bottom: 50px;
 }
 .account_manage_mypage div {
-	align-content: center;
 	margin: auto;
 }
 .account_manage_mypage div:first-child {
 	margin-right: 10px;
+}
+.account_title {
+	margin-top: 40px;
+}
+.small {
+	font-size: 12px;
 }
 .myfamily_go1 {
 	width: 24px;
@@ -867,15 +863,12 @@ fieldset {
 .account_insert {
 	display: block;
 	width: 100%;
-	margin: 0;
 	outline: 0;
-	padding: 1.5rem 0 0.0625rem 0;
 	border: 0;
 	border-radius: 0;
 	border-bottom: 1px solid #929292;
 	appearance: none;
-	transition: box-shadow .2s;
-	font-size: 1rem;
+	font-size: 17px;
 	line-height: 1.5;
 	box-sizing: border-box;
 }

@@ -56,7 +56,7 @@ public class MemberController {
 	public void join() {}
 	@PostMapping("/join")
 	public ModelAndView join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
-		ModelAndView mav = new ModelAndView("redirect");
+		ModelAndView mav = new ModelAndView("member/alert");
 		int row = mes.join(dto);
 		mav.addObject("msg", "登録完了。ログインページに移動します。");
 		mav.addObject("url", "member/login");

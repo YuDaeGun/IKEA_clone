@@ -8,7 +8,7 @@
 	
 	alert(msg)
 	
-	if (url == '') location.href = '${cpath}/'
+	if (url == '') location.href = '${cpath}'
 	if (url == 'back') location.href = history.back()
 	location.href = '${cpath}/' + url
 </script>

@@ -15,7 +15,7 @@
 			<div class="account_manage_mypage">
 				<div>
 					<p>マイページ</p>
-					<span class="small">こちらでは、IKEA Familyの特典をすべてご確認いただけます。</span>
+					<p class="small">こちらでは、IKEA Familyの特典をすべてご確認いただけます。</p>
 				</div>
 				<div>
 					<span><img class="myfamily_go1" src="${cpath }/IKEA_image/go1.svg"></span>
@@ -33,53 +33,71 @@
 				</a>
 			</div>
 			<form method="POST">
-				<div class="account_manage_list1">
+				<div class="modifyDiv">
 					<div class="account_info">
-						<div class="faq-content">
+						<div class="account_profile">
 							<div class="account_manage_info">
-								<div><strong>お名前</strong></div>
+								<b>お名前</b>
 								<span class="account_modify" id="modify_name">編集</span>
 							</div>
 							<div id="modify_name_preview">
 								<p>${loginInfo.member_name1 } ${loginInfo.member_name2 }</p>
 								<p>${loginInfo.member_birth }</p>
-								<p>${loginInfo.member_gender}</p>
+								<p>${loginInfo.member_gender == 'M' ? '男性' : loginInfo.member_gender == 'F' ? '女性' : '応答拒否'}</p>
 							</div>
-							<br>
-							<div class="answer" id="modify_name_toggle">
+							<div class="displayNone" id="modify_name_toggle">
 								<input type="text" class="hidden" value="${loginInfo.member_idx }">
-								<div>姓　例：山田
-									<input name="member_name1" class="account_insert" type="text" value="${loginInfo.member_name1 }">
-								</div><br><br>
-								<div>姓 (フリガナ)　例：ヤマダ
-									<input name="member_name1_furigana" class="account_insert" type="text" value="${loginInfo.member_name1_furigana }">
-								</div><br><br>
-								<div>名　例：太郎
-									<input name="member_name2" class="account_insert" type="text" value="${loginInfo.member_name2 }">
-								</div><br><br>
-								<div>名 (フリガナ)　例：タロウ
-									<input name="member_name2_furigana" class="account_insert" type="text" value="${loginInfo.member_name2_furigana }">
-								</div><br><br>
-								<div id="member_birth2">誕生日 (YYYY-MM-DD)　例：1990-07-03
-									<input name="member_birth" class="account_insert" type="date" value="${loginInfo.member_birth }">
-								</div><br><br>
-								<div>성별
-									<select class="account_insert" name="member_gender" id="member_gender2">
-										<option value="M">남자</option>
-										<option value="F">여자</option>
-										<option value="X">응답거부</option>
-									</select>
+								<div>
+									<label>姓　例：山田
+										<input name="member_name1" class="account_insert" type="text" value="${loginInfo.member_name1 }">
+									</label>
 								</div>
-								<button type="submit" class="family_submit" id="family_submit">
-									<span id="save" class="profile__btn__label">저장</span>
+								<div>
+									<label>姓 (フリガナ)　例：ヤマダ
+										<input name="member_name1_furigana" class="account_insert" type="text" value="${loginInfo.member_name1_furigana }">
+									</label>
+								</div>
+								<div>
+									<label>名　例：太郎
+										<input name="member_name2" class="account_insert" type="text" value="${loginInfo.member_name2 }">
+									</label>
+								</div>
+								<div>
+									<label>名 (フリガナ)　例：タロウ
+										<input name="member_name2_furigana" class="account_insert" type="text" value="${loginInfo.member_name2_furigana }">
+									</label>
+								</div>
+								<div>
+									<label>誕生日 (YYYY-MM-DD)　例：1990-07-03
+										<input name="member_birth" class="account_insert" type="date" value="${loginInfo.member_birth }">
+									</label>
+								</div>
+								<div>
+									<span>성별</span>
+									<div class="genderRadio">
+										<div>
+											<label><input name="member_gender" type="radio" value="M" ${loginInfo.member_gender == 'M' ? 'checked' : '' }>男性</label>
+										</div>
+										<div>
+											<label><input id="radio_F" name="member_gender" type="radio" value="F" ${loginInfo.member_gender == 'F' ? 'checked' : '' }>女性</label>
+										</div>
+										<div>
+											<label><input name="member_gender" type="radio" value="X" ${loginInfo.member_gender == 'X' ? 'checked' : '' }>言わないでおく</label>
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="family_submit">
+									<span id="save" class="profile__btn__label">変更を保存</span>
 								</button>
 							</div>
-							<hr class="account_manage_line">
 						</div>
+						
+						<hr>
+						
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_tel">
-									<strong>連絡先</strong>
+									<b>連絡先</b>
 								</div>
 								<span class="account_modify" id="modify_pnum">編集</span>
 							</div>
@@ -87,11 +105,13 @@
 								<span>+82</span><span>${loginInfo.member_pnum }</span>
 							</div>
 						</div>
-						<hr class="account_manage_line">
+						
+						<hr>
+						
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_email">
-									<strong>メールアドレス</strong>
+									<b>メールアドレス</b>
 								</div>
 								<span class="account_modify" id="modify_email">編集</span>
 							</div>
@@ -99,11 +119,13 @@
 								<span>${loginInfo.member_email }</span>
 							</div>
 						</div>
-						<hr class="account_manage_line">
+						
+						<hr>
+						
 						<div class="account_profile">
 							<div class="account_manage_info">
 								<div class="account_manage_pw">
-									<strong>パスワード</strong>
+									<b>パスワード</b>
 								</div>
 								<span class="account_modify" id="modify_pw">編集</span>
 							</div>
@@ -111,31 +133,27 @@
 								<span>*******</span>
 							</div>
 						</div>
-						<hr class="account_manage_line">
+						
+						<hr>
+						
 					</div>
+					
 				</div>
 			</form>
 		</div>
-
-		<div class="first_interest">
-			<div class="interest">
-				<img class="interesting_home" src="${cpath }/IKEA_image/interesting_home.svg">
-				<div>
-					<p>
-						<strong>관심사를 설정해주세요</strong>
-					</p>
-					<p>집에 대한 정보를 입력하고 맞춤형 팁과 아이디어를 얻어보세요</p>
-					<p class="interest_start">
-						<strong>시작하기!</strong>
-					</p>
-				</div>
+		
+		<div class="interest">
+			<img class="home_icon" src="${cpath }/IKEA_image/interesting_home.svg">
+			<div>
+				<b>あなたについてもう少し教えてください</b>
+				<p>よりあなたに合ったヒントやアイデアを提供できるよう、あなたの家について教えてください。</p><br>
+				<a href="#none">始めましょう！</a>
 			</div>
 		</div>
 	</div>
 	
 	<script>
 		const items = document.querySelectorAll('.account_manage_info');
-		console.log(items)
 		items.forEach(item => item.addEventListener('click', modifyHandler));
 	</script>
 	

@@ -598,13 +598,10 @@ fieldset {
 	display: flex;
 }
 .account_manage {
-	width: 1171px;
-	height: 1800px;
+	width: 1000px;
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-	max-width: 90rem;
-	line-height: 1.71429;
 }
 .account_big_title {
 	margin-bottom: 0;
@@ -620,11 +617,10 @@ fieldset {
 .account_manage_mypage {
 	display: flex;
 	width: 340px;
-	height: 152px;
+	height: 130px;
 	border-radius: 4px;
-	padding: 1.875rem;
-	padding-right: 1.25rem;
-	border: 1px solid grey;
+	padding: 30px;
+	border: 1px solid #dfdfdf;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
@@ -656,7 +652,7 @@ fieldset {
 	display: flex;
 	justify-content: space-between;
 }
-.answer {
+.displayNone {
 	display: none;
 }
 .tab_list {
@@ -683,40 +679,57 @@ fieldset {
 	border-bottom-color: #0058a3;
 	color: #111;
 }
-.account_info {
-	width: 976px;
-	margin-top: 40px;
+.modifyDiv label {
+	font-size: 13px;
+}
+.modifyDiv b {
+	margin-bottom: 10px;
+}
+.modifyDiv hr {
+	border: 1px solid #f5f5f5;
+}
+.displayNone div {
+	margin-bottom: 35px;
+}
+.genderRadio {
+	width: 300px;
+	margin: 5px 0 0 5px;
+}
+.genderRadio div {
+	margin: 0px;
+}
+.genderRadio div label {
+	position: relative;
+	font-size: 16px;
+	top: -7px;
+}
+.genderRadio input[type=radio] {
+	margin-top: 10px;
+    width: 20%;
+    height: 25px;
 }
 .privacy_info {
 	justify-content: space-between;
 }
-.account_manage_line {
-	border-top: 1px solid #f5f5f5;
-}
 .interest {
 	display: block;
-	border: 1px solid grey;
+	border: 1px solid #dfdfdf;
 	border-radius: 8px;
-	padding: 1.875rem;
-	margin: 8.25rem 0;
-	color: #111;
-	width: 500px;
-	height: auto;
-	align-items: center;
-	cursor: pointer;
+	padding: 30px;
+	margin: 60px 0 120px 0;
+	width: 640px;
+}
+.interest a {
+	text-decoration: underline;
 }
 .account_modify {
 	color: black;
 	text-decoration: underline;
 	cursor: pointer;
 }
-.interesting_home {
-	margin: auto;
+.home_icon {
 	width: 24px;
 	height: 24px;
-}
-.interest_start {
-	text-decoration: underline;
 }
 .new_tel_title {
 	display: flex;
@@ -873,8 +886,8 @@ fieldset {
 	box-sizing: border-box;
 }
 .family_submit {
-	width: 550px;
-	height: 70px;
+	width: 555px;
+	height: 56px;
 	border-radius: 30px;
 	background-color: black;
 	font-weight: 700;
@@ -884,8 +897,6 @@ fieldset {
 	cursor: pointer;
 	justify-content: center;
 	border: 1px solid black;
-	margin-top: 40px;
-	margin-bottom: 40px;
 }
 .street_add2 {
 	display: block;
@@ -931,9 +942,6 @@ fieldset {
 	font-size: 1rem;
 	line-height: 1.5;
 	box-sizing: border-box;
-}
-.first_interest {
-	margin: auto;
 }
 .hidden {
 	display: none;

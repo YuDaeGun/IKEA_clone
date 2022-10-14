@@ -34,9 +34,10 @@
 			</div>
 			<form method="POST">
 				<div class="modifyDiv">
-					<div class="account_info">
+				
+					<div class="account_info">	<!-- 한 덩이 -->
 						<div class="account_profile">
-							<div class="account_manage_info">
+							<div class="account_item">
 								<b>お名前</b>
 								<span class="account_modify" id="modify_name">編集</span>
 							</div>
@@ -73,21 +74,27 @@
 									</label>
 								</div>
 								<div>
-									<span>성별</span>
+									<span>性別</span>
 									<div class="genderRadio">
 										<div>
-											<label><input name="member_gender" type="radio" value="M" ${loginInfo.member_gender == 'M' ? 'checked' : '' }>男性</label>
+											<input id="radio_M" name="member_gender" type="radio" value="M" ${loginInfo.member_gender == 'M' ? 'checked' : '' }>
+											<label for="radio_M">男性</label>
 										</div>
 										<div>
-											<label><input id="radio_F" name="member_gender" type="radio" value="F" ${loginInfo.member_gender == 'F' ? 'checked' : '' }>女性</label>
+											<input id="radio_F" name="member_gender" type="radio" value="F" ${loginInfo.member_gender == 'F' ? 'checked' : '' }>
+											<label for="radio_F">女性</label>
 										</div>
 										<div>
-											<label><input name="member_gender" type="radio" value="X" ${loginInfo.member_gender == 'X' ? 'checked' : '' }>言わないでおく</label>
+											<input id="radio_X" name="member_gender" type="radio" value="X" ${loginInfo.member_gender == 'X' ? 'checked' : '' }>
+											<label for="radio_X">言わないでおく</label>
 										</div>
 									</div>
 								</div>
-								<button type="submit" class="family_submit">
-									<span id="save" class="profile__btn__label">変更を保存</span>
+								<button type="button" class="modify_cancel" onclick="document.getElementById('modify_name').click()">
+									<span>キャンセル</span>
+								</button>
+								<button type="submit" class="modify_submit">
+									<span>変更を保存</span>
 								</button>
 							</div>
 						</div>
@@ -95,7 +102,7 @@
 						<hr>
 						
 						<div class="account_profile">
-							<div class="account_manage_info">
+							<div class="account_item">
 								<div class="account_manage_tel">
 									<b>連絡先</b>
 								</div>
@@ -109,7 +116,7 @@
 						<hr>
 						
 						<div class="account_profile">
-							<div class="account_manage_info">
+							<div class="account_item">
 								<div class="account_manage_email">
 									<b>メールアドレス</b>
 								</div>
@@ -123,7 +130,7 @@
 						<hr>
 						
 						<div class="account_profile">
-							<div class="account_manage_info">
+							<div class="account_item">
 								<div class="account_manage_pw">
 									<b>パスワード</b>
 								</div>
@@ -133,10 +140,12 @@
 								<span>*******</span>
 							</div>
 						</div>
-						
 						<hr>
-						
 					</div>
+					
+					
+					
+					
 					
 				</div>
 			</form>
@@ -153,7 +162,7 @@
 	</div>
 	
 	<script>
-		const items = document.querySelectorAll('.account_manage_info');
+		const items = document.querySelectorAll('.account_item');
 		items.forEach(item => item.addEventListener('click', modifyHandler));
 	</script>
 	

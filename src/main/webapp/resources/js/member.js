@@ -6,7 +6,6 @@ function modifyHandler(event) {
     const toggleMenu1 = document.getElementById(event.target.id + '_toggle')
     const toggleMenu2 = document.getElementById(event.target.id + '_preview')
 
-    console.log(eventElement.id)
     if (toggleMenu1.style.display == 'block') {
     	toggleMenu1.style.display = 'none';
     	toggleMenu2.style.display = 'block';
@@ -16,7 +15,6 @@ function modifyHandler(event) {
     	toggleMenu2.style.display = 'none';
     	eventElement.textContent = '閉じる';
     }
-    // beforeClick div 관련 수정예정
 }
 //	目玉アイコンをクリックすると、パスワードを表示<->非表示
 function changeEye(event) {

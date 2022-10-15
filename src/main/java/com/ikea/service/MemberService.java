@@ -30,4 +30,5 @@ public class MemberService {
 		dto.setMember_pw(hash);
 		return dao.selectOne(dto);
 	}
+	
 }

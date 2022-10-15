@@ -69,6 +69,19 @@ public class MemberController {
 		MemberDTO dto = mes.emailDupCheck(member_email.replace("_", "."));
 		return dto;
 	}
+
+	@GetMapping("/pwMatchCheck/{member_pw}")
+	@ResponseBody
+	public MemberDTO pwMatchCheck(@PathVariable String member_pw, HttpSession session) throws NoSuchAlgorithmException, NullPointerException {
+		String member_email = ((MemberDTO)session.getAttribute("loginInfo")).getMember_email();
+		
+		MemberDTO dto = new MemberDTO();
+		dto.setMember_email(member_email);
+		dto.setMember_pw(member_pw);
+		dto = mes.selectOne(dto);
+		
+		return dto;
+	}
 	
 	@GetMapping("/mypage")
 	public void mypage() {}

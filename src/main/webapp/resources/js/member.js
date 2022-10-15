@@ -20,10 +20,10 @@ function modifyHandler(event) {
 function changeEye(event) {
     if (password.getAttribute("type") == "password") {
         password.setAttribute("type", "text")
-        eyeIcon.setAttribute("src", cpath + "/IKEA_image/pw_show2.svg")
+        eyeIcon.setAttribute("src", cpath + "/IKEA_image/closeeye.jpg")
     } else if (password.getAttribute("type") == "text") {
         password.setAttribute("type", "password")
-        eyeIcon.setAttribute("src", cpath + "/IKEA_image/pw_show.svg")
+        eyeIcon.setAttribute("src", cpath + "/IKEA_image/openeye.jpg")
     }
 }
 //	メールアドレス重複チェック
@@ -36,9 +36,10 @@ function emailChecker(event) {
 	const url = cpath + '/member/emailDupCheck/' + email.replace('.', '_')
 	fetch(url).then(resp => resp.json())
 	.then(json => {
-        if(json != null)
+        if (json != null) {
         	document.getElementById('mailCheck').innerHTML = '既に登録済みのメールアドレスです'
     		document.getElementById('mailCheck').style.color = 'red';
+        }
     })
 }
 //	パスワードの制約条件チェック
@@ -80,6 +81,22 @@ function pwChecker2(event) {
         document.getElementById('pwCheck2').innerHTML = 'パスワードが一致しません';
         document.getElementById('pwCheck2').style.color = 'red';
     }
+}
+//	現在のパスワードと一致するかチェック
+function pwChecker3(event) {
+	const pw = document.getElementById('input_old_pw').value;
+	
+	document.getElementById('pwCheck3').innerHTML = 'パスワードが一致しません'
+	document.getElementById('pwCheck3').style.color = 'red';
+
+	const url = cpath + '/member/pwMatchCheck/' + pw
+	fetch(url).then(resp => resp.json())
+	.then(json => {
+        if (json != null) {
+        	document.getElementById('pwCheck3').innerHTML = 'パスワードが一致します'
+    		document.getElementById('pwCheck3').style.color = 'blue';
+        }
+    })
 }
 //	メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない
 function submitHandler(event) {

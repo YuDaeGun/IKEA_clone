@@ -76,11 +76,6 @@ div.login_act {
 	text-decoration: underline;
 	color: white;
 }
-body {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 div.root {
 	display: flex;
 	position: block;
@@ -133,6 +128,13 @@ div.login_ex > h1 {
 	all: unset;
 	width: 412px;
 	height: 48px;
+}
+.password_input_box {
+	width: 412px;
+	height: 78px;
+}
+.modifyEye {
+	height: 40px;
 }
 .phone_number2 {
 	all: unset;
@@ -239,15 +241,6 @@ div.login_ex > h1 {
 	background-color: white;
 	border-radius: 10px;
 	border-style: 1px solid black;
-}
-body {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-div.root {
-	display: flex;
-	position: block;
 }
 .join_logo {
 	margin-left: 30px;
@@ -640,12 +633,12 @@ fieldset {
 	width: 24px;
 	height: 24px;
 }
-.account_profile {
+.modify_items {
 	justify-content: space-between;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
-.account_item {
+.modify_item {
 	display: flex;
 	justify-content: space-between;
 }
@@ -910,9 +903,10 @@ fieldset {
 	text-align: center;
 	cursor: pointer;
 	justify-content: center;
+	border: 0;
 }
 .modify_submit:hover {
-	background-color: #333333;
+	background-color: #4b4b4b;
 	transition-duration: 250ms;
 }
 .street_add2 {

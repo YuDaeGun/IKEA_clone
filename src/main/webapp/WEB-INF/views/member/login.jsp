@@ -37,20 +37,16 @@
 				</div>
 				<div class="login_act_pw">
 					<label for="password">パスワードを入力</label><br>
-					<div class="pwbt">
-						<div>
-							<div class="d1">
-								<input id="password" type="password" class="password_input_vi" name="member_pw" required>
-								<img id="eyeIcon" class="eye_visible" src="${cpath }/IKEA_image/openeye.jpg">
-							</div>
-						</div>
-						<a href="IKEA_Pw_find" class="find_pw">パスワードをお忘れですか?</a>
-					</div><br><br>
-					<div>
-						<button type="submit" class="login_bt">
-							<span>続ける</span>
-						</button>
+					<div class="login_input_pw">
+						<input id="password1" type="password" name="member_pw" required>
+						<img id="eyeIcon1" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(1)">
 					</div>
+					<a href="IKEA_Pw_find" class="find_pw">パスワードをお忘れですか?</a>
+				</div>
+				<div>
+					<button type="submit" class="login_bt">
+						<span>続ける</span>
+					</button>
 				</div>
 			</form>
 			<p>イケアのアカウントをお持ちではありませんか？今すぐ作成：</p>
@@ -62,13 +58,6 @@
 		</div>
 	</div>
 </div>
-	
-<script>
-	const eyeIcon = document.getElementById('eyeIcon')
-	const password = document.getElementById('password')
-
-	eyeIcon.addEventListener('click', changeEye)
-</script>
 
 </body>
 </html>

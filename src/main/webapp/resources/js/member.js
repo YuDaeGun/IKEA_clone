@@ -17,14 +17,17 @@ function modifyHandler(event) {
     }
 }
 //	目玉アイコンをクリックすると、パスワードを表示<->非表示
-function changeEye(event) {
-    if (password.getAttribute("type") == "password") {
-        password.setAttribute("type", "text")
-        eyeIcon.setAttribute("src", cpath + "/IKEA_image/closeeye.jpg")
-    } else if (password.getAttribute("type") == "text") {
-        password.setAttribute("type", "password")
-        eyeIcon.setAttribute("src", cpath + "/IKEA_image/openeye.jpg")
-    }
+function changeEye(n) {
+	const element = document.getElementById('password' + n)
+	const icon = document.getElementById('eyeIcon' + n)
+	
+	if (element.getAttribute("type") == "password") {
+		element.setAttribute("type", "text")
+		icon.setAttribute("src", cpath + "/IKEA_image/closeeye.jpg")
+	} else if (element.getAttribute("type") == "text") {
+		element.setAttribute("type", "password")
+		icon.setAttribute("src", cpath + "/IKEA_image/openeye.jpg")
+	}
 }
 //	メールアドレス重複チェック
 function emailChecker(event) {
@@ -44,10 +47,10 @@ function emailChecker(event) {
 }
 //	パスワードの制約条件チェック
 function pwChecker1(event) {
-	document.getElementById('input_pw_re').value = ''
+	document.getElementById('password2').value = ''
 	document.getElementById('pwCheck2').innerHTML = ''
 	
-    const pw = document.getElementById('input_pw').value;
+    const pw = document.getElementById('password1').value;
     const sc = ["!", "@", "#", "$", "%", "^", "&", "*"];
     let checkSC = false;
 
@@ -72,8 +75,8 @@ function pwChecker1(event) {
 }
 //	再入力パスワードか原本パスワードと一致するかチェック
 function pwChecker2(event) {
-    if (document.getElementById('input_pw').value != '' && document.getElementById('input_pw_re').value != '') {
-        if (document.getElementById('input_pw').value == document.getElementById('input_pw_re').value) {
+    if (document.getElementById('password1').value != '' && document.getElementById('password2').value != '') {
+        if (document.getElementById('password1').value == document.getElementById('password2').value) {
             document.getElementById('pwCheck2').innerHTML = 'パスワードが一致します'
             document.getElementById('pwCheck2').style.color = 'blue';
             return;
@@ -84,7 +87,7 @@ function pwChecker2(event) {
 }
 //	現在のパスワードと一致するかチェック
 function pwChecker3(event) {
-	const pw = document.getElementById('input_old_pw').value;
+	const pw = document.getElementById('password3').value;
 	
 	document.getElementById('pwCheck3').innerHTML = 'パスワードが一致しません'
 	document.getElementById('pwCheck3').style.color = 'red';

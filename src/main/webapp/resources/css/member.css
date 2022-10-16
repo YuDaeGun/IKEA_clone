@@ -27,12 +27,12 @@ body {
 	margin-left: 60px;
 	padding: 32px 80px;
 }
-div.login_ex>.PwFind_big_white {
+div.login_ex > .PwFind_big_white {
 	color: white;
 	font-size: 30px;
 	margin-bottom: 40px;
 }
-div.login_ex>.login_white {
+div.login_ex > .login_white {
 	color: white;
 	font-size: 15px;
 	width: 400px;
@@ -42,6 +42,9 @@ div.login_act {
 	width: 700px;
 	height: 700px;
 	font-size: 18px;
+}
+.login_act input {
+	font-size: 20px;
 }
 .email_or_tele1 {
 	margin-top: 250px;
@@ -124,28 +127,29 @@ div.login_ex > h1 {
 	height: 60px;
 	border-style: 1px solid black;
 }
-.password_input_vi {
-	all: unset;
-	width: 412px;
-	height: 48px;
-}
 .password_input_box {
 	width: 412px;
 	height: 78px;
 }
-.modifyEye {
-	height: 40px;
-}
-.phone_number2 {
-	all: unset;
-	width: 412px;
-	height: 48px;
-}
-.d1 {
+.login_input_pw {
 	width: 448px;
 	height: 48px;
 	border: 1px solid black;
 	box-sizing: border-box;
+}
+#modify_pw_toggle img {
+	width: 24px;
+	height: 20px;
+}
+.login_input_pw > input {
+	all: unset;
+	width: 410px;
+	height: 48px;
+	font-size: 20px;
+}
+.login_input_pw > img {
+	width: 24px;
+	height: 20px;
 }
 .phone_numberdiv {
 	width: 448px;
@@ -160,9 +164,8 @@ div.login_ex > h1 {
 .naver_login {
 	color: black;
 }
-.lologin_act_pw {
-	margin-bottom: 40px;
-	border: 1px solid black;
+.login_act_pw {
+	margin-bottom: 50px;
 }
 .find_pw {
 	font-size: 14px;
@@ -215,10 +218,6 @@ div.login_ex > h1 {
 	text-decoration: underline;
 	color: white;
 }
-.login_act_pw img {
-	width: 24px;
-	height: 24px;
-}
 .backicon {
 	margin-top: 79px;
 	margin-left: 34px;
@@ -236,11 +235,6 @@ div.login_ex > h1 {
 }
 .eyes {
 	cursor: pointer;
-}
-.pwbt {
-	background-color: white;
-	border-radius: 10px;
-	border-style: 1px solid black;
 }
 .join_logo {
 	margin-left: 30px;
@@ -352,6 +346,12 @@ div.login_ex > h1 {
 .join_right > p {
 	font-weight: bold;
 	margin-bottom: 30px;
+}
+.join_right input {
+	font-size: 20px;
+}
+.join_right select {
+	font-size: 20px;
 }
 .join_main {
 	margin-top: 50px;
@@ -506,6 +506,7 @@ input[type=radio] {
 	display: none;
 }
 .phone_number2 {
+	all: unset;
 	width: 341px;
 	height: 48px;
 }
@@ -678,7 +679,7 @@ fieldset {
 .modifyDiv hr {
 	border: 1px solid #f5f5f5;
 }
-.displayNone div {
+.displayNone > div {
 	margin-bottom: 35px;
 }
 .genderRadio {
@@ -868,9 +869,16 @@ fieldset {
 	width: 100%;
 	outline: 0;
 	border: 0;
-	border-radius: 0;
 	border-bottom: 1px solid #929292;
-	appearance: none;
+	font-size: 17px;
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+.pw_insert {
+	width: 970px;
+	outline: 0;
+	border: 0;
+	border-bottom: 1px solid #929292;
 	font-size: 17px;
 	line-height: 1.5;
 	box-sizing: border-box;
@@ -918,7 +926,6 @@ fieldset {
 	border: 0;
 	border-radius: 0;
 	border-bottom: 1px solid #929292;
-	appearance: none;
 	transition: box-shadow .2s;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -933,7 +940,6 @@ fieldset {
 	border: 0;
 	border-radius: 0;
 	border-bottom: 1px solid #929292;
-	appearance: none;
 	transition: box-shadow .2s;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -948,7 +954,6 @@ fieldset {
 	border: 0;
 	border-radius: 0;
 	border-bottom: 1px solid #929292;
-	appearance: none;
 	transition: box-shadow .2s;
 	font-size: 1rem;
 	line-height: 1.5;

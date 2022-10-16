@@ -176,13 +176,13 @@
 				<div id="mailCheck" class="checkMsg"></div>
 			</div>
 			<div>
-				<label for="input_pw">パスワード</label><br>
-				<input id="input_pw" name="member_pw" type="password" class="join_inputbox2" required>
+				<label for="password1">パスワード</label><br>
+				<input id="password1" name="member_pw" type="password" class="join_inputbox2" required onkeyup="pwChecker1()">
 				<div id="pwCheck1" class="checkMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 			</div>
 			<div>
-				<label for="input_pw_re">パスワード再入力（確認用）</label><br>
-				<input id="input_pw_re" name="member_pw_re" type="password" class="join_inputbox2" required>
+				<label for="password2">パスワード再入力（確認用）</label><br>
+				<input id="password2" type="password" class="join_inputbox2" required onkeyup="pwChecker2()">
 				<div id="pwCheck2" class="checkMsg"></div>
 			</div>
 			<div>
@@ -200,14 +200,10 @@
 	
 	<script>
 		const input_email = document.getElementById('input_email')
-		const input_pw = document.getElementById('input_pw')
-		const input_pw_re = document.getElementById('input_pw_re')
 		const join_complete = document.getElementById('join_complete')
 		
 		input_email.addEventListener('keyup', emailChecker)
 		input_email.addEventListener('blur', emailChecker)
-		input_pw.addEventListener('keyup', pwChecker1)
-		input_pw_re.addEventListener('keyup', pwChecker2)
 		join_complete.addEventListener('click', submitHandler)
 	</script>
 

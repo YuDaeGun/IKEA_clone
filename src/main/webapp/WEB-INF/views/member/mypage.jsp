@@ -147,24 +147,22 @@
 					</div>
 					<div class="displayNone" id="modify_pw_toggle">
 						<div>
-							<label for="input_pw">新しいパスワード</label><br>
-							<input id="input_pw" name="member_pw" type="password" class="account_insert">
+							<label for="password1">新しいパスワード</label><br>
+							<input id="password1" name="member_pw" type="password" class="pw_insert" onkeyup="pwChecker1()">
+							<img id="eyeIcon1" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(1)">
 							<div id="pwCheck1" class="checkMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 						</div>
 						<div>
-							<label for="input_pw_re">新しいパスワード再入力（確認用）</label><br>
-							<input id="input_pw_re" type="password" class="account_insert">
+							<label for="password2">新しいパスワード再入力（確認用）</label><br>
+							<input id="password2" type="password" class="pw_insert" onkeyup="pwChecker2()">
+							<img id="eyeIcon2" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(2)">
 							<div id="pwCheck2" class="checkMsg"></div>
 						</div>
 						<div>
-							<label for="input_old_pw">古いパスワードで変更を確認*</label><br>
-							<input id="input_old_pw" type="password" class="account_insert">
+							<label for="password3">古いパスワードで変更を確認*</label><br>
+							<input id="password3" type="password" class="pw_insert" onkeyup="pwChecker3()">
+							<img id="eyeIcon3" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(3)">
 							<div id="pwCheck3" class="checkMsg"></div>
-						</div>
-						
-						<div style="height: 100px;">
-							<input id="password" type="password" class="password_input_box" name="member_pw" required>
-							<img id="eyeIcon" class="modifyEye" src="${cpath }/IKEA_image/openeye.jpg">
 						</div>
 						
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_pw').click()">
@@ -199,20 +197,11 @@
 <script>
 	const items = document.querySelectorAll('.modify_item');
 	const input_email = document.getElementById('input_email')
-	const input_pw = document.getElementById('input_pw')
-	const input_pw_re = document.getElementById('input_pw_re')
-	const input_old_pw = document.getElementById('input_old_pw')
-	const eyeIcon = document.getElementById('eyeIcon')
-	const password = document.getElementById('password')
-	const modyfyPw_complete = document.getElementById('modyfyPw_complete')
+// 	const modyfyPw_complete = document.getElementById('modyfyPw_complete')
 	
 	items.forEach(item => item.addEventListener('click', modifyHandler));
 	input_email.addEventListener('keyup', emailChecker)
 	input_email.addEventListener('blur', emailChecker)
-	input_pw.addEventListener('keyup', pwChecker1)
-	input_pw_re.addEventListener('keyup', pwChecker2)
-	input_old_pw.addEventListener('keyup', pwChecker3)
-	eyeIcon.addEventListener('click', changeEye)
 	
 // 	join_complete.addEventListener('click', submitHandler)
 </script>

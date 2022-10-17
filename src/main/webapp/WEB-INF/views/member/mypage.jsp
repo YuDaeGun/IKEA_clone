@@ -28,7 +28,7 @@
 	<div class="modifyDiv">
 		<div class="modify_account">	<!-- アカウント tab -->
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>お名前</b>
 						<span class="account_modify" id="modify_name">編集</span>
@@ -87,7 +87,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>連絡先</b>
 						<span class="account_modify" id="modify_pnum">編集</span>
@@ -111,7 +111,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>メールアドレス</b>
 						<span class="account_modify" id="modify_email">編集</span>
@@ -136,7 +136,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>パスワード</b>
 						<span class="account_modify" id="modify_pw">編集</span>
@@ -185,7 +185,7 @@
 		
 		<div class="modify_address displayNone">	<!-- 住所一覧 tab -->
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>メインの住所</b>
 						<span class="account_modify" id="modify_addr">編集</span>
@@ -281,7 +281,7 @@
 		
 		<div class="modify_setting displayNone">	<!-- 設定 tab -->
 			<div class="modify_items">
-				<form method="POST">
+				<form target="${cpath }/member/modifyMember">
 					<div class="modify_item">
 						<b>お近くのイケア店舗</b>
 						<span class="account_modify" id="modify_nearbystore">編集</span>

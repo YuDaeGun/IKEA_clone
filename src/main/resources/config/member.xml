@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+ 		"-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ikea.member.MemberDAO">
+	<update id="modifyMember" parameterType="member">
+		UPDATE MEMBER
+			<set>
+		<if test="member_email != null">			MEMBER_EMAIL			=	#{member_email},			</if>
+		<if test="member_pw != null">				MEMBER_PW				=	#{member_pw},				</if>
+		<if test="member_name1 != null">			MEMBER_NAME1			=	#{member_name1},			</if>
+		<if test="member_name1_furigana != null">	MEMBER_NAME1_FURIGANA	=	#{member_name1_furigana},	</if>
+		<if test="member_name2 != null">			MEMBER_NAME2			=	#{member_name2},			</if>
+		<if test="member_name2_furigana != null">	MEMBER_NAME2_FURIGANA	=	#{member_name2_furigana},	</if>
+		<if test="member_birth != null">			MEMBER_BIRTH			=	#{member_birth},			</if>
+		<if test="member_pnum != null">				MEMBER_PNUM				=	#{member_pnum},				</if>	
+		<if test="member_zipcode != null">			MEMBER_ZIPCODE			=	#{member_zipcode},			</if>
+		<if test="member_address1 != null">			MEMBER_ADDRESS1			=	#{member_address1},			</if>
+		<if test="member_address2 != null">			MEMBER_ADDRESS2			=	#{member_address2},			</if>
+		<if test="member_address3 != null">			MEMBER_ADDRESS3			=	#{member_address3},			</if>
+		<if test="member_address4 != null">			MEMBER_ADDRESS4			=	#{member_address4},			</if>
+		<if test="member_nearbystore != null">		MEMBER_NEARBYSTORE		=	#{member_nearbystore},		</if>
+		<if test="member_gender != null">			MEMBER_GENDER			=	#{member_gender},			</if>
+			</set>
+			WHERE MEMBER_IDX = #{member_idx}
+	</update>
+</mapper>
+
+
+
+

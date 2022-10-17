@@ -2,6 +2,7 @@ package com.ikea.member;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface MemberDAO {
 
@@ -18,4 +19,6 @@ public interface MemberDAO {
 	@Select("SELECT * FROM MEMBER WHERE MEMBER_EMAIL = #{member_email} AND MEMBER_PW = #{member_pw} AND MEMBER_ISDELETED != 'Y'")
 	MemberDTO selectOne(MemberDTO dto);
 	
+	// Dynamic Query使用
+	int modifyMember(MemberDTO dto);
 }

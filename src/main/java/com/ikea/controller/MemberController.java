@@ -57,7 +57,7 @@ public class MemberController {
 	@PostMapping("/join")
 	public ModelAndView join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
 		ModelAndView mav = new ModelAndView("member/alert");
-		int row = mes.join(dto);
+		mes.join(dto);
 		mav.addObject("msg", "登録完了。ログインページに移動します。");
 		mav.addObject("url", "member/login");
 		return mav;
@@ -85,5 +85,43 @@ public class MemberController {
 	
 	@GetMapping("/mypage")
 	public void mypage() {}
+	
+	@GetMapping("/modifyMember")
+	public void modifyMember(HttpSession session, MemberDTO dto) {
+		int userIdx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
+		dto.setMember_idx(userIdx);
+		
+		System.out.printf("index : " + userIdx);
+		System.out.printf("이름 : %s, %s, %s, %s\n", dto.getMember_name1(), dto.getMember_name1_furigana(), dto.getMember_name2(), dto.getMember_name2_furigana());
+		System.out.printf("메일 : %s, 암호 : %s\n", dto.getMember_email(), dto.getMember_pw());
+		System.out.printf("생일 : %s, 폰 : %s\n", dto.getMember_birth(), dto.getMember_pnum());
+		System.out.printf("주소 : %s, %s, %s, %s, %s\n", dto.getMember_zipcode(), dto.getMember_address1(), dto.getMember_address2(), dto.getMember_address3(), dto.getMember_address4());
+		System.out.printf("근처 스토어 : %s, 성별 : %s\n", dto.getMember_nearbystore(), dto.getMember_gender());
+		
+		
+//		session.setAttribute("loginInfo", login);
+		session.setMaxInactiveInterval(60 * 60);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

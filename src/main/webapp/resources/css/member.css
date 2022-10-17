@@ -523,6 +523,15 @@ input[type=radio] {
 	margin-bottom: 40px;
 	box-sizing: border-box;
 }
+.modify_selectBox {
+	margin-left: -3px;
+	border: 0;
+	outline: none;
+}
+#modi_addr1, #modi_nbs {
+	width: 555px;
+	font-size: 17px;
+}
 .join_inputbox_small {
 	width: 200px;
 	height: 48px;
@@ -643,13 +652,13 @@ fieldset {
 	display: flex;
 	justify-content: space-between;
 }
+.space {
+	height: 300px;
+}
 .displayNone {
 	display: none;
 }
-.tab_list {
-	flex: 1 0 auto;
-}
-.account_tab_list {
+.modify_tab {
 	width: 328px;
 	position: relative;
 	background: none;
@@ -658,17 +667,15 @@ fieldset {
 	color: #484848;
 	display: inline-block;
 	flex-shrink: 0;
-	font-size: .875rem;
+	font-size: 16px;
 	font-weight: 700;
-	line-height: 1.71429;
-	padding: 0 0.9375rem 0.9375rem 0;
+	padding: 0 15px 15px 0;
 	margin: 0;
 	text-align: left;
 	cursor: pointer;
 }
-.account_tab_list:active {
+.modify_tab.selected {
 	border-bottom-color: #0058a3;
-	color: #111;
 }
 .modifyDiv label {
 	font-size: 13px;
@@ -866,7 +873,7 @@ fieldset {
 }
 .account_insert {
 	display: block;
-	width: 100%;
+	width: 555px;
 	outline: 0;
 	border: 0;
 	border-bottom: 1px solid #929292;
@@ -875,13 +882,17 @@ fieldset {
 	box-sizing: border-box;
 }
 .pw_insert {
-	width: 970px;
+	width: 555px;
 	outline: 0;
 	border: 0;
 	border-bottom: 1px solid #929292;
 	font-size: 17px;
 	line-height: 1.5;
 	box-sizing: border-box;
+}
+#modify_pw_toggle img {
+	position: relative;
+	left: -30px
 }
 .modify_cancel {
 	width: 555px;

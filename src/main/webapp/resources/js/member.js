@@ -1,5 +1,32 @@
 'use strict';
 
+//	tab変更（アカウント　<->　住所一覧　<->　設定）
+function tabHandler(n) {
+	const tabs = document.querySelectorAll('.modify_tab');
+	const modify_account = document.querySelector('.modify_account')
+	const modify_address = document.querySelector('.modify_address')
+	const modify_setting = document.querySelector('.modify_setting')
+	
+	tabs.forEach(tab => tab.classList.remove('selected'))
+	
+	if (n == 1) {
+		tabs[0].classList.add('selected')
+		modify_account.classList.remove('displayNone')
+		modify_address.classList.add('displayNone')
+		modify_setting.classList.add('displayNone')
+	} else if (n == 2) {
+		tabs[1].classList.add('selected')
+		modify_account.classList.add('displayNone')
+		modify_address.classList.remove('displayNone')
+		modify_setting.classList.add('displayNone')
+	} else {
+		tabs[2].classList.add('selected')
+		modify_account.classList.add('displayNone')
+		modify_address.classList.add('displayNone')
+		modify_setting.classList.remove('displayNone')
+	}
+}
+
 //	編集<->閉じる
 function modifyHandler(event) {
     const eventElement = document.getElementById(event.target.id)

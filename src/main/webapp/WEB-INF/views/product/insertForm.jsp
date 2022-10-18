@@ -36,7 +36,7 @@
 		                <div class="inputChild">
 		                	<div>
 			                    <label for="inputProductPrice">*価格</label>
-			                    <input id="inputProductPrice" type="text"name="product_price_String" onkeyup="inputNumberFormat(this)" required>
+			                    <input id="inputProductPrice" type="text" name="product_price_String" onkeyup="inputNumberFormat(this)" required>
 			                </div>
 			                <div><br>원</div>
 		                </div>

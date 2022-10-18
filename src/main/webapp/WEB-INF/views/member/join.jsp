@@ -80,7 +80,7 @@
 			<div class="phone_number1">携帯（または固定電話）<br>
 				<div class="phone_numberdiv">
 					<span>&nbsp;JP(+81)</span>
-					<input name="member_pnum" type="tel" class="phone_number2" required>
+					<input name="member_pnum" type="text" class="phone_number2" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
 				</div>
 			</div>
 			<div>

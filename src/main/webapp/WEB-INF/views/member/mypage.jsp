@@ -28,7 +28,7 @@
 	<div class="modifyDiv">
 		<div class="modify_account">	<!-- アカウント tab -->
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>お名前</b>
 						<span class="account_modify" id="modify_name">編集</span>
@@ -87,7 +87,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>連絡先</b>
 						<span class="account_modify" id="modify_pnum">編集</span>
@@ -98,7 +98,7 @@
 					<div class="displayNone" id="modify_pnum_toggle">
 						<div>
 							<label>新しい電話番号
-							<input name="member_pnum" class="account_insert" type="text" required></label>
+							<input name="member_pnum" class="account_insert" type="text" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></label>
 						</div>
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_pnum').click()">
 							<span>キャンセル</span>
@@ -111,7 +111,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>メールアドレス</b>
 						<span class="account_modify" id="modify_email">編集</span>
@@ -136,7 +136,7 @@
 			</div>
 			<hr>
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>パスワード</b>
 						<span class="account_modify" id="modify_pw">編集</span>
@@ -185,7 +185,7 @@
 		
 		<div class="modify_address displayNone">	<!-- 住所一覧 tab -->
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>メインの住所</b>
 						<span class="account_modify" id="modify_addr">編集</span>
@@ -281,7 +281,7 @@
 		
 		<div class="modify_setting displayNone">	<!-- 設定 tab -->
 			<div class="modify_items">
-				<form target="${cpath }/member/modifyMember">
+				<form method="post">
 					<div class="modify_item">
 						<b>お近くのイケア店舗</b>
 						<span class="account_modify" id="modify_nearbystore">編集</span>
@@ -321,7 +321,7 @@
 					<b>プロフィールの削除</b>
 				</div>
 				<p>お客様情報はいつでも削除できます。プロフィールの他に、関連付けられた情報が削除されます。</p>
-				<a href="${cpath }/member/delete">アカウントを削除しますか?</a>
+				<a href="${cpath }/member/delete" onclick="return confirm('アカウントを削除してもよろしいでしょうか？')">アカウントを削除しますか?</a>
 			</div>
 			<div class="space"></div>
 		</div>

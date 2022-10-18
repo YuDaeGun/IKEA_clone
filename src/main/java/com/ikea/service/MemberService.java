@@ -16,8 +16,7 @@ public class MemberService {
 	@Autowired private HashComponent hs;
 	
 	public int join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
-		String hash = hs.getHash(dto.getMember_pw());
-		dto.setMember_pw(hash);
+		dto.setMember_pw(hs.getHash(dto.getMember_pw()));
 		return dao.insert(dto);		
 	}
 
@@ -26,9 +25,19 @@ public class MemberService {
 	}
 
 	public MemberDTO selectOne(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
-		String hash = hs.getHash(dto.getMember_pw());
-		dto.setMember_pw(hash);
+		dto.setMember_pw(hs.getHash(dto.getMember_pw()));
 		return dao.selectOne(dto);
+	}
+
+	public int modifyMember(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
+		if (dto.getMember_pw() != null) {
+			dto.setMember_pw(hs.getHash(dto.getMember_pw()));
+		}
+		return dao.modifyMember(dto);
+	}
+
+	public MemberDTO selectOneByIdx(int member_idx) {
+		return dao.selectOneByIdx(member_idx);
 	}
 	
 }

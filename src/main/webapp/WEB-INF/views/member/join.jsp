@@ -178,11 +178,13 @@
 			<div>
 				<label for="password1">パスワード</label><br>
 				<input id="password1" name="member_pw" type="password" class="join_inputbox2" required onkeyup="pwChecker1()">
+				<img id="eyeIcon1" class="eyeImg" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(1)">
 				<div id="pwCheck1" class="checkMsg">*特殊文字(!@#$%^&*)を含め、8~16文字</div>
 			</div>
 			<div>
 				<label for="password2">パスワード再入力（確認用）</label><br>
 				<input id="password2" type="password" class="join_inputbox2" required onkeyup="pwChecker2()">
+				<img id="eyeIcon2" class="eyeImg" src="${cpath }/IKEA_image/openeye.jpg" onclick="changeEye(2)">
 				<div id="pwCheck2" class="checkMsg"></div>
 			</div>
 			<div>

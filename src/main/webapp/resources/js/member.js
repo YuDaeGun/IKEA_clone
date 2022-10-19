@@ -51,7 +51,7 @@ function changeEye(n) {
 	if (element.getAttribute("type") == "password") {
 		element.setAttribute("type", "text")
 		icon.setAttribute("src", cpath + "/IKEA_image/closeeye.jpg")
-	} else if (element.getAttribute("type") == "text") {
+	} else {
 		element.setAttribute("type", "password")
 		icon.setAttribute("src", cpath + "/IKEA_image/openeye.jpg")
 	}
@@ -128,7 +128,7 @@ function pwChecker3(event) {
         }
     })
 }
-//	メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない
+//	メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない (会員登録ページ)
 function submitHandler(event) {
 	const mail = document.getElementById('mailCheck').style.color
 	const pw1 = document.getElementById('pwCheck1').style.color
@@ -145,6 +145,7 @@ function submitHandler(event) {
 		return
 	}
 }
+//	メールアドレスやパスワードの入力に問題があった場合、顧客情報変更に進ませない (マイページ)
 
 
 

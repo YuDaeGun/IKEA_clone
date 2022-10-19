@@ -321,13 +321,16 @@
 					<b>プロフィールの削除</b>
 				</div>
 				<p>お客様情報はいつでも削除できます。プロフィールの他に、関連付けられた情報が削除されます。</p>
-				<a href="${cpath }/member/delete" onclick="return confirm('アカウントを削除してもよろしいでしょうか？')">アカウントを削除しますか?</a>
+				<a href="${cpath }/member/delete"
+					onclick="return confirm('以下のアカウントを削除してもよろしいでしょうか？\n${loginInfo.member_email }') ? alert('個人情報と欲しいものリストをすべて消去します。 \n'
+							+ 'また、IKEA Familyの特典も利用できなくなります。\n'
+							+ '税金やその他の法的な理由により、購入履歴は引き続き保持されます。'
+							+ 'ご利用いただきありがとうございました。またのご利用お待ちしております。') : false">アカウントを削除しますか?</a>
 			</div>
 			<div class="space"></div>
 		</div>
 	</div>
 </div>
-
 <script>
 	const items = document.querySelectorAll('.modify_item');
 	const input_email = document.getElementById('input_email')
@@ -339,6 +342,5 @@
 	
 // 	join_complete.addEventListener('click', submitHandler)
 </script>
-	
-	
+
 <%@ include file="../footer.jsp" %>

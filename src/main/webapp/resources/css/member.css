@@ -956,6 +956,12 @@ fieldset {
 	line-height: 1.5;
 	box-sizing: border-box;
 }
+.eyeImg {
+	position: relative;
+	left: -35px;
+	width: 24px;
+	height: 20px;
+}
 .post2 {
 	display: block;
 	width: 100%;

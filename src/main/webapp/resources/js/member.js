@@ -28,11 +28,11 @@ function tabHandler(n) {
 }
 
 //	編集<->閉じる
-function modifyHandler(event) {
+function modifyHandler() {
     const eventElement = document.getElementById(event.target.id)
     const toggleMenu1 = document.getElementById(event.target.id + '_toggle')
     const toggleMenu2 = document.getElementById(event.target.id + '_preview')
-
+    
     if (toggleMenu1.style.display == 'block') {
     	toggleMenu1.style.display = 'none';
     	toggleMenu2.style.display = 'block';
@@ -57,7 +57,7 @@ function changeEye(n) {
 	}
 }
 //	メールアドレス重複チェック
-function emailChecker(event) {
+function emailChecker() {
 	const email = document.getElementById('input_email').value;
 	
 	document.getElementById('mailCheck').innerHTML = ''
@@ -73,7 +73,7 @@ function emailChecker(event) {
     })
 }
 //	パスワードの制約条件チェック
-function pwChecker1(event) {
+function pwChecker1() {
 	document.getElementById('password2').value = ''
 	document.getElementById('pwCheck2').innerHTML = ''
 	
@@ -101,7 +101,7 @@ function pwChecker1(event) {
 	document.getElementById('pwCheck1').style.color = 'blue';
 }
 //	再入力パスワードか原本パスワードと一致するかチェック
-function pwChecker2(event) {
+function pwChecker2() {
     if (document.getElementById('password1').value != '' && document.getElementById('password2').value != '') {
         if (document.getElementById('password1').value == document.getElementById('password2').value) {
             document.getElementById('pwCheck2').innerHTML = 'パスワードが一致します'
@@ -113,7 +113,7 @@ function pwChecker2(event) {
     }
 }
 //	現在のパスワードと一致するかチェック
-function pwChecker3(event) {
+function pwChecker3() {
 	const pw = document.getElementById('password3').value;
 	
 	document.getElementById('pwCheck3').innerHTML = 'パスワードが一致しません'
@@ -129,7 +129,7 @@ function pwChecker3(event) {
     })
 }
 //	メールアドレスやパスワードの入力に問題があった場合、登録完了に進ませない (会員登録ページ)
-function submitHandler(event) {
+function joinHandler() {
 	const mail = document.getElementById('mailCheck').style.color
 	const pw1 = document.getElementById('pwCheck1').style.color
 	const pw2 = document.getElementById('pwCheck2').style.color
@@ -145,7 +145,28 @@ function submitHandler(event) {
 		return
 	}
 }
-//	メールアドレスやパスワードの入力に問題があった場合、顧客情報変更に進ませない (マイページ)
+//	メールアドレスに問題があった場合、情報変更不可 (マイページ)
+function modifyEmailHandler() {
+	const mail = document.getElementById('mailCheck').style.color
+	
+	if (input_email.value != '' && mail != 'blue') {
+		alert('新しいメールアドレスをもう一度確認してください')
+		event.preventDefault()
+		return
+	}
+}
+//	パスワードに問題があった場合、情報変更不可 (マイページ)
+function modifyPwHandler() {
+	const pw1 = document.getElementById('pwCheck1').style.color
+	const pw2 = document.getElementById('pwCheck2').style.color
+	const pw3 = document.getElementById('pwCheck3').style.color
+	
+	if (pw1 == 'red' || pw2 == 'red' || pw3 == 'red') {
+		alert('パスワードをもう一度確認してください')
+		event.preventDefault()
+		return
+	}
+}
 
 
 

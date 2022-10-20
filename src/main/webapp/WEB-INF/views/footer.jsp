@@ -2,14 +2,16 @@
     pageEncoding="UTF-8"%>
 
 <footer>
-      <div class="footer_container">
-          <div class="footer_main">
-              <div class="footer_main_left">
-                  <h3>IKEA Familyに入会する</h3>
-                  <p>IKEA Familyメンバーになると、お買い得な商品や便利なサービスなど、さまざまな会員特典をご利用いただけます。入会費・年会費無料。</p>
-                  <p><a href="#none">詳しく見る</a></p>
-                  <a class="footer_ikea_join" href="${cpath }/member/login">入会する</a>
-            </div>
+	<div class="footer_container">
+		<div class="footer_main">
+			<c:if test="${loginInfo == null }">
+				<div class="footer_main_left">
+					<h3>IKEA Familyに入会する</h3>
+					<p>IKEA Familyメンバーになると、お買い得な商品や便利なサービスなど、さまざまな会員特典をご利用いただけます。入会費・年会費無料。</p>
+					<p><a href="#none">詳しく見る</a></p>
+					<a class="footer_ikea_join" href="${cpath }/member/login">入会する</a>
+				</div>
+			</c:if>
             <div class="footer_main_right">
                 <ul class="footer_right_big">
                     <li>

@@ -34,8 +34,8 @@ public class MemberController {
 		MemberDTO login = mes.selectOne(dto);
 		
 		if(login == null) {
-			model.addAttribute("url", "back");
 			model.addAttribute("msg", "入力されたメールアドレスまたはパスワードが間違っています。再度お確かめの上ご入力ください。");
+			model.addAttribute("url", "back");
 			return "member/alert";
 		}
 		session.setAttribute("loginInfo", login);

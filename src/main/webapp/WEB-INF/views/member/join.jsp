@@ -206,7 +206,7 @@
 		
 		input_email.addEventListener('keyup', emailChecker)
 		input_email.addEventListener('blur', emailChecker)
-		join_complete.addEventListener('click', submitHandler)
+		join_complete.addEventListener('click', joinHandler)
 	</script>
 
 </body>

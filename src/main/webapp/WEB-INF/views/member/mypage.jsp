@@ -128,7 +128,7 @@
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_email').click()">
 							<span>キャンセル</span>
 						</button>
-						<button type="submit" class="modify_submit">
+						<button type="submit" class="modify_submit" onclick="modifyEmailHandler()">
 							<span>新しいメールアドレスを登録</span>
 						</button>
 					</div>
@@ -166,7 +166,7 @@
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_pw').click()">
 							<span>キャンセル</span>
 						</button>
-						<button id="modyfyPw_complete" type="submit" class="modify_submit">
+						<button id="modyfyPw_complete" type="submit" class="modify_submit" onclick="modifyPwHandler()">
 							<span>新しいパスワードを登録</span>
 						</button>
 					</div>
@@ -322,25 +322,24 @@
 				</div>
 				<p>お客様情報はいつでも削除できます。プロフィールの他に、関連付けられた情報が削除されます。</p>
 				<a href="${cpath }/member/delete"
-					onclick="return confirm('以下のアカウントを削除してもよろしいでしょうか？\n${loginInfo.member_email }') ? alert('個人情報と欲しいものリストをすべて消去します。 \n'
-							+ 'また、IKEA Familyの特典も利用できなくなります。\n'
-							+ '税金やその他の法的な理由により、購入履歴は引き続き保持されます。'
-							+ 'ご利用いただきありがとうございました。またのご利用お待ちしております。') : false">アカウントを削除しますか?</a>
+					onclick="return confirm('以下のアカウントを削除してもよろしいでしょうか？\n'
+							+ '${loginInfo.member_email }\n'
+							+ '個人情報と欲しいものリストをすべて消去します。 \n'
+							+ 'また、IKEA Familyの特典も利用できなくなります。') 
+							? alert('ご利用いただきありがとうございました。\nまたのご利用お待ちしております。') : false">アカウントを削除しますか?</a>
 			</div>
 			<div class="space"></div>
 		</div>
 	</div>
 </div>
+
 <script>
 	const items = document.querySelectorAll('.modify_item');
 	const input_email = document.getElementById('input_email')
-// 	const modyfyPw_complete = document.getElementById('modyfyPw_complete')
 	
 	items.forEach(item => item.addEventListener('click', modifyHandler));
 	input_email.addEventListener('keyup', emailChecker)
 	input_email.addEventListener('blur', emailChecker)
-	
-// 	join_complete.addEventListener('click', submitHandler)
 </script>
 
 <%@ include file="../footer.jsp" %>

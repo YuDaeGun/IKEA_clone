@@ -147,4 +147,8 @@ public class ProductService {
 		return cdao.getCateDesc(category_name);
 	}
 
+	public List<ProductAndImageDTO> searchView(String keyword) {
+		return pdao.searchView(keyword);
+	}
+
 }

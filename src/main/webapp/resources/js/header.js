@@ -73,3 +73,13 @@ function getSubCategory(event) {
 	})
 }
 
+function enterkey() {
+	console.log('실행!')
+	if (window.event.keyCode == 13) {
+		console.log('zzz')
+		
+	}
+//	const keyword = document.getElementById('searchProduct').value
+//	console.log(keyword)
+}
+

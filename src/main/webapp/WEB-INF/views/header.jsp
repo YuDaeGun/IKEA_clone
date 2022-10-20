@@ -26,7 +26,7 @@
 <body>
 	<header>
 		<div id="hnf_value" class="wrap">
-			<div class="hnf_message wrap">
+			<div class="hnf_message">
 				<div class="hnf_message_inner">
 					<a href="#none"><img src="${cpath }/IKEA_image/Truck.svg"><span>小物配送サービスがお手ごろ料金に！￥500～</span></a>
 				</div>
@@ -39,29 +39,25 @@
 			</div>
 		</div>
 		<div class="hnf_hamburger">
-			<div class="hnf_header_aside wrap">
+			<div class="hnf_header_aside">
 				<button type="button" class="hnf_btn_hamburger"><span><img src="${cpath }/IKEA_image/hamburger.svg"></span></button>
 				<button type="button" class="hnf_btn_menu"><span>メニュー</span></button>
 			</div>
 		</div>
 		<div class="wrap">
-			<div class="hnf_page_container wrap">
+			<div class="hnf_page_container">
 				<div class="hnf_header_container">
 					<div class="hnf_head_cont_logo">
 						<a href="${cpath }"><img src="${cpath }/IKEA_image/ikea.svg"></a>
 					</div>
-					<div class="hnf_header_search wrap">
-						<div class="hnf_header_searchForm wrap">
-							<form class="header_search">
-								<img class="lense" src="${cpath }/IKEA_image/lense.svg">
-								<input type="text" name="search" placeholder="商品・コンテンツを検索">
-								<span class="camera_btn">
-									<button type="submit"><img src="${cpath }/IKEA_image/camera.svg"></button>
-								</span>
-							</form>
+					<div class="hnf_header_search">
+						<div class="hnf_header_searchForm">
+							<img src="${cpath }/IKEA_image/lense.svg">
+							<input id="searchProduct" type="text" placeholder="商品・コンテンツを検索" onkeyup="if(window.event.keyCode == 13) enterkey()">
+							<img src="${cpath }/IKEA_image/camera.svg">
 						</div>
 					</div>
-					<div class="hnf_loginUI wrap">
+					<div class="hnf_loginUI">
 						<div class="hnf_login_container">
 							<c:if test="${empty loginInfo}">
 								<div class="hnf_login_profile">

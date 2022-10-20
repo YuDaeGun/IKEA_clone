@@ -120,4 +120,12 @@ public class ProductController {
 		mav.addObject("mediumcateList", ps.getSubCateWithImage(largecate));
 		return mav;
 	}
+	
+	@GetMapping("/product/searchView/{keyword}")
+	public ModelAndView searchView(@PathVariable String keyword) {
+		ModelAndView mav = new ModelAndView("/product/searchView");
+		mav.addObject("productList", ps.searchView(keyword));
+		
+		return mav;
+	}
 }

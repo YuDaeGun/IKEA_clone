@@ -45,8 +45,8 @@ public class MemberController {
 	}
 	
 	@GetMapping("/logout")
-	public String logout(HttpServletRequest request, Model model) {
-		request.getSession().invalidate();
+	public String logout(HttpSession session, Model model) {
+		session.invalidate();
 		
 		model.addAttribute("msg", "ログアウトされました。メインページに戻ります。");
 		return "member/alert";
@@ -97,6 +97,15 @@ public class MemberController {
 		session.setMaxInactiveInterval(60 * 60);
 	}
 	
+	@GetMapping("/delete")	
+	public String delete(HttpSession session) {
+		int userIdx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
+		mes.deleteAccByIdx(userIdx);
+
+		session.invalidate();
+		
+		return "redirect:/";
+	}
 	
 	
 	

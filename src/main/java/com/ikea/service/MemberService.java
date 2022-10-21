@@ -39,5 +39,9 @@ public class MemberService {
 	public MemberDTO selectOneByIdx(int member_idx) {
 		return dao.selectOneByIdx(member_idx);
 	}
+
+	public int deleteAccByIdx(int member_idx) {
+		return dao.deleteAccByIdx(member_idx);
+	}
 	
 }

@@ -2,6 +2,7 @@ package com.ikea.member;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface MemberDAO {
 
@@ -23,4 +24,7 @@ public interface MemberDAO {
 
 	// Dynamic Query使用 (config/member.xml)
 	int modifyMember(MemberDTO dto);
+
+	@Update("UPDATE MEMBER SET MEMBER_ISDELETED = 'Y' WHERE MEMBER_IDX = #{member_idx}")
+	int deleteAccByIdx(int member_idx);
 }

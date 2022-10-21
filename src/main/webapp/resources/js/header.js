@@ -72,14 +72,12 @@ function getSubCategory(event) {
 		}
 	})
 }
-
+//	検索機能
 function enterkey() {
-	console.log('실행!')
-	if (window.event.keyCode == 13) {
-		console.log('zzz')
-		
+	const keyword = document.getElementById('searchProduct').value
+	
+	if (keyword != '') {
+		location.href = cpath + '/product/searchView/' + keyword
 	}
-//	const keyword = document.getElementById('searchProduct').value
-//	console.log(keyword)
 }
 

@@ -476,7 +476,7 @@ button {
 	cursor: pointer;
 }
 #leng {
-	width: calc(100% - 17%);
+	width: 83%;
 	margin: 0 auto;
 	margin-left: 215px;
 	position: relative;
@@ -1047,4 +1047,7 @@ footer {
 }
 .swiper-button-next::after, .swiper-button-prev::after {
 	display: none;
+}
+.space {
+	height: 300px;
 }

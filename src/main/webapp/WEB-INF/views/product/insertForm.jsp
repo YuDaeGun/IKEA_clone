@@ -4,6 +4,7 @@
 <link type="text/css" rel="stylesheet" href="${cpath }/resources/css/product.css">
 
 <div class="insert_wrap all">
+	<div class="space"></div>
 	<h1>商品追加 (管理者専用ページ)</h1><br>
 	<div class="insert_wrap_container">
 	    <div class="input_wrap">

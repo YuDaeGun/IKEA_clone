@@ -3,8 +3,8 @@
 <%@ include file="../header.jsp" %>
 <link type="text/css" rel="stylesheet" href="${cpath }/resources/css/product.css">
 
-	
 	<div class="insert_wrap all">
+		<div class="space"></div>
 	    <h1>[${p.product_name}] 商品修正 (管理者専用ページ)</h1><br>
 	    <div class="input_wrap">
 	        <form id="addForm" method="post" enctype="multipart/form-data">

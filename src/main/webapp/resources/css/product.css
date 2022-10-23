@@ -79,4 +79,6 @@ label {
 	display: flex;
 	flex-wrap: wrap;
 }
-
+.space {
+	height: 30px;
+}

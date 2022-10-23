@@ -25,7 +25,7 @@ public class ProductController {
 	@RequestMapping("/")
 	public ModelAndView newProductList() {
 		ModelAndView mav = new ModelAndView("/home");
-		mav.addObject("newProducts", ps.newProductList());	// 신상품 10개
+		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
 
@@ -45,7 +45,7 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView("/product/view");
 		mav.addObject("p", ps.productSelectOne(product_idx));		// 해당 상품
 		mav.addObject("imageList", ps.imageSelect(product_idx));	// 해당상품의 이미지(들)
-		mav.addObject("newProducts", ps.newProductList());	// 신상품 10개
+		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
 	
@@ -124,8 +124,10 @@ public class ProductController {
 	@GetMapping("/product/searchView/{keyword}")
 	public ModelAndView searchView(@PathVariable String keyword) {
 		ModelAndView mav = new ModelAndView("/product/searchView");
+		mav.addObject("keyword", keyword);
 		mav.addObject("productList", ps.searchView(keyword));
-		
+		mav.addObject("numberOfResults", ps.searchView(keyword).size());
+		mav.addObject("newProducts", ps.newProductList());	// 검색결과가 없을 시 대신해서 출력
 		return mav;
 	}
 }

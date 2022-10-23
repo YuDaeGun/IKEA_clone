@@ -4,6 +4,7 @@
 <link type="text/css" rel="stylesheet" href="${cpath }/resources/css/product.css">
 
 	<div class="insert_wrap all">
+		<div class="space"></div>
 	    <h1>[${p.product_name}] 商品の追加・修正が完了しました (管理者専用ページ)</h1><br>
 	    <div class="input_wrap">
 	        <form>

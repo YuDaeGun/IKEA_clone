@@ -27,7 +27,7 @@ button {
     cursor: pointer;
 }
 #list_container {
-    width: calc(100% - 17%);
+    width: 83%;
     margin: 0 auto;
     margin-left: 215px;
 }
@@ -46,7 +46,7 @@ button {
     font-style: inherit;
     color: red;
 }
-.cateView_title_h2 {
+.cateView_title {
     font-size: 1.5rem;
     line-height: 1.45;
     letter-spacing: -0.0042em;
@@ -86,7 +86,6 @@ button {
 .cateView_sect4_productList {
 	display: flex;
 	flex-flow: wrap;
-	
     width: 100%;
     color: #000;
 }
@@ -97,7 +96,6 @@ button {
     padding-top: 40px;
     font-size: 14px;
     font-weight: 400px;
-    
 }
 .cateView_sect4_teaser_container div {
     font-weight: inherit;

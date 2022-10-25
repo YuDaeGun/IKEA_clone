@@ -19,8 +19,7 @@ import com.ikea.service.ProductService;
 public class ProductController {
 	private int product_idx = 0;
 	
-	@Autowired
-	private ProductService ps;
+	@Autowired private ProductService ps;
 
 	@RequestMapping("/")
 	public ModelAndView newProductList() {

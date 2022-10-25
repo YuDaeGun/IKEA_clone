@@ -92,10 +92,9 @@ button {
 .cateView_sect4_teaser_container {
     position: relative;
     width: 370px;
-    height: 530px;
+    height: 580px;
     padding-top: 40px;
     font-size: 14px;
-    font-weight: 400px;
 }
 .cateView_sect4_teaser_container div {
     font-weight: inherit;
@@ -119,18 +118,22 @@ button {
     opacity: 0;
     transition: opacity 0.5s linear;
     transition-duration: 0.2s;
-
 }
 .cateView_sect4_teaser_img:hover .cateView_sect4_banner2 {
     opacity: 1;
 }
 .cateView_sect4_teaser_content {
-    position: absolute;
+    position: relative;
     top: 395px;
     width: 370px;
-    height: 110px;
+    height: 130px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    position: relative;
+}
+.cateView_sect4_teaser_content div {
+	margin-bottom: 5px;
+}
+.cateView_sect4_teaser_content div:last-child {
+	margin-top: 5px;
 }

@@ -21,15 +21,14 @@ depth1.forEach((item, i) => {
         depth1.forEach((dep1) => (dep1.style.display = 'none'),(eventmenu.style.display = 'none'))
         {item === e.currentTarget ? (item.classList.add('on'), (item.style.display = 'block')) : null}
     })
-    item.querySelectorAll('li').forEach((dep2, ind) => {
+    item.querySelectorAll('li').forEach((dep2, idx) => {
         dep2.addEventListener('click', (e) => {
             depth2Wrap.querySelectorAll('.popupmenu_depth3').forEach((dep3) => {
                 dep3.querySelectorAll('.popupmenu_depth3_menu').forEach((dep3Div) => dep3Div.classList.remove('on'))
             })
             depth2Wrap.classList.add('on')
             depth2Wrap.querySelectorAll('.popupmenu_depth3')[i].classList.add('on')
-            depth2Wrap.querySelectorAll('.popupmenu_depth3')[i].querySelectorAll('.popupmenu_depth3_menu')[ind].classList.add('on')
-            console.log(ind)
+            depth2Wrap.querySelectorAll('.popupmenu_depth3')[i].querySelectorAll('.popupmenu_depth3_menu')[idx].classList.add('on')
         })
     })
 })
@@ -72,6 +71,8 @@ function getSubCategory(event) {
 		}
 	})
 }
+
+
 //	検索機能
 function enterkey() {
 	const keyword = document.getElementById('searchProduct').value

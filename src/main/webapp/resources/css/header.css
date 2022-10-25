@@ -155,13 +155,7 @@ button {
 	align-items: center;
 	justify-content: space-between;
 }
-.hnf_header_searchForm img:first-child {
-	position: relative;
-	width: 24px;
-	height: 24px;
-	left: 40px;
-}
-.hnf_header_searchForm img:last-child {
+.hnf_header_searchForm img {
 	position: relative;
 	width: 24px;
 	height: 24px;
@@ -170,6 +164,7 @@ button {
 #searchProduct {
 	width: 100%;
 	padding: 13px 0 13px 48px;
+	margin-left: 30px;
 	outline: 0;
 	border: 2px solid white;
 	border-radius: 20px;

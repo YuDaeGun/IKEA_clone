@@ -67,5 +67,6 @@ public interface ProductAndImageDAO {
 			+ "FROM PRODUCT JOIN PRODUCT_IMAGE ON PRODUCT_IDX = IMAGE_PI "
 			+ "WHERE IMAGE_ISTHUMBNAIL = 'Y' AND UPPER (PRODUCT_NAME) LIKE UPPER ('%${keyword}%')")
 	List<ProductAndImageDTO> searchView(String keyword);
+
 	
 }

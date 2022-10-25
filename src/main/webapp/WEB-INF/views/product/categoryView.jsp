@@ -69,6 +69,9 @@
 								</span>
 								<span>(${p.product_star })</span>
 							</div>
+							<div class="cateView_sect4_product_addcart">
+								<a href="${cpath }/addCart/${p.product_idx }/${p.product_name }"><img src="${cpath }/IKEA_image/addCartIcon.jpg"></a>
+							</div>
 						</div>
 					</div>
 				</div>			

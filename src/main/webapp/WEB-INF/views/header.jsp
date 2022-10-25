@@ -52,9 +52,8 @@
 					</div>
 					<div class="hnf_header_search">
 						<div class="hnf_header_searchForm">
-							<img src="${cpath }/IKEA_image/lense.svg">
 							<input id="searchProduct" type="text" placeholder="商品・コンテンツを検索" onkeyup="if(window.event.keyCode == 13) enterkey()">
-							<img src="${cpath }/IKEA_image/camera.svg">
+							<img src="${cpath }/IKEA_image/lense.svg" onclick="enterkey()">
 						</div>
 					</div>
 					<div class="hnf_loginUI">

@@ -84,6 +84,7 @@
 							<div class="hnf_login_btn">
 								<a href="${cpath }/product/cart">
 									<img src="${cpath }/IKEA_image/basket2.png">
+									<span>2</span>
 								</a>
 							</div>
 						</div>

@@ -1,5 +1,6 @@
 package com.ikea.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.servlet.http.Cookie;
@@ -16,24 +17,24 @@ import org.springframework.web.servlet.ModelAndView;
 public class CartController {
 
 	@GetMapping("/addCart/{product_idx}/{product_name}")
-	public ModelAndView addCookie(@PathVariable int product_idx, @PathVariable String product_name, 
+	public ModelAndView addCart(@PathVariable String product_idx, @PathVariable String product_name, 
 			HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("member/alert");
 		
-		Cookie[] list = request.getCookies();
+		Cookie[] cookieList = request.getCookies();
 		String cart = "";
-		for (Cookie cookie : list) {
+		for (Cookie cookie : cookieList) {
 			if (cookie.getName().equals("IKEA_CART")) {
 				cart = cookie.getValue();
 			}
 		}
 		
-		System.out.println("카트 문자열 : " + cart);
 		String[] arr = cart.split("&");
-		System.out.println("카트 속 상품 : " + Arrays.toString(arr));
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(arr));
 		
-		
-		cart = cart + product_idx + "&";
+		if (list.contains(product_idx) != true) {
+			cart = cart + product_idx + "&";
+		}
 		
 		Cookie cookie = new Cookie("IKEA_CART", cart);
 		cookie.setDomain("localhost");
@@ -46,7 +47,7 @@ public class CartController {
 		return mav;
 	}
 	
-	@GetMapping("/getCart")
+	@GetMapping("/getCartNumber")	//	カートの中の商品数
 	public String getCookie(HttpServletRequest request) {
 		
 		Cookie[] list = request.getCookies();
@@ -58,8 +59,20 @@ public class CartController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/resetCart")
-	public String deleteCookie(HttpServletRequest request, HttpServletResponse response) {
+	@GetMapping("/getCart")
+	public String getCart(HttpServletRequest request) {
+		
+		Cookie[] list = request.getCookies();
+		for (Cookie cookie : list) {
+			if (cookie.getName().equals("IKEA_CART")) {
+				System.out.println("쿠키 확인 : " + cookie.getValue());
+			}
+		}
+		return "redirect:/";
+	}
+	
+	@GetMapping("/deleteCart")
+	public String deleteCart(HttpServletRequest request, HttpServletResponse response) {
 		Cookie cookie = new Cookie("IKEA_CART", null);
 		cookie.setDomain("localhost");
 		cookie.setPath("/");

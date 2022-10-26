@@ -98,7 +98,9 @@
                         </div>
                     </div>
                     <div class="view_module_purchase">
-                        <button class="view_module_btnLeft"><span>カートに追加</span></button>
+                    	<a href="${cpath }/addCart/${p.product_idx }/${p.product_name }">
+                    		<button class="view_module_btnLeft"><span>カートに追加</span></button>
+                   		</a>
                         <div class="view_module_btnRight"><img src="${cpath }/IKEA_image/like.svg" alt=""></div>
                     </div>
                 </div>

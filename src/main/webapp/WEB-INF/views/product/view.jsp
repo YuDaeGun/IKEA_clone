@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="view_module_purchase">
-                   		<button onclick="addCart(${p.product_idx })" class="view_module_btnLeft"><span>ショッピングカートに追加</span></button>
+                   		<button onclick="addCart(${p.product_idx })" class="view_module_btnLeft"><span>カートに追加</span></button>
                         <div class="view_module_btnRight"><img src="${cpath }/IKEA_image/like.svg" alt=""></div>
                     </div>
                     <span id="addCartMsg${p.product_idx }" class="addCartMsg displayNone">✔カートに追加されました。</span>

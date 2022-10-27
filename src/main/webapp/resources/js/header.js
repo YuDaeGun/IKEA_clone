@@ -84,11 +84,17 @@ function enterkey() {
 //	カートアイコンの隣に商品数を表示
 function getCartNumber() {
 	const cartNumber = document.getElementById('cartNumber')
+	const circle = document.querySelector('.cartNumber_circle')
+	circle.classList.remove('displayNone')
 	
 	const url = cpath + '/getCartNumber'
 	fetch(url).then(resp => resp.json())
 	.then(n => {
 		cartNumber.innerHTML = n
+		if (n == 0) {
+			circle.classList.add('displayNone')
+			
+		}
 	})
 }
 window.addEventListener('load', getCartNumber())

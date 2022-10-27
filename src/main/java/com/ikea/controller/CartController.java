@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 public class CartController {
 
-	@GetMapping("/addCart/{product_idx}/{product_name}")
-	public ModelAndView addCart(@PathVariable String product_idx, @PathVariable String product_name, 
+	@GetMapping("/addCart/{product_idx}")
+	@ResponseBody
+	public void addCart(@PathVariable String product_idx, 
 			HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav = new ModelAndView("member/alert");
 		
 		Cookie[] cookieList = request.getCookies();
 		String cart = "";
@@ -32,7 +33,7 @@ public class CartController {
 		String[] arr = cart.split("&");
 		ArrayList<String> list = new ArrayList<String>(Arrays.asList(arr));
 		
-		if (list.contains(product_idx) != true) {
+		if (list.contains(product_idx) == false) {
 			cart = cart + product_idx + "&";
 		}
 		
@@ -41,22 +42,24 @@ public class CartController {
 		cookie.setPath("/");
 		cookie.setMaxAge(60 * 60 * 24);
 		response.addCookie(cookie);
-		
-		mav.addObject("msg", "「" + product_name + "」がカートに追加されました。");
-		mav.addObject("url", "back");
-		return mav;
 	}
 	
-	@GetMapping("/getCartNumber")	//	カートの中の商品数
-	public String getCookie(HttpServletRequest request) {
+	@GetMapping("/getCartNumber")
+	@ResponseBody
+	public int getCartNumber(HttpServletRequest request) {
 		
-		Cookie[] list = request.getCookies();
-		for (Cookie cookie : list) {
+		Cookie[] cookieList = request.getCookies();
+		String cart = "";
+		for (Cookie cookie : cookieList) {
 			if (cookie.getName().equals("IKEA_CART")) {
-				System.out.println("쿠키 확인 : " + cookie.getValue());
+				cart = cookie.getValue();
 			}
 		}
-		return "redirect:/";
+		if (cart != "") {
+			String[] arr = cart.split("&");
+			return arr.length;
+		}
+		return 0;
 	}
 	
 	@GetMapping("/getCart")

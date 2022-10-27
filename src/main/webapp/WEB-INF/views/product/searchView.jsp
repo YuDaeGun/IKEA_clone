@@ -50,7 +50,8 @@
 								<span>(${p.product_star })</span>
 							</div>
 							<div class="cateView_sect4_product_addcart">
-								<a href="${cpath }/addCart/${p.product_idx }/${p.product_name }"><img src="${cpath }/IKEA_image/addCartIcon.jpg"></a>
+								<img onclick="addCart(${p.product_idx })" src="${cpath }/IKEA_image/addCartIcon.jpg">
+								<span id="addCartMsg${p.product_idx }" class="displayNone">✔カートに追加されました。</span>
 							</div>
 						</div>
 					</div>

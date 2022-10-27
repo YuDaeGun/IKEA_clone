@@ -36,7 +36,7 @@ public class MemberController {
 		if(login == null) {
 			model.addAttribute("msg", "入力されたメールアドレスまたはパスワードが間違っています。再度お確かめの上ご入力ください。");
 			model.addAttribute("url", "back");
-			return "member/alert";
+			return "alert";
 		}
 		session.setAttribute("loginInfo", login);
 		session.setMaxInactiveInterval(60 * 60);
@@ -49,14 +49,14 @@ public class MemberController {
 		session.invalidate();
 		
 		model.addAttribute("msg", "ログアウトされました。メインページに戻ります。");
-		return "member/alert";
+		return "alert";
 	}
 	
 	@GetMapping("/join")
 	public void join() {}
 	@PostMapping("/join")
 	public ModelAndView join(MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
-		ModelAndView mav = new ModelAndView("member/alert");
+		ModelAndView mav = new ModelAndView("alert");
 		mes.join(dto);
 		mav.addObject("msg", "登録完了。ログインページに移動します。");
 		mav.addObject("url", "member/login");

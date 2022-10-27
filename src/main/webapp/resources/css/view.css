@@ -99,50 +99,9 @@ details > summary {
     width: 32px;
     height: 32px;
 }
-.view_sect3_filter {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.view_sect3_filter_count {
-    color: #dfdfdf;
-    font-size: 12px;
-    margin-right: 15px;
-}
-.view_sect3_filter_btn {
-    display: flex;
-}
-.view_sect3_toggle {
-    padding: 0 12px;
-    width: 25px;
-    height: 30px;
-    border: 1px solid #dfdfdf;
-    border-radius: 4px 0px 0px 4px;
-    background-color: inherit;
-}
-.view_sect3_toggle:last-child {
-    border-radius: 0 4px 4px 0;
-    border-left: none;
-}
-.view_sect3_pillOption {
-    margin-bottom: 20px;
-    border-bottom: #f5f5f5;
-}
-.view_sect3_pill {
-    height: 40px;
-    border: none;
-    border-radius: 64px;
-    background-color: #f5f5f5;
-    padding: 0 16px 0 24px;
-    margin-right: 8px;
-}
-.view_sect3_pill:hover {
-    background-color: #dfdfdf;
-}
 .view_module {
     padding: 0 40px;
     width: 439px;
-
 }
 .view_module_container {
     position: sticky;
@@ -239,6 +198,9 @@ details > summary {
     height: 56px;
     margin: 16px 0;
 }
+.view_module_btnLeft:hover {
+    background-color: #1a5095;
+}
 .view_module_btnLeft span {
     font-weight: bold;
     font-size: 16px;
@@ -264,4 +226,8 @@ details > summary {
 .showPrice {
 	font-size: 30px;
 	font-weight: bold;
+}
+.addCartMsg {
+	font-size: 18px;
+	margin-left: 10px;
 }

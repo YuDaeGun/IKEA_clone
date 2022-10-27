@@ -81,4 +81,30 @@ function enterkey() {
 		location.href = cpath + '/product/searchView/' + keyword
 	}
 }
+//	カートアイコンの隣に商品数を表示
+function getCartNumber() {
+	const cartNumber = document.getElementById('cartNumber')
+	
+	const url = cpath + '/getCartNumber'
+	fetch(url).then(resp => resp.json())
+	.then(n => {
+		cartNumber.innerHTML = n
+	})
+}
+window.addEventListener('load', getCartNumber())
+
+//	カートに商品追加
+async function addCart(n) {
+	const addCartMsg = document.getElementById('addCartMsg' + n)
+	
+	const url = cpath + '/addCart/' + n
+	await fetch(url)
+	
+	getCartNumber()
+	addCartMsg.classList.remove('displayNone')
+}
+
+
+
+
 

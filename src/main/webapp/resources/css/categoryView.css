@@ -134,6 +134,17 @@ button {
 .cateView_sect4_teaser_content div {
 	margin-bottom: 5px;
 }
-.cateView_sect4_teaser_content div:last-child {
+.cateView_sect4_product_addcart {
+	display: flex;
 	margin-top: 5px;
 }
+.cateView_sect4_product_addcart span {
+	margin: auto;
+	font-size: 18px;
+	position: relative;
+	right: 40px;
+}
+
+
+
+

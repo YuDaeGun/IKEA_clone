@@ -1046,3 +1046,6 @@ footer {
 .space {
 	height: 300px;
 }
+.displayNone {
+	display: none;
+}

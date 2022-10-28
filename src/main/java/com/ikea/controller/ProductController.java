@@ -21,6 +21,9 @@ public class ProductController {
 	
 	@Autowired private ProductService ps;
 
+	@GetMapping("product/cart")
+	public void cart() {}
+	
 	@RequestMapping("/")
 	public ModelAndView newProductList() {
 		ModelAndView mav = new ModelAndView("/home");

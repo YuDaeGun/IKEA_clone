@@ -107,6 +107,13 @@
 						<li><a href="#none">お買い得情報</a></li>
 					</ul>
 					<ul class="hnf_cont_nav_ul2">
+					
+						<li>
+							<a class="hnf_nav_btn" href="${cpath }/product/cart">
+								<span class="adminpage">カート</span>
+							</a>
+						</li>
+					
 						<li>
 							<a class="hnf_nav_btn" href="${cpath }/product/insertForm">
 								<span class="adminpage">商品追加</span>

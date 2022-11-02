@@ -25,22 +25,9 @@
 						</div>
                 	</div>
 					
-					<div class="join_promotion_info">
-						<div class="join_promotion_left">
-							<h3>IKEA Family</h3>
-							<a
-								href="https://www.ikea.com/jp/ja/profile/login/?from=https://www.ikea.com/jp/ja/shoppingcart/?isCartLogin=true"
-								class="cart-ingka-link">アカウントを作成 またはログインすると</a> 支払額はこちらになります： ¥
-							2,797
-						</div>
-						<div class="join_promotion_right">
-							<h3 class="loginPromo_familySavingsHeader__ylt8z">これだけお得</h3>
-							<span
-								class="cart-ingka-price cart-ingka-price--leading cart-ingka-price--leading cart-ingka-price--medium loginPromo_familySavingsPrice__p-kVK"
-								aria-label="これだけお得 ¥400"><span
-								class="cart-ingka-price__currency"></span><span
-								class="cart-ingka-price__integer">¥ 400</span></span>
-						</div>
+					<div class="purchase_button">
+						<span>購入にすすむ</span>
+						<div><img src="${cpath }/IKEA_image/arrow2.svg"></div>
 					</div>
 					
 					<div class="checkout_wrapper__FYF9N" data-cs-show="true">

@@ -245,6 +245,12 @@ details > summary {
     padding-left: 133px;
     width: 520px;
 }
+.cart_sect1_wrap {
+	margin-bottom: 40px;
+}
+.cart_sect1_wrap hr {
+	border: 1px solid black;
+}
 .cart_sect1_wrap > div {
 	display: flex;
     justify-content: space-between;
@@ -259,14 +265,36 @@ details > summary {
 .cart_sect1_wrap_price {
 	font-size: 22px;
 }
-.join_promotion_info {
-	border: 1px solid #dfdfdf;
+.purchase_button {
 	display: flex;
+	justify-content: space-between;
+	height: 120px;
+	background-color: #1d59a5;
 }
-.join_promotion_left h3 {
-	color: #2978c4
+.purchase_button img {
+	position: relative;
+	top: 5px;
+	left: 5px;
+	width: 25px;
+	height: 25px;
 }
-
+.purchase_button span:first-child {
+	margin: auto;
+	margin-left: 30px;
+	color: white;
+}
+.purchase_button > div {
+	margin: auto;
+	margin-right: 30px;
+	background-color: white;
+	border-radius: 100%;
+	width: 35px;
+	height: 35px;
+}
+.purchase_button:hover {
+	cursor: pointer;
+	background-color: #1a5095;
+}
 
 
 

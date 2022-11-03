@@ -153,7 +153,7 @@
 											<span>${p.product_desc }, ${p.product_length } x ${p.product_width }cm</span>
 										</div>
 										<div class="sect3_product_price">
-											<span>￦</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
+											<span>¥</span><h2><fmt:formatNumber value="${p.product_price }"/></h2>
 										</div>
 										<div class="sect3_product_star">
 											<span id="rating">

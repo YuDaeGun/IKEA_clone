@@ -317,6 +317,9 @@ button {
 	font-weight: bold;
 	margin-left: 5px;
 }
+.hnf_nav_btn > span > span {
+	margin-left: 10px;
+}
 .allmenu_popup {
 	position: fixed;
 	display: none;

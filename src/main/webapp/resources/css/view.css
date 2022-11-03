@@ -46,7 +46,7 @@ button {
 .detail_category_item a {
 	color: red;
 }
-.view {
+.displayFlex {
     display: flex;
 }
 .view_container {
@@ -234,12 +234,58 @@ details > summary {
 .cartSpace {
 	margin-bottom: 80px;
 }
-.dgcontents {
-	height: 1500px;
-	background-color: pink;
-}
 .cart_container {
 	width: 925px;
+}
+.cart_container > div {
+	margin-bottom: 22px;
+}
+.cart_container h1 {
+	font-size: 30px;
+}
+.cartList {
+	display: flex;
+}
+.cartList > div:first-child {
+	margin-right: 30px;
+}
+.cartList > div:nth-child(2) {
+	width: 100%;
+}
+.cartList img {
+	width: 140px;
+	height: 140px;
+}
+.cartList_firstRow {
+	display: flex;
+	justify-content: space-between;
+}
+.howToReceive {
+	display: flex;
+	justify-content: space-between;
+}
+.howToReceive > div {
+	height: 88px;
+	width: 453px;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+}
+.howToReceive > div:hover {
+	border: 1px solid black;
+	cursor: pointer;
+}
+.howToReceive img {
+	position: relative;
+	top: 5px;
+	margin-left: 20px;
+}
+.howToReceive span {
+	margin-left: 20px;
+}
+.howToReceive a {
+	line-height: 88px;
+	margin: auto;
+	text-decoration: none;
 }
 .cart_module {
     padding-left: 133px;
@@ -270,6 +316,8 @@ details > summary {
 	justify-content: space-between;
 	height: 120px;
 	background-color: #1d59a5;
+	margin-bottom: 40px;
+	border-radius: 4px;
 }
 .purchase_button img {
 	position: relative;
@@ -295,12 +343,30 @@ details > summary {
 	cursor: pointer;
 	background-color: #1a5095;
 }
-
-
-
-
-
-
+.purchase_info {
+	margin-top: 25px;
+}
+.purchase_info img {
+	position: relative;
+	top: 4px;
+	width: 21px;
+	height: 21px;
+}
+.purchase_info a {
+	text-decoration: underline;
+	margin-left: 15px;
+	font-size: 14px;
+}
+.purchase_info a:hover {
+	cursor: pointer;
+}
+.purchase_info div {
+	margin-bottom: 20px;
+}
+.cartList {
+	padding: 40px 0;
+	border-bottom: 1px solid #dfdfdf;
+}
 
 
 

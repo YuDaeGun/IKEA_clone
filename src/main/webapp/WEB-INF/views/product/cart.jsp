@@ -1,15 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-    <link type='text/css' rel="stylesheet" href="${cpath }/resources/css/view.css">
+<link type='text/css' rel="stylesheet" href="${cpath }/resources/css/view.css">
 
     <article id="detail_container">
         <div class="cartSpace"></div>
-        <div class="view">
+        <div class="displayFlex">
             <div class="cart_container">
-        		<div class="dgcontents"></div>
-            </div>
-            
+				<div><h1>カート</h1></div>            
+				<div>ご注文の品をどのように受取りますか？</div>
+				<div class="howToReceive">
+					<div>
+						<a href="#none">
+							<img src="${cpath }/IKEA_image/truck2.svg"><span>配送する</span>
+						</a>
+					</div>
+					<div>
+						<a href="#none">
+							<img src="${cpath }/IKEA_image/offline.svg"><span>店舗・商品受取りセンターで受取る</span>
+						</a>
+					</div>
+				</div>
+				<c:forEach var="p" items="${productList }">
+				<div class="cartList">
+					<div><img src="${cpath }/IKEA_productImage/${p.image_filename1 }"></div>
+					<div>
+						<div class="cartList_firstRow">
+							<a>${p.product_name }</a>
+							<span>¥<fmt:formatNumber value="${p.product_price}"/></span>
+						</div>
+						<div>${p.product_desc}<c:if test="${p.product_color != null}">, ${p.product_color}</c:if></div>
+						<div><c:if test="${p.product_length != 0}">${p.product_length} x ${p.product_width} cm</c:if></div>
+						<br>
+						<a class="delete">商品を削除する</a>
+					</div>
+				</div>
+				</c:forEach>
+				</div>
+				
             <div class="cart_module">
                 <div class="view_module_container">
                 	<div class="cart_sect1_wrap">
@@ -24,33 +52,25 @@
 							<b class="cart_sect1_wrap_price">¥3,197</b>
 						</div>
                 	</div>
-					
 					<div class="purchase_button">
 						<span>購入にすすむ</span>
 						<div><img src="${cpath }/IKEA_image/arrow2.svg"></div>
 					</div>
-					
-					<div class="checkout_wrapper__FYF9N" data-cs-show="true">
-						<button type="button"
-							class="cart-ingka-btn cart-ingka-btn--emphasised cart-ingka-btn--fluid orderCaptureRedirect_hideLg__3IhIW"
-							data-testid="checkoutButton__mobile">
-							<span class="cart-ingka-btn__inner"><span
-								class="cart-ingka-btn__label">購入にすすむ</span></span>
-						</button>
-						<button type="button"
-							class="cart-ingka-jumbo-btn cart-ingka-jumbo-btn--emphasised orderCaptureRedirect_onlyLg__F+8cy"
-							data-testid="checkoutButton__default">
-							<span class="cart-ingka-jumbo-btn__inner"><span
-								class="cart-ingka-jumbo-btn__label">購入にすすむ</span><span
-								class="cart-ingka-jumbo-btn__icon"><svg focusable="false"
-										viewBox="0 0 24 24" class="cart-ingka-svg-icon"
-										aria-hidden="true">
-										<path fill-rule="evenodd" clip-rule="evenodd"
-											d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
-						</button>
+					<hr>
+					<div class="purchase_info">
+						<div>
+							<img src="${cpath }/IKEA_image/couponIcon.jpg">
+							<a href="#none">クーポンコードをお持ちですか？</a>
+						</div>
+						<div>
+							<img src="${cpath }/IKEA_image/recycleIcon.jpg">
+							<a href="#none">365日 返品可能</a>
+						</div>
+						<div>
+							<img src="${cpath }/IKEA_image/padlockIcon.jpg">
+							<a href="#none">安全なショッピング SSLデータ暗号化</a>
+						</div>
 					</div>
-
-
 				</div>
             </div>
         </div>
@@ -81,7 +101,7 @@
 											<span>${p.product_desc }, ${p.product_length } x ${p.product_width }cm</span>
 										</div>
 										<div class="sect3_product_price">
-											<span>￦</span><h2><fmt:formatNumber value="${p.product_price }" /></h2>
+											<span>¥</span><h2><fmt:formatNumber value="${p.product_price }" /></h2>
 										</div>
 										<div class="sect3_product_star">
 											<span id="rating"> <img src="${cpath }/IKEA_image/${p.product_star >= 1 ? 'star.jpg' : p.product_star >= 0.5 ? 'halfstar.jpg' : 'nostar.jpg'}">

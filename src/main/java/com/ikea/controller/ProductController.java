@@ -20,9 +20,6 @@ public class ProductController {
 	private int product_idx = 0;
 	
 	@Autowired private ProductService ps;
-
-	@GetMapping("product/cart")
-	public void cart() {}
 	
 	@RequestMapping("/")
 	public ModelAndView newProductList() {

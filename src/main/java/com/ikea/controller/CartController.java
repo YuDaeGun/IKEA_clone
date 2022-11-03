@@ -7,16 +7,47 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ikea.product.ProductAndImageDTO;
+import com.ikea.service.ProductService;
+
 
 @Controller
 public class CartController {
 
+	@Autowired private ProductService ps;
+	
+	@GetMapping("product/cart")
+	public ModelAndView cart(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("product/cart");
+		
+		Cookie[] cookieList = request.getCookies();
+		String cart = "";
+		for (Cookie cookie : cookieList) {
+			if (cookie.getName().equals("IKEA_CART")) {
+				cart = cookie.getValue();
+			}
+		}
+		
+		String[] arr = cart.split("&");
+		ArrayList<ProductAndImageDTO> list = new ArrayList<ProductAndImageDTO>();
+		if (cart != "") {
+			for (String idx : arr) {
+				list.add(ps.productSelectOneWithImage(Integer.parseInt(idx)));
+			}
+		}
+		
+		mav.addObject("productList", list);
+		mav.addObject("newProducts", ps.newProductList());
+		return mav;
+	}
+	
 	@GetMapping("/addCart/{product_idx}")
 	@ResponseBody
 	public void addCart(@PathVariable String product_idx, 
@@ -34,7 +65,7 @@ public class CartController {
 		ArrayList<String> list = new ArrayList<String>(Arrays.asList(arr));
 		
 		if (list.contains(product_idx) == false) {
-			cart = cart + product_idx + "&";
+			cart = product_idx + "&" + cart;
 		}
 		
 		Cookie cookie = new Cookie("IKEA_CART", cart);

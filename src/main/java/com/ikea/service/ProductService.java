@@ -129,6 +129,10 @@ public class ProductService {
 		return pdao.productSelectOne(product_idx);
 	}
 
+	public ProductAndImageDTO productSelectOneWithImage(int product_idx) {
+		return pdao.productSelectOneWithImage(product_idx);
+	}
+
 	public List<ProductAndImageDTO> imageSelect(int product_idx) {
 		return pdao.imageSelect(product_idx);
 	}
@@ -150,6 +154,5 @@ public class ProductService {
 	public List<ProductAndImageDTO> searchView(String keyword) {
 		return pdao.searchView(keyword);
 	}
-
 
 }

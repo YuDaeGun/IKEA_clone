@@ -21,12 +21,13 @@
 						</a>
 					</div>
 				</div>
-				<c:forEach var="p" items="${productList }">
+				<c:forEach var="p" items="${productList }" varStatus="st">
 				<div class="cartList">
 					<div><img src="${cpath }/IKEA_productImage/${p.image_filename1 }"></div>
 					<div>
 						<div class="cartList_firstRow">
 							<a>${p.product_name }</a>
+							<a>${productNumber[st.index] }</a>
 							<span>¥<fmt:formatNumber value="${p.product_price}"/></span>
 						</div>
 						<div>${p.product_desc}<c:if test="${p.product_color != null}">, ${p.product_color}</c:if></div>

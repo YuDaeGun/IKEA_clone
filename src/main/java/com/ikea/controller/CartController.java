@@ -28,22 +28,25 @@ public class CartController {
 		ModelAndView mav = new ModelAndView("product/cart");
 		
 		Cookie[] cookieList = request.getCookies();
-		String cart = "";
+		String idx = "";
+		String number = "";
 		for (Cookie cookie : cookieList) {
-			if (cookie.getName().equals("IKEA_CART")) {
-				cart = cookie.getValue();
-			}
+			if (cookie.getName().equals("IKEA_CART_IDX")) idx = cookie.getValue();
+			if (cookie.getName().equals("IKEA_CART_NUMBER")) number = cookie.getValue();
 		}
 		
-		String[] arr = cart.split("&");
+		String[] idxArr = idx.split("&");
+		String[] numberArr = number.split("&");
+		
 		ArrayList<ProductAndImageDTO> list = new ArrayList<ProductAndImageDTO>();
-		if (cart != "") {
-			for (String idx : arr) {
-				list.add(ps.productSelectOneWithImage(Integer.parseInt(idx)));
+		if (idx != "") {
+			for (String s : idxArr) {
+				list.add(ps.productSelectOneWithImage(Integer.parseInt(s)));
 			}
 		}
 		
 		mav.addObject("productList", list);
+		mav.addObject("productNumber", numberArr);
 		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
@@ -54,25 +57,33 @@ public class CartController {
 			HttpServletRequest request, HttpServletResponse response) {
 		
 		Cookie[] cookieList = request.getCookies();
-		String cart = "";
+		String idx = "";
+		String number = "";
 		for (Cookie cookie : cookieList) {
-			if (cookie.getName().equals("IKEA_CART")) {
-				cart = cookie.getValue();
-			}
+			if (cookie.getName().equals("IKEA_CART_IDX")) idx = cookie.getValue();
+			if (cookie.getName().equals("IKEA_CART_NUMBER")) number = cookie.getValue();
 		}
 		
-		String[] arr = cart.split("&");
-		ArrayList<String> list = new ArrayList<String>(Arrays.asList(arr));
+		String[] idxArr = idx.split("&");
+		String[] numberArr = number.split("&");
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(idxArr));
 		
-		if (list.contains(product_idx) == false) {
-			cart = product_idx + "&" + cart;
+		int cartIdx = list.indexOf(product_idx);
+		if (cartIdx == -1) {					//	新たな商品をカートに追加する場合、
+			idx = product_idx + "&" + idx;		//	"IKEA_CART_IDX" Cookieに商品番号を記入し、
+			number = "1" + "&" + number;		//	"IKEA_CART_NUMBER" Cookieの同じ位置に数量(1)を記入する
+		} else { //	既にカートの中に入っている商品を再び追加する場合、IKEA_CART_NUMBERの文字列の中で、当該商品の数量を現す数字を探し、１増加させる
+			numberArr[cartIdx] = Integer.parseInt(numberArr[cartIdx]) + 1 + "";
+			number = "";
+			for (String s : numberArr) number += s + "&";
 		}
 		
-		Cookie cookie = new Cookie("IKEA_CART", cart);
-		cookie.setDomain("localhost");
-		cookie.setPath("/");
-		cookie.setMaxAge(60 * 60 * 24);
-		response.addCookie(cookie);
+		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
+		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
+		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setPath("/");				cookie2.setPath("/");
+		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
+		response.addCookie(cookie1);		response.addCookie(cookie2);
 	}
 	
 	@GetMapping("/getCartNumber")
@@ -82,13 +93,13 @@ public class CartController {
 		Cookie[] cookieList = request.getCookies();
 		String cart = "";
 		for (Cookie cookie : cookieList) {
-			if (cookie.getName().equals("IKEA_CART")) {
-				cart = cookie.getValue();
-			}
+			if (cookie.getName().equals("IKEA_CART_NUMBER")) cart = cookie.getValue();
 		}
 		if (cart != "") {
 			String[] arr = cart.split("&");
-			return arr.length;
+			int number = 0;
+			for (String s : arr) number += Integer.parseInt(s);
+			return number;
 		}
 		return 0;
 	}

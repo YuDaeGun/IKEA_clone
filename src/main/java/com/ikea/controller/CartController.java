@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,8 +46,14 @@ public class CartController {
 			}
 		}
 		
+		int total = 0;
+		for (int i = 0; i < list.size(); i++) {
+			total += list.get(i).getProduct_price() * Integer.parseInt(numberArr[i]);
+		}
+		
 		mav.addObject("productList", list);
 		mav.addObject("productNumber", numberArr);
+		mav.addObject("totalPrice", total);
 		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
@@ -104,26 +111,37 @@ public class CartController {
 		return 0;
 	}
 	
-	@GetMapping("/getCart")
-	public String getCart(HttpServletRequest request) {
+	@GetMapping("/deleteCart/{product_idx}")
+	public String deleteCart(@PathVariable String product_idx, Model model,
+			HttpServletRequest request, HttpServletResponse response) {
 		
-		Cookie[] list = request.getCookies();
-		for (Cookie cookie : list) {
-			if (cookie.getName().equals("IKEA_CART")) {
-				System.out.println("쿠키 확인 : " + cookie.getValue());
-			}
+		Cookie[] cookieList = request.getCookies();
+		String idx = "";
+		String number = "";
+		for (Cookie cookie : cookieList) {
+			if (cookie.getName().equals("IKEA_CART_IDX")) idx = cookie.getValue();
+			if (cookie.getName().equals("IKEA_CART_NUMBER")) number = cookie.getValue();
 		}
-		return "redirect:/";
-	}
-	
-	@GetMapping("/deleteCart")
-	public String deleteCart(HttpServletRequest request, HttpServletResponse response) {
-		Cookie cookie = new Cookie("IKEA_CART", null);
-		cookie.setDomain("localhost");
-		cookie.setPath("/");
-		cookie.setMaxAge(0);
-		response.addCookie(cookie);
 		
-		return "redirect:/";
+		String[] idxArr = idx.split("&");
+		String[] numberArr = number.split("&");
+		ArrayList<String> idxList = new ArrayList<String>(Arrays.asList(idxArr));
+		ArrayList<String> numberList = new ArrayList<String>(Arrays.asList(numberArr));
+		
+		int cartIdx = idxList.indexOf(product_idx);
+		idxList.remove(cartIdx);				 numberList.remove(cartIdx);
+		idx = "";								 number = "";
+		for (String s : idxList) idx += s + "&"; for (String s : numberList) number += s + "&";
+		
+		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
+		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
+		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setPath("/");				cookie2.setPath("/");
+		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
+		response.addCookie(cookie1);		response.addCookie(cookie2);
+		
+		model.addAttribute("url", "product/cart");
+		
+		return "redirect";
 	}
 }

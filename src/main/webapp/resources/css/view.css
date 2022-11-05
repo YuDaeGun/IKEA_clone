@@ -256,7 +256,7 @@ details > summary {
 	width: 140px;
 	height: 140px;
 }
-.cartList_firstRow {
+.cartList_row {
 	display: flex;
 	justify-content: space-between;
 }
@@ -308,8 +308,11 @@ details > summary {
 .cart_sect1_wrap span {
 	font-size: 14px;
 }
-.cart_sect1_wrap_price {
-	font-size: 22px;
+.cart_total_price {
+	font-size: 23px;
+}
+.unitPrice {
+	font-size: 13px;
 }
 .purchase_button {
 	display: flex;

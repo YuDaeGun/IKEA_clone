@@ -25,15 +25,21 @@
 				<div class="cartList">
 					<div><img src="${cpath }/IKEA_productImage/${p.image_filename1 }"></div>
 					<div>
-						<div class="cartList_firstRow">
+						<div class="cartList_row">
 							<a>${p.product_name }</a>
-							<a>${productNumber[st.index] }</a>
-							<span>¥<fmt:formatNumber value="${p.product_price}"/></span>
+							<span>¥<fmt:formatNumber value="${p.product_price * productNumber[st.index]}"/></span>
 						</div>
-						<div>${p.product_desc}<c:if test="${p.product_color != null}">, ${p.product_color}</c:if></div>
+						<div class="cartList_row">
+							<div>${p.product_desc}<c:if test="${p.product_color != null}">, ${p.product_color}</c:if></div>
+							<span class="unitPrice">
+								<c:if test="${productNumber[st.index] != 1 }">
+									(¥<fmt:formatNumber value="${p.product_price}"/> / 個)
+								</c:if>
+							</span>
+						</div>
 						<div><c:if test="${p.product_length != 0}">${p.product_length} x ${p.product_width} cm</c:if></div>
 						<br>
-						<a class="delete">商品を削除する</a>
+						<a href="${cpath }/deleteCart/${p.product_idx}" class="deleteCart">商品を削除する</a>
 					</div>
 				</div>
 				</c:forEach>
@@ -50,7 +56,7 @@
 						<hr>
 						<div>
 							<b>小計</b>
-							<b class="cart_sect1_wrap_price">¥3,197</b>
+							<b class="cart_total_price">¥<fmt:formatNumber value="${totalPrice}"/></b>
 						</div>
                 	</div>
 					<div class="purchase_button">

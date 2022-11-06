@@ -25,18 +25,18 @@
 	            <div class="inputProduct section2">
 	                <div class="inputChild">
 	                    <label for="inputProductName">*商品名</label>
-	                    <input id="inputProductName" type="text" name="product_name" value="${p.product_name }" required>
+	                    <input id="inputProductName" name="product_name" value="${p.product_name }" required>
 	                </div>
 	                <div class="inputChild">
 	                    <label for="inputProductDesc">構成</label>
-	                    <input id="inputProductDesc" type="text" name="product_desc" value="${p.product_desc }">
+	                    <input id="inputProductDesc" name="product_desc" value="${p.product_desc }">
 	                </div>
 	            </div>
 	            <div class="inputProduct section3">
 	                <div class="inputChild">
 	                	<div>
 		                    <label for="inputProductPrice">*価格</label>
-		                    <input id="inputProductPrice" type="text" name="product_price_String" onkeyup="inputNumberFormat(this)" 
+		                    <input id="inputProductPrice" name="product_price_String" onkeyup="inputNumberFormat(this)" 
 		                    value="<fmt:formatNumber value='${p.product_price}'/>" required>
 		                </div>
 		                <div><br>원</div>
@@ -49,7 +49,7 @@
 	            <div class="inputProduct section4">
 	                <div class="inputChild"> 
 	                    <label for="inputProductColor">色</label>
-	                    <input id="inputProductColor" type="text" name="product_color" value="${p.product_color }">
+	                    <input id="inputProductColor" name="product_color" value="${p.product_color }">
 	                </div>
 	                <div class="inputChild">
 		                <div>

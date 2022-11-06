@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 
 <div class="root">
@@ -80,12 +80,12 @@
 			<div class="phone_number1">携帯（または固定電話）<br>
 				<div class="phone_numberdiv">
 					<span>&nbsp;JP(+81)</span>
-					<input name="member_pnum" type="text" class="phone_number2" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+					<input name="member_pnum" class="phone_number2" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
 				</div>
 			</div>
 			<div>
 				<label for="input_zipcode">郵便番号 (半角)</label><br>
-				<input id="input_zipcode" name="member_zipcode" class="join_inputbox" required>
+				<input id="input_zipcode" name="member_zipcode" class="join_inputbox" required oninput="this.value = this.value.replace(/[^0-9-.]/g, '').replace(/(\..*?)\..*/g, '$1');">
 			</div>
 			<div>
 				<label for="input_address1">都道府県</label><br>
@@ -200,14 +200,14 @@
 	</div>
 </div>
 	
-	<script>
-		const input_email = document.getElementById('input_email')
-		const join_complete = document.getElementById('join_complete')
-		
-		input_email.addEventListener('keyup', emailChecker)
-		input_email.addEventListener('blur', emailChecker)
-		join_complete.addEventListener('click', joinHandler)
-	</script>
+<script>
+	const input_email = document.getElementById('input_email')
+	const join_complete = document.getElementById('join_complete')
+	
+	input_email.addEventListener('keyup', emailChecker)
+	input_email.addEventListener('blur', emailChecker)
+	join_complete.addEventListener('click', joinHandler)
+</script>
 
 </body>
 </html>

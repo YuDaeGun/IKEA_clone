@@ -144,4 +144,55 @@ public class CartController {
 		
 		return "redirect";
 	}
+	
+	@GetMapping("/modifyCartQuantity/{product_idx}/{quantity}")
+	public String modifyCartQuantity(@PathVariable String product_idx, @PathVariable String quantity,
+			Model model, HttpServletRequest request, HttpServletResponse response) {
+
+		Cookie[] cookieList = request.getCookies();
+		String idx = "";
+		String number = "";
+		for (Cookie cookie : cookieList) {
+			if (cookie.getName().equals("IKEA_CART_IDX")) idx = cookie.getValue();
+			if (cookie.getName().equals("IKEA_CART_NUMBER")) number = cookie.getValue();
+		}
+		
+		String[] idxArr = idx.split("&");
+		String[] numberArr = number.split("&");
+		ArrayList<String> idxList = new ArrayList<String>(Arrays.asList(idxArr));
+		ArrayList<String> numberList = new ArrayList<String>(Arrays.asList(numberArr));
+		
+		int cartIdx = idxList.indexOf(product_idx);
+		numberList.set(cartIdx, quantity);
+		number = "";
+		for (String s : numberList) number += s + "&";
+		
+		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
+		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
+		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setPath("/");				cookie2.setPath("/");
+		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
+		response.addCookie(cookie1);		response.addCookie(cookie2);
+		
+		model.addAttribute("url", "product/cart");
+		
+		return "redirect";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

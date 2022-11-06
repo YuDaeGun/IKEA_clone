@@ -26,20 +26,20 @@
 	            <div class="inputProduct section2">
 	                <div class="inputChild">
 	                    <label for="inputProductName">*商品名</label>
-	                    <input id="inputProductName" type="text" name="product_name" required>
+	                    <input id="inputProductName" name="product_name" required>
 	                </div>
 	                <div class="inputChild">
 	                    <label for="inputProductDesc">構成</label>
-	                    <input id="inputProductDesc" type="text" name="product_desc">
+	                    <input id="inputProductDesc" name="product_desc">
 	                </div>
 	            </div>
 	            <div class="inputProduct section3">
 	                <div class="inputChild">
 	                	<div>
 		                    <label for="inputProductPrice">*価格</label>
-		                    <input id="inputProductPrice" type="text" name="product_price_String" onkeyup="inputNumberFormat(this)" required>
+		                    <input id="inputProductPrice" name="product_price_String" onkeyup="inputNumberFormat(this)" required>
 		                </div>
-		                <div><br>원</div>
+		                <div><br>円</div>
 	                </div>
 	                <div class="inputChild">                
 	                    <label for="inputProductStock">*在庫</label>
@@ -49,7 +49,7 @@
 	            <div class="inputProduct section4">
 	                <div class="inputChild"> 
 	                    <label for="inputProductColor">色</label>
-	                    <input id="inputProductColor" type="text" name="product_color">
+	                    <input id="inputProductColor" name="product_color">
 	                </div>
 	                <div class="inputChild">
 		                <div>
@@ -105,5 +105,14 @@
 </div>
 
 <script src="${cpath }/resources/js/product.js"></script>
+
+<script>
+	window.addEventListener('load', loadHandler)
+	window.addEventListener('load', addMoreImageFile)
+	document.getElementById('addForm').addEventListener('submit', formSubmitHandler)
+	document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener('change', setThumbnail))
+	document.getElementById('largeCategory').addEventListener('change', getSubCategory)
+	document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
+</script>
 
 <%@ include file="../footer.jsp" %>

@@ -41,19 +41,19 @@
 					<div class="displayNone" id="modify_name_toggle">
 						<div>
 							<label>姓　例：山田
-							<input name="member_name1" class="account_insert" type="text" value="${loginInfo.member_name1 }" required></label>
+							<input name="member_name1" class="account_insert" value="${loginInfo.member_name1 }" required></label>
 						</div>
 						<div>
 							<label>姓 (フリガナ)　例：ヤマダ
-							<input name="member_name1_furigana" class="account_insert" type="text" value="${loginInfo.member_name1_furigana }" required></label>
+							<input name="member_name1_furigana" class="account_insert" value="${loginInfo.member_name1_furigana }" required></label>
 						</div>
 						<div>
 							<label>名　例：太郎
-							<input name="member_name2" class="account_insert" type="text" value="${loginInfo.member_name2 }" required></label>
+							<input name="member_name2" class="account_insert" value="${loginInfo.member_name2 }" required></label>
 						</div>
 						<div>
 							<label>名 (フリガナ)　例：タロウ
-							<input name="member_name2_furigana" class="account_insert" type="text" value="${loginInfo.member_name2_furigana }" required></label>
+							<input name="member_name2_furigana" class="account_insert" value="${loginInfo.member_name2_furigana }" required></label>
 						</div>
 						<div>
 							<label>誕生日 (YYYY-MM-DD)　例：1990-07-03
@@ -98,7 +98,7 @@
 					<div class="displayNone" id="modify_pnum_toggle">
 						<div>
 							<label>新しい電話番号
-							<input name="member_pnum" class="account_insert" type="text" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></label>
+							<input name="member_pnum" class="account_insert" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></label>
 						</div>
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_pnum').click()">
 							<span>キャンセル</span>
@@ -198,7 +198,7 @@
 					<div class="displayNone" id="modify_addr_toggle">
 						<div>
 							<label>郵便番号 (半角)
-							<input name="member_zipcode" class="account_insert" type="text" value="${loginInfo.member_zipcode }" required></label>
+							<input name="member_zipcode" class="account_insert" value="${loginInfo.member_zipcode }" required></label>
 						</div>
 						<div>
 							<label for="modi_addr1">都道府県</label>
@@ -256,15 +256,15 @@
 						</div>
 						<div>
 							<label>市区町村
-							<input name="member_address2" class="account_insert" type="text" value="${loginInfo.member_address2 }" required></label>
+							<input name="member_address2" class="account_insert" value="${loginInfo.member_address2 }" required></label>
 						</div>
 						<div>
 							<label>丁番地
-							<input name="member_address3" class="account_insert" type="text" value="${loginInfo.member_address3 }" required></label>
+							<input name="member_address3" class="account_insert" value="${loginInfo.member_address3 }" required></label>
 						</div>
 						<div>
 							<label>建物名・部屋番号 （任意）
-							<input name="member_address4" class="account_insert" type="text" value="${loginInfo.member_address4 }"></label>
+							<input name="member_address4" class="account_insert" value="${loginInfo.member_address4 }"></label>
 						</div>
 						<button type="button" class="modify_cancel" onclick="document.getElementById('modify_addr').click()">
 							<span>キャンセル</span>

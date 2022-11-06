@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <link type='text/css' rel="stylesheet" href="${cpath }/resources/css/view.css">
+<script src="${cpath }/resources/js/product.js"></script>
 
     <article id="detail_container">
         <div class="cartSpace"></div>
@@ -23,10 +24,14 @@
 				</div>
 				<c:forEach var="p" items="${productList }" varStatus="st">
 				<div class="cartList">
-					<div><img src="${cpath }/IKEA_productImage/${p.image_filename1 }"></div>
+					<div>
+						<a href="${cpath }/product/view/${p.product_idx }">
+							<img src="${cpath }/IKEA_productImage/${p.image_filename1 }">
+						</a>
+					</div>
 					<div>
 						<div class="cartList_row">
-							<a>${p.product_name }</a>
+							<a href="${cpath }/product/view/${p.product_idx }">${p.product_name }</a>
 							<span>¥<fmt:formatNumber value="${p.product_price * productNumber[st.index]}"/></span>
 						</div>
 						<div class="cartList_row">
@@ -37,13 +42,18 @@
 								</c:if>
 							</span>
 						</div>
-						<div><c:if test="${p.product_length != 0}">${p.product_length} x ${p.product_width} cm</c:if></div>
-						<br>
+						<div><c:if test="${p.product_length != 0}">${p.product_length} x ${p.product_width} cm</c:if></div><br>
+						数量 : 
+						<select onchange="changeQuantity(${p.product_idx })">
+							<c:forEach var="i" begin="1" end="1000">
+							<option value="${i }" ${productNumber[st.index] == i ? 'selected' : ''}>${i }</option>
+							</c:forEach>
+						</select><br><br>
 						<a href="${cpath }/deleteCart/${p.product_idx}" class="deleteCart">商品を削除する</a>
 					</div>
 				</div>
 				</c:forEach>
-				</div>
+			</div>
 				
             <div class="cart_module">
                 <div class="view_module_container">
@@ -133,6 +143,4 @@
 		
     </article>
     
-<script src="${cpath }/resources/js/product.js"></script>
-
 <%@ include file="../footer.jsp" %>

@@ -90,7 +90,9 @@ function getCartNumber() {
 	const url = cpath + '/getCartNumber'
 	fetch(url).then(resp => resp.json())
 	.then(n => {
-		cartNumber.innerHTML = n
+		if (n > 99) cartNumber.innerHTML = '99+'
+		else cartNumber.innerHTML = n
+		
 		if (n == 0) {
 			circle.classList.add('displayNone')
 			

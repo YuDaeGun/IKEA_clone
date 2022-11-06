@@ -1,10 +1,3 @@
-window.addEventListener('load', loadHandler)
-window.addEventListener('load', addMoreImageFile)
-document.getElementById('addForm').addEventListener('submit', formSubmitHandler)
-document.querySelectorAll('input[type="file"]').forEach(e => e.addEventListener('change', setThumbnail))
-document.getElementById('largeCategory').addEventListener('change', getSubCategory)
-document.getElementById('mediumCategory').addEventListener('change', getSubCategory)
-
 //	イメージ追加欄を追加(3個ずつ)
 function addMoreImageFile() {
 	$("#d_file").append("<div class='inputProduct'>")
@@ -49,7 +42,6 @@ function setThumbnail(event) {
       img.setAttribute("height", "180")
       img.setAttribute("width", "auto")
       event.target.nextElementSibling.appendChild(img)
-      // document.querySelector("div#preview1").appendChild(img)
     }
     reader.readAsDataURL(event.target.files[0])
 }
@@ -136,6 +128,7 @@ function loadHandler2(largecate, midiumcate, smallcate) {
 		}
 	})
 }
+
 //	矢印の方向転換
 function changeArrow(event) {
 	const toggleImage = document.getElementById('toggleImage')
@@ -151,3 +144,26 @@ function changeArrow(event) {
 		
 	}
 }
+
+//	カートの商品の数量変更
+async function changeQuantity(idx) {
+	const quantity = event.target.value
+	
+	url = cpath + '/modifyCartQuantity/' + idx + '/' + quantity
+	await fetch(url)
+	
+	location.href = cpath + '/product/cart'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -370,7 +370,11 @@ details > summary {
 	padding: 40px 0;
 	border-bottom: 1px solid #dfdfdf;
 }
-
+.deleteCart {
+	all: unset;
+	font-size: 14px;
+	cursor: pointer;
+}
 
 
 

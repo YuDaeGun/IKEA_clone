@@ -7,7 +7,6 @@
 	const fullurl = '${fullurl}'
 	
 	if (url == '' && fullurl == '') location.href = '${cpath}'
-	if (url == 'back') location.href = history.back()
 	if (url != '') location.href = '${cpath}/' + url
 	if (fullurl != '') location.href = fullurl
 </script>

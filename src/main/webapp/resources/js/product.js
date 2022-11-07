@@ -152,7 +152,7 @@ async function changeQuantity(idx) {
 	url = cpath + '/modifyCartQuantity/' + idx + '/' + quantity
 	await fetch(url)
 	
-	location.href = cpath + '/product/cart'
+	location.reload()
 }
 
 

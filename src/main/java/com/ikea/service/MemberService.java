@@ -40,8 +40,8 @@ public class MemberService {
 		return dao.selectOneByIdx(member_idx);
 	}
 
-	public int deleteAccByIdx(int member_idx) {
-		return dao.deleteAccByIdx(member_idx);
+	public int deleteAccByIdx(int member_idx, String member_email) {
+		return dao.deleteAccByIdx(member_idx, member_email);
 	}
 	
 }

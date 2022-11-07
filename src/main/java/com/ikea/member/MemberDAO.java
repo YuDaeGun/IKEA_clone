@@ -25,6 +25,6 @@ public interface MemberDAO {
 	// Dynamic Query使用 (config/member.xml)
 	int modifyMember(MemberDTO dto);
 
-	@Update("UPDATE MEMBER SET MEMBER_ISDELETED = 'Y' WHERE MEMBER_IDX = #{member_idx}")
-	int deleteAccByIdx(int member_idx);
+	@Update("UPDATE MEMBER SET MEMBER_EMAIL = '(DELETED)${arg1}', MEMBER_ISDELETED = 'Y' WHERE MEMBER_IDX = #{arg0}")
+	int deleteAccByIdx(int arg0, String arg1);
 }

@@ -146,8 +146,8 @@ public class CartController {
 	}
 	
 	@GetMapping("/modifyCartQuantity/{product_idx}/{quantity}")
-	public String modifyCartQuantity(@PathVariable String product_idx, @PathVariable String quantity,
-			Model model, HttpServletRequest request, HttpServletResponse response) {
+	public void modifyCartQuantity(@PathVariable String product_idx, @PathVariable String quantity,
+			HttpServletRequest request, HttpServletResponse response) {
 
 		Cookie[] cookieList = request.getCookies();
 		String idx = "";
@@ -173,10 +173,6 @@ public class CartController {
 		cookie1.setPath("/");				cookie2.setPath("/");
 		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
 		response.addCookie(cookie1);		response.addCookie(cookie2);
-		
-		model.addAttribute("url", "product/cart");
-		
-		return "redirect";
 	}
 }
 

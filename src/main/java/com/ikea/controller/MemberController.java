@@ -87,11 +87,11 @@ public class MemberController {
 	public void mypage() {}
 	@PostMapping("/mypage")
 	public void mypage(HttpSession session, MemberDTO dto) throws NoSuchAlgorithmException, NullPointerException {
-		int userIdx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
-		dto.setMember_idx(userIdx);
+		int member_idx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
+		dto.setMember_idx(member_idx);
 		
 		mes.modifyMember(dto);
-		MemberDTO login = mes.selectOneByIdx(userIdx);
+		MemberDTO login = mes.selectOneByIdx(member_idx);
 		
 		session.setAttribute("loginInfo", login);
 		session.setMaxInactiveInterval(60 * 60);
@@ -99,8 +99,9 @@ public class MemberController {
 	
 	@GetMapping("/delete")	
 	public String delete(HttpSession session) {
-		int userIdx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
-		mes.deleteAccByIdx(userIdx);
+		int member_idx = ((MemberDTO)session.getAttribute("loginInfo")).getMember_idx();
+		String member_email = ((MemberDTO)session.getAttribute("loginInfo")).getMember_email();
+		mes.deleteAccByIdx(member_idx, member_email);
 
 		session.invalidate();
 		

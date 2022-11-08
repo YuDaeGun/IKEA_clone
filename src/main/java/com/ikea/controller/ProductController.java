@@ -120,13 +120,13 @@ public class ProductController {
 		return mav;
 	}
 	
-	@GetMapping("/product/searchView/{keyword}")
-	public ModelAndView searchView(@PathVariable String keyword) {
+	@GetMapping("/product/searchView")
+	public ModelAndView searchView(String keyword) {
 		ModelAndView mav = new ModelAndView("/product/searchView");
-		mav.addObject("keyword", keyword);
+		mav.addObject("keyword", keyword.replaceAll("''", "'"));
 		mav.addObject("productList", ps.searchView(keyword));
 		mav.addObject("numberOfResults", ps.searchView(keyword).size());
-		mav.addObject("newProducts", ps.newProductList());	// 검색결과가 없을 시 대신해서 출력
+		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
 }

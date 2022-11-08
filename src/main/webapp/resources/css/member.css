@@ -664,7 +664,7 @@ fieldset {
 	background: none;
 	border: 0;
 	border-bottom: 2px solid #dfdfdf;
-	color: #484848;
+	color: red;
 	display: inline-block;
 	flex-shrink: 0;
 	font-size: 16px;
@@ -721,7 +721,7 @@ fieldset {
 	text-decoration: underline;
 }
 .account_modify {
-	color: black;
+	color: red;
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -911,6 +911,9 @@ fieldset {
 	background-color: #dfdfdf;
 	transition-duration: 250ms;
 }
+.modify_cancel > span {
+	color: red;
+}
 .modify_submit {
 	width: 555px;
 	height: 56px;
@@ -927,6 +930,9 @@ fieldset {
 .modify_submit:hover {
 	background-color: #4b4b4b;
 	transition-duration: 250ms;
+}
+.modify_submit > span {
+	color: red;
 }
 .street_add2 {
 	display: block;

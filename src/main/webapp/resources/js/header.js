@@ -72,15 +72,15 @@ function getSubCategory(event) {
 	})
 }
 
-
 //	検索機能
 function enterkey() {
-	const keyword = document.getElementById('searchProduct').value
+	var keyword = document.getElementById('searchProduct').value
 	
-	if (keyword != '') {
-		location.href = cpath + '/product/searchView/' + keyword
+	for (var i = 0; i < keyword.length; i++) {
+		if (keyword[i] != ' ') location.href = cpath + '/product/searchView?keyword=' + keyword.replaceAll("'", "''")
 	}
 }
+
 //	カートアイコンの隣に商品数を表示
 function getCartNumber() {
 	const cartNumber = document.getElementById('cartNumber')

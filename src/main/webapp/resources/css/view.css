@@ -260,6 +260,9 @@ details > summary {
 	display: flex;
 	justify-content: space-between;
 }
+.cartList_row a {
+	color: red;
+}
 .howToReceive {
 	display: flex;
 	justify-content: space-between;
@@ -373,7 +376,11 @@ details > summary {
 .deleteCart {
 	all: unset;
 	font-size: 14px;
+	color: red;
 	cursor: pointer;
+}
+.deleteCart:hover {
+	color: red;
 }
 
 

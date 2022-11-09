@@ -27,23 +27,23 @@ body {
 	margin-left: 60px;
 	padding: 32px 80px;
 }
-div.login_ex > .PwFind_big_white {
+div.toggle_left > .PwFind_big_white {
 	color: white;
 	font-size: 30px;
 	margin-bottom: 40px;
 }
-div.login_ex > .login_white {
+div.toggle_left > .login_white {
 	color: white;
 	font-size: 15px;
 	width: 400px;
 }
-div.login_act {
+div.toggle_right {
 	margin-top: 150px;
 	width: 700px;
 	height: 700px;
 	font-size: 18px;
 }
-.login_act input {
+.toggle_right input {
 	font-size: 20px;
 }
 .email_or_tele1 {
@@ -98,23 +98,22 @@ div.root {
 	margin-left: 90px;
 	justify-content: space-between;
 }
-div.login_ex {
-	display: flex;
+div.toggle_left {
 	flex-flow: column;
 	align-items: flex-start;
 	justify-content: space-between;
 }
-div.login_ex > h1 {
+div.toggle_left > h1 {
 	color: white;
 }
-.login_ex_img {
+.toggle_left_img {
 	display: flex;
 }
 .login_white2 {
 	color: white;
 	font-size: 12px;
 }
-.login_act_Id {
+.toggle_right_Id {
 	margin-bottom: 40px;
 }
 .username {
@@ -164,13 +163,15 @@ div.login_ex > h1 {
 .naver_login {
 	color: black;
 }
-.login_act_pw {
+.toggle_right_pw {
 	margin-bottom: 50px;
 }
-.find_pw {
+.forget_pw {
+	color: red;
 	font-size: 14px;
 	font-weight: bold;
 	text-decoration: underline;
+	cursor: pointer;
 }
 .login_ing {
 	margin-bottom: 40px;
@@ -187,7 +188,7 @@ div.login_ex > h1 {
 	background-color: #0058a3;
 	font-weight: 700;
 	font-size: 17px;
-	color: white;
+	color: red;
 	text-align: center;
 	cursor: pointer;
 	justify-content: center;
@@ -202,6 +203,7 @@ div.login_ex > h1 {
 	border-style: 1px solid black;
 	font-weight: 700;
 	font-size: 17px;
+	color: red;
 	text-align: center;
 	cursor: pointer;
 	justify-content: center;
@@ -654,6 +656,9 @@ fieldset {
 }
 .space {
 	height: 300px;
+}
+.pwResetSpace {
+	height: 200px;
 }
 .displayNone {
 	display: none;

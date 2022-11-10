@@ -170,27 +170,48 @@ function modifyPwHandler() {
 //	ログインページの画面転換
 function forgetPw() {
 	const toggle_left = document.querySelector('.toggle_left')
-	toggle_left.innerHTML = '<h1 class="login_title">パスワードリセット</h1>'
-						  + '<p class="login_white">'
-						      + 'メールアドレスを入力し、臨時パスワードを受信する。'
-						  + '</p>'
-						
+	toggle_left.innerHTML = `	<h1 class="login_title">パスワードリセット</h1>
+								<p class="login_white">
+									メールアドレスを入力し、臨時パスワードを受信する。
+								</p>`
+						   
 	const toggle_right = document.querySelector('.toggle_right')
-	toggle_right.innerHTML = '<form>'
-							   + '<div class="pwResetSpace"></div>'
-							   + '<div class="toggle_right_Id">'
-							       + '<label for="input_mail">確認済みのメールアドレス</label><br>'
-							       + '<input id="input_mail" type="email" class="username" required>'
-							   + '</div>'
-							   + '<div>'
-							       + '<button class="login_bt" onclick="sendMail()">'
-							           + '<span>パスワードをリセットする</span>'
-							       + '</button>'
-							   + '</div>'
-						   + '</form>'
+	toggle_right.innerHTML = `	<form onsubmit="sendMail()">
+									<div class="pwResetSpace"></div>
+										<div class="toggle_right_Id">
+										<label for="input_mail">確認済みのメールアドレス</label><br>
+											<input id="input_mail" type="email" name="userEmail" class="username" required>
+										</div>
+										<div>
+										<button class="login_bt">
+											<span>パスワードをリセットする</span>
+										</button>
+									</div>
+								</form>`
 }
-// sendMail() functionを作成 -> msg : 送信されるメール本文にある説明にしたがってパスワードを再登録してください。　メール受信には10分少々かかることがあります。
-
+//	確認されたメールアドレスに臨時パスワードを送信
+function sendMail() {
+	console.log('JS 실행')
+	event.preventDefault()
+	
+	const formData = new FormData(event.target)
+	const ob = {}
+	for(let key of formData.keys()) {
+		ob[key] = formData.get(key)
+	}
+	fetch(cpath + '/member/sendMail', {
+		method: 'POST', 
+		body: ob.userEmail,
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8'
+		}
+	})
+	.then(resp => resp.text())
+	.then(text => {
+		alert(text)
+		event.target.reset()
+	})
+}
 
 
 

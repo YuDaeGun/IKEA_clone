@@ -116,13 +116,9 @@ public class MemberController {
 	@PostMapping(value="/sendMail", produces="application/json; charset=utf-8")
 	@ResponseBody
 	public String sendMail(@RequestBody String userEmail) 
-			throws IOException, AddressException, MessagingException {
-		System.out.println("컨트롤러 실행");
-		
-		System.out.println("입력받은 userEmail : " + userEmail);
+			throws IOException, AddressException, MessagingException, NoSuchAlgorithmException, NullPointerException {
 		int row = ms.sendMail(userEmail);
-		return row == 1 ? "성공" : "실패";
+		return row == 1 ? "「" + userEmail + "」\nに臨時パスワードを送信しました。" : "メール送信に失敗しました。";
 	}
-	
 }
 

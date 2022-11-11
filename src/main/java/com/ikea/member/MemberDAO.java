@@ -22,6 +22,9 @@ public interface MemberDAO {
 	@Select("SELECT * FROM MEMBER WHERE MEMBER_IDX = #{member_idx}")
 	MemberDTO selectOneByIdx(int member_idx);
 
+	@Select("SELECT * FROM MEMBER WHERE MEMBER_EMAIL = #{member_email}")
+	MemberDTO selectOneByEmail(String member_email);
+
 	// Dynamic Query使用 (config/member.xml)
 	int modifyMember(MemberDTO dto);
 

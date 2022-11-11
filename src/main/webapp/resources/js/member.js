@@ -176,7 +176,7 @@ function forgetPw() {
 								</p>`
 						   
 	const toggle_right = document.querySelector('.toggle_right')
-	toggle_right.innerHTML = `	<form onsubmit="sendMail()">
+	toggle_right.innerHTML = `	<form onsubmit="sendMail(event)">
 									<div class="pwResetSpace"></div>
 										<div class="toggle_right_Id">
 										<label for="input_mail">確認済みのメールアドレス</label><br>
@@ -189,9 +189,8 @@ function forgetPw() {
 									</div>
 								</form>`
 }
-//	確認されたメールアドレスに臨時パスワードを送信
-function sendMail() {
-	console.log('JS 실행')
+//	入力されたメールアドレスに臨時パスワードを送信
+function sendMail(event) {
 	event.preventDefault()
 	
 	const formData = new FormData(event.target)

@@ -3,42 +3,42 @@
 	font-family: 'Noto Sans JP', sans-serif;
 }
 .inputProduct {
-    display: flex;
-    margin-bottom: 10px;
+	display: flex;
+	margin-bottom: 10px;
 }
 label {
-    display: block;
-    font-size: 15px;
+	display: block;
+	font-size: 15px;
 }
 .insert_wrap {
 	margin-left: 216px;
 }
-.insert_wrap h1{
-	margin: auto;
+.insert_wrap h1 {
 	font-size: 23px;
+	margin: auto;
 	margin-right: 20px;
 }
 .inputChild {
 	width: 285px;
 }
 .inputChild input {
-	width: 235px;
+	font-size: 17px;
 	height: 20px;
-    font-size: 17px;
+	width: 235px;
 }
 #inputProductPrice {
 	text-align: right;
 	width: 220px;
 }
-#inputProductStock, #inputProductLength, #inputProductWidth, #inputProductHeight {
-    width: 70px;
+#inputProductHeight, #inputProductLength, #inputProductStock, #inputProductWidth {
+	width: 70px;
 }
 .inputProduct {
 	width: 570px;
 }
 .inputProduct textarea {
-	width: 570px;
 	box-sizing: border-box;
+	width: 570px;
 }
 .selectInputChild {
 	width: 190px;
@@ -66,9 +66,9 @@ label {
 	height: 180px;
 }
 .section8 {
-	margin-top: 15px;
 	display: flex;
 	justify-content: space-between;
+	margin-top: 15px;
 	width: 680px;
 }
 .section9 {

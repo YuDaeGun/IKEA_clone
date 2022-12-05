@@ -63,7 +63,7 @@ function emailChecker() {
 	document.getElementById('mailCheck').innerHTML = ''
 	document.getElementById('mailCheck').style.color = 'blue'
 	
-	const url = cpath + '/member/emailDupCheck/' + email.replace('.', '_')
+	const url = cpath + '/member/emailDupCheck/' + email.replaceAll('.', '_')
 	fetch(url).then(resp => resp.json())
 	.then(json => {
         if (json != null) {
@@ -194,6 +194,8 @@ function sendMail(event) {
 	event.preventDefault()
 	
 	const formData = new FormData(event.target)
+	event.target.reset()
+
 	const ob = {}
 	for(let key of formData.keys()) {
 		ob[key] = formData.get(key)
@@ -208,7 +210,6 @@ function sendMail(event) {
 	.then(resp => resp.text())
 	.then(text => {
 		alert(text)
-		event.target.reset()
 	})
 }
 

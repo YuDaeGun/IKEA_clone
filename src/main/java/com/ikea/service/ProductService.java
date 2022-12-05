@@ -24,6 +24,7 @@ public class ProductService {
 	@Autowired private CategoryDAO cdao;
 	private String imageRepoFolder = "D:\\IKEA_productImage";
 	
+	
 	public ProductService() {
 		File dir = new File(imageRepoFolder);
 		if(dir.exists() && dir.isFile()) dir.delete();
@@ -36,7 +37,7 @@ public class ProductService {
 	}
 	@Transactional
 	public int imageInsert(List<MultipartFile> imageFileList) throws IllegalStateException, IOException {
-		int image_pi = pdao.getLastProductIdx();	// 마지막에 등록된 상품의 인덱스
+		int image_pi = pdao.getLastProductIdx();	//	最後に登録された商品のインデクス
 		for (int i = 0; i < imageFileList.size(); i++) {
 			MultipartFile imageFile = imageFileList.get(i);
 			if (imageFile.getSize() == 0) continue;
@@ -54,7 +55,7 @@ public class ProductService {
 			imageFile.transferTo(dest);
 			
 			if (i == 1) {
-				int image_idx = pdao.getLastImageIdx();	// 마지막에 등록된 이미지의 인덱스
+				int image_idx = pdao.getLastImageIdx();	//	最後に登録されたイメージのインデクス
 				pdao.insertFilename2(image_idx, newFileName);
 				continue;
 			}
@@ -75,8 +76,8 @@ public class ProductService {
 	}
 	@Transactional
 	public int imageModify(List<MultipartFile> imageFileList, int product_idx) throws IllegalStateException, IOException {
-		int image_pi = product_idx;		// 수정 할 상품의 인덱스
-		pdao.deleteOldImage(image_pi);	// 원래 있던 이미지(들) 삭제
+		int image_pi = product_idx;		//	修正したい商品のインデクス
+		pdao.deleteOldImage(image_pi);	//	本来にあったイメージ(1枚以上)を削除
 		for (int i = 0; i < imageFileList.size(); i++) {
 			MultipartFile imageFile = imageFileList.get(i);
 			if (imageFile.getSize() == 0) continue;
@@ -94,7 +95,7 @@ public class ProductService {
 			imageFile.transferTo(dest);
 			
 			if (i == 1) {
-				int image_idx = pdao.getLastImageIdx();	// 마지막에 등록된 이미지의 인덱스
+				int image_idx = pdao.getLastImageIdx();
 				pdao.insertFilename2(image_idx, newFileName);
 				continue;
 			}

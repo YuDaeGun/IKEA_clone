@@ -42,8 +42,8 @@ public class ProductController {
 	@GetMapping("/product/view/{product_idx}")
 	public ModelAndView productView(@PathVariable int product_idx) {
 		ModelAndView mav = new ModelAndView("/product/view");
-		mav.addObject("p", ps.productSelectOne(product_idx));		// 해당 상품
-		mav.addObject("imageList", ps.imageSelect(product_idx));	// 해당상품의 이미지(들)
+		mav.addObject("p", ps.productSelectOne(product_idx));		//	該当商品
+		mav.addObject("imageList", ps.imageSelect(product_idx));	//	該当商品のイメージ(1枚以上)
 		mav.addObject("newProducts", ps.newProductList());
 		return mav;
 	}
@@ -54,8 +54,8 @@ public class ProductController {
 	public ModelAndView productInsert(ProductAndImageDTO dto) throws Exception {
 		List<MultipartFile> imageFileList = dto.getImageFile();
 		
-		ps.productInsert(dto);	// 상품 등록
-		product_idx = ps.imageInsert(imageFileList);	// 이미지(들) 등록 후 마지막에 등록된 상품의 인덱스를 반환
+		ps.productInsert(dto);	//	商品登録
+		product_idx = ps.imageInsert(imageFileList);	//	イメージ(1枚以上)登録後、最後に登録された商品のインデクスをリターン
 
 		ModelAndView mav = new ModelAndView("/product/insertResult");
 		mav.addObject("p", ps.productSelectOne(product_idx));
@@ -93,7 +93,7 @@ public class ProductController {
 		String smallcate = null;
 		mav.addObject("largecate", largecate);
 
-		if (large_medium_small.split("_").length == 3) {	// 대,중,소분류 카테고리 모두 받았을 때
+		if (large_medium_small.split("_").length == 3) {	//	大中小分類の全てのカテゴリー情報が入った場合
 			mediumcate = large_medium_small.split("_")[1];
 			smallcate = large_medium_small.split("_")[2];
 			mav.addObject("smallcate", smallcate);
@@ -102,7 +102,7 @@ public class ProductController {
 			mav.addObject("cateDesc", ps.getCateDesc(smallcate));
 			mav.addObject("productList", ps.smallCateView(smallcate));
 			return mav;
-		} else if (large_medium_small.split("_").length == 2) {	// 대,중분류 카테고리만 받았을 때
+		} else if (large_medium_small.split("_").length == 2) {	//	大と中分類のカテゴリー情報が入った場合
 			mediumcate = large_medium_small.split("_")[1];
 			mav.addObject("mediumcate", mediumcate);
 			
@@ -112,7 +112,7 @@ public class ProductController {
 			mav.addObject("smallcateList", ps.getSubCateWithImage(mediumcate));
 			return mav;
 		}
-		// 대분류 카테고리만 받았을 때
+		//	大分類のカテゴリー情報だけ入った場合
 		mav.addObject("cateDesc", ps.getCateDesc(largecate));
 		mav.addObject("productList", ps.largeCateView(largecate));
 		

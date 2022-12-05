@@ -75,9 +75,10 @@ public class MailService {
 			mimeMessage.setFrom(from);
 			mimeMessage.setRecipient(Message.RecipientType.TO, to);
 			
-			String newPw = UUID.randomUUID().toString().replaceAll("-", "");
+			String newPw = UUID.randomUUID().toString().replaceAll("-", "").substring(0, 10);
+			
 			mimeMessage.setSubject("臨時パスワード");
-			mimeMessage.setText("様に臨時発行されたパスワードは「" + newPw + "」です。\n"
+			mimeMessage.setText(dto.getMember_name1() + "様に臨時発行されたパスワードは「" + newPw + "」です。\n"
 					+ "臨時パスワードを使用してログインした後、設定したいパスワードに変更してください。");
 			Transport.send(mimeMessage);
 

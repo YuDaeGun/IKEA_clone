@@ -39,7 +39,7 @@
 		                    <input id="inputProductPrice" name="product_price_String" onkeyup="inputNumberFormat(this)" 
 		                    value="<fmt:formatNumber value='${p.product_price}'/>" required>
 		                </div>
-		                <div><br>원</div>
+		                <div><br>円</div>
 	                </div>
 	                <div class="inputChild">                
 	                    <label for="inputProductStock">*在庫</label>

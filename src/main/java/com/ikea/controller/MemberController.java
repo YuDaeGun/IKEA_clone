@@ -71,7 +71,7 @@ public class MemberController {
 	@GetMapping("/emailDupCheck/{member_email}")
 	@ResponseBody
 	public MemberDTO emailDupCheck(@PathVariable String member_email) {
-		MemberDTO dto = mes.emailDupCheck(member_email.replace("_", "."));
+		MemberDTO dto = mes.emailDupCheck(member_email.replaceAll("_", "."));
 		return dto;
 	}
 
@@ -118,7 +118,8 @@ public class MemberController {
 	public String sendMail(@RequestBody String userEmail) 
 			throws IOException, AddressException, MessagingException, NoSuchAlgorithmException, NullPointerException {
 		int row = ms.sendMail(userEmail);
-		return row == 1 ? "「" + userEmail + "」\nに臨時パスワードを送信しました。" : "メール送信に失敗しました。";
+		return row == 1 ? "「" + userEmail + "」\nに臨時パスワードを送信しました。" : "メール送信に失敗しました。\n"
+																		+ "メールアドレスをもう一度確認してください。\n「" + userEmail + "」";
 	}
 }
 

@@ -10,7 +10,7 @@
 		<div class="login_main">
 			<div class="toggle_left_img">
 				<div class="login_logo">
-					<a href="${cpath }"><img src="${cpath }/IKEA_image/white_Logo.svg"></a>
+					<a href="${cpath }/"><img src="${cpath }/IKEA_image/white_Logo.svg"></a>
 				</div>
 			</div>
 			

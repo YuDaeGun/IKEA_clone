@@ -87,7 +87,7 @@ public class CartController {
 		
 		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
 		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
-		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setDomain("yudaegun.tk");	cookie2.setDomain("yudaegun.tk");
 		cookie1.setPath("/");				cookie2.setPath("/");
 		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
 		response.addCookie(cookie1);		response.addCookie(cookie2);
@@ -135,7 +135,7 @@ public class CartController {
 		
 		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
 		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
-		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setDomain("yudaegun.tk");	cookie2.setDomain("yudaegun.tk");
 		cookie1.setPath("/");				cookie2.setPath("/");
 		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
 		response.addCookie(cookie1);		response.addCookie(cookie2);
@@ -169,7 +169,7 @@ public class CartController {
 		
 		Cookie cookie1 = new Cookie("IKEA_CART_IDX", idx);
 		Cookie cookie2 = new Cookie("IKEA_CART_NUMBER", number);
-		cookie1.setDomain("localhost");		cookie2.setDomain("localhost");
+		cookie1.setDomain("yudaegun.tk");	cookie2.setDomain("yudaegun.tk");
 		cookie1.setPath("/");				cookie2.setPath("/");
 		cookie1.setMaxAge(60 * 60 * 24);	cookie2.setMaxAge(60 * 60 * 24);
 		response.addCookie(cookie1);		response.addCookie(cookie2);

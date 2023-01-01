@@ -15,7 +15,7 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/IKEA_image/**" location="/resources/IKEA_image/" />
-	<resources mapping="/IKEA_productImage/**" location="file:D:/IKEA_productImage/" />
+	<resources mapping="/IKEA_productImage/**" location="file:/IKEA_productImage/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

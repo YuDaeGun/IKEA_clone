@@ -22,7 +22,7 @@ public class ProductService {
 	
 	@Autowired private ProductAndImageDAO pdao;
 	@Autowired private CategoryDAO cdao;
-	private String imageRepoFolder = "D:\\IKEA_productImage";
+	private String imageRepoFolder = "/IKEA_productImage";
 	
 	
 	public ProductService() {

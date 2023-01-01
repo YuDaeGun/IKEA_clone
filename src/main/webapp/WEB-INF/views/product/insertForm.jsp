@@ -29,8 +29,8 @@
 	                    <input id="inputProductName" name="product_name" required>
 	                </div>
 	                <div class="inputChild">
-	                    <label for="inputProductDesc">構成</label>
-	                    <input id="inputProductDesc" name="product_desc">
+	                    <label for="inputProductDesc">*構成</label>
+	                    <input id="inputProductDesc" name="product_desc" required>
 	                </div>
 	            </div>
 	            <div class="inputProduct section3">

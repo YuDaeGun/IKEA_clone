@@ -6,7 +6,7 @@
 	const url = '${url}'
 	const fullurl = '${fullurl}'
 	
-	if (url == '' && fullurl == '') location.href = '${cpath}'
+	if (url == '' && fullurl == '') location.href = '${cpath}/'
 	if (url != '') location.href = '${cpath}/' + url
 	if (fullurl != '') location.href = fullurl
 </script>

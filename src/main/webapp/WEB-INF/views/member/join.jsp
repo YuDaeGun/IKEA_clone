@@ -10,7 +10,7 @@
 		<div class="join_main">
 			<div class="_img">
 				<div class="join_logo">
-					<a href="${cpath }">
+					<a href="${cpath }/">
 						<img class="join_logo2" src="${cpath }/IKEA_image/Ikea_logo.svg.png">
 					</a>
 				</div>

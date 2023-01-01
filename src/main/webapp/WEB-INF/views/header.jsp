@@ -48,7 +48,7 @@
 			<div class="hnf_page_container">
 				<div class="hnf_header_container">
 					<div class="hnf_head_cont_logo">
-						<a href="${cpath }"><img src="${cpath }/IKEA_image/ikea.svg"></a>
+						<a href="${cpath }/"><img src="${cpath }/IKEA_image/ikea.svg"></a>
 					</div>
 					<div class="hnf_header_search">
 						<div class="hnf_header_searchForm">

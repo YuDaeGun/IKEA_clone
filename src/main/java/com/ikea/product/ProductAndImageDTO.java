@@ -8,30 +8,30 @@ import org.springframework.web.multipart.MultipartFile;
 //	TABLE INFO
 
 //	PRODUCT
-//	PRODUCT_IDX             NUMBER          DEFAULT PRODUCT_SEQ.NEXTVAL PRIMARY KEY,    -- 상품 인덱스
-//	PRODUCT_LARGECATEGORY   VARCHAR2(40),   NOT NULL,   -- 대분류 카테고리
-//	PRODUCT_MEDIUMCATEGORY  VARCHAR2(40),   NOT NULL,   -- 중분류 카테고리
-//	PRODUCT_SMALLCATEGORY   VARCHAR2(40)    NOT NULL,   -- 소분류 카테고리
-//	PRODUCT_NAME            VARCHAR2(100)   NOT NULL,   -- 상품명
-//	PRODUCT_DESC            VARCHAR2(500),   			-- 상품 상세구성 설명 EX) 침대프레임+침대헤드2 -- (BYTE크기 수정예정)
-//	PRODUCT_SUMMARY         VARCHAR2(1000),             -- 제품 간단 설명
-//	PRODUCT_DETAILS         VARCHAR2(2000),             -- 제품 상세 설명
-//	PRODUCT_LENGTH          NUMBER, -- 상품 길이(cm) (미입력 시 -> 0)
-//	PRODUCT_WIDTH           NUMBER, -- 상품 너비(cm)
-//	PRODUCT_HEIGHT          NUMBER, -- 상품 높이(cm)
-//	PRODUCT_COLOR           VARCHAR2(50),               -- 상품 색상
-//	PRODUCT_PRICE           NUMBER          NOT NULL,   -- 상품 가격
-//	PRODUCT_STOCK           NUMBER          NOT NULL,   -- 상품 재고
-//	PRODUCT_STAR			NUMBER, -- 별점평균
-//	PRODUCT_REGDATE         DATE            DEFAULT SYSDATE     -- 상품 등록일
+//	PRODUCT_IDX             NUMBER          DEFAULT PRODUCT_SEQ.NEXTVAL PRIMARY KEY,
+//	PRODUCT_LARGECATEGORY   VARCHAR2(50)    NOT NULL,   -- 大分類カテゴリー
+//	PRODUCT_MEDIUMCATEGORY  VARCHAR2(50)    NOT NULL,   -- 中分類カテゴリー
+//	PRODUCT_SMALLCATEGORY   VARCHAR2(50)    NOT NULL,   -- 小分類カテゴリー
+//	PRODUCT_NAME            VARCHAR2(100)   NOT NULL,   -- 商品名
+//	PRODUCT_DESC            VARCHAR2(500),   			-- 商品構成
+//	PRODUCT_SUMMARY         VARCHAR2(1000),             -- 簡単説明
+//	PRODUCT_DETAILS         VARCHAR2(3000),             -- 詳細説明
+//	PRODUCT_LENGTH          NUMBER, -- 長(cm)(未入力の際 -> 0)
+//	PRODUCT_WIDTH           NUMBER, -- 幅
+//	PRODUCT_HEIGHT          NUMBER, -- 高さ
+//	PRODUCT_STAR			NUMBER, -- 評価(平均)
+//	PRODUCT_COLOR           VARCHAR2(100),
+//	PRODUCT_PRICE           NUMBER          NOT NULL,
+//	PRODUCT_STOCK           NUMBER          NOT NULL,
+//	PRODUCT_REGDATE         DATE            DEFAULT SYSDATE
 
 //	PRODUCT_IMAGE
-//	IMAGE_IDX               NUMBER          DEFAULT IMAGE_SEQ.NEXTVAL PRIMARY KEY,  -- 상품 이미지 인덱스
-//	IMAGE_PI                NUMBER          NOT NULL,   -- FK : 상품 인덱스
-//	IMAGE_FILENAME1         VARCHAR2(100)   NOT NULL,   -- 이미지 파일명 (날짜 + UUID난수)
-//	IMAGE_FILENAME2         VARCHAR2(100),              -- 마우스 오버시 출력 할 이미지 파일명
-//	IMAGE_ISTHUMBNAIL       CHAR(1)         CHECK(IMAGE_ISTHUMBNAIL IN ('Y', 'N')) NOT NULL,  -- 1번 대표 이미지인가? ('Y' OR 'N') 
-//	IMAGE_REGDATE           DATE            DEFAULT SYSDATE,     -- 이미지 등록일
+//	IMAGE_IDX               NUMBER          DEFAULT IMAGE_SEQ.NEXTVAL PRIMARY KEY,
+//	IMAGE_PI                NUMBER          NOT NULL,   -- FK : 商品インデクス
+//	IMAGE_FILENAME1         VARCHAR2(100)   NOT NULL,   -- イメージファイル名(日付 + UUID乱数)
+//	IMAGE_FILENAME2         VARCHAR2(100),              -- マウスオーバーの際、出力されるイメージファイル名
+//	IMAGE_ISTHUMBNAIL       CHAR(1)         CHECK(IMAGE_ISTHUMBNAIL IN ('Y', 'N')) NOT NULL, -- 代表イメージ('Y' OR 'N') 
+//	IMAGE_REGDATE           DATE            DEFAULT SYSDATE,
 
 public class ProductAndImageDTO {
 	private String product_largecategory, product_mediumcategory, product_smallcategory, 

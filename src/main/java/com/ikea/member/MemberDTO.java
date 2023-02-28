@@ -4,24 +4,24 @@ import java.sql.Date;
 
 //	TABLE INFO
 
-//	MEMBER_IDX              NUMBER          DEFAULT MEMBER_SEQ.NEXTVAL PRIMARY KEY,     -- 고객 인덱스
-//	MEMBER_EMAIL            VARCHAR2(40)    UNIQUE NOT NULL,  -- ID역할
+//	MEMBER_IDX              NUMBER          DEFAULT MEMBER_SEQ.NEXTVAL PRIMARY KEY,
+//	MEMBER_EMAIL            VARCHAR2(50)    NOT NULL,   -- IDの役割
 //	MEMBER_PW               VARCHAR2(200)   NOT NULL,
-//	MEMBER_NAME1            VARCHAR2(20)    NOT NULL,   -- 姓
-//	MEMBER_NAME1_FURIGANA   VARCHAR2(20)    NOT NULL,   -- 姓(フリガナ)
-//	MEMBER_NAME2            VARCHAR2(20)    NOT NULL,   -- 名
-//	MEMBER_NAME2_FURIGANA   VARCHAR2(20)    NOT NULL,   -- 名(フリガナ)
+//	MEMBER_NAME1            VARCHAR2(50)    NOT NULL,   -- 姓
+//	MEMBER_NAME1_FURIGANA   VARCHAR2(50)    NOT NULL,   -- 姓(フリガナ)
+//	MEMBER_NAME2            VARCHAR2(50)    NOT NULL,   -- 名
+//	MEMBER_NAME2_FURIGANA   VARCHAR2(50)    NOT NULL,   -- 名(フリガナ)
 //	MEMBER_BIRTH            DATE            NOT NULL,
-//	MEMBER_PNUM             VARCHAR2(20)    NOT NULL,   -- 전화번호
-//	MEMBER_ZIPCODE          VARCHAR2(20)    NOT NULL,   -- 우편번호
+//	MEMBER_PNUM             VARCHAR2(30)    NOT NULL,   -- 電話番号
+//	MEMBER_ZIPCODE          VARCHAR2(30)    NOT NULL,   -- 郵便番号
 //	MEMBER_ADDRESS1         VARCHAR2(200)   NOT NULL,   -- 都道府県
 //	MEMBER_ADDRESS2         VARCHAR2(100),              -- 市区町村
 //	MEMBER_ADDRESS3         VARCHAR2(100),              -- 丁番地
 //	MEMBER_ADDRESS4         VARCHAR2(100),              -- 建物名・部屋番号 （オプション）
 //	MEMBER_NEARBYSTORE      VARCHAR2(100),              -- 近くのイケア店舗
-//	MEMBER_GENDER           CHAR(1)         CHECK(MEMBER_GENDER IN ('M', 'F', 'X')), -- 성별('M' = 남, 'F' = 여, 'X' = 응답거부) 
-//	MEMBER_ISDELETED        CHAR(1)         DEFAULT 'N' CHECK(MEMBER_ISDELETED IN ('Y', 'N')), -- 'Y' -> 삭제됨
-//	MEMBER_REGDATE          DATE            DEFAULT SYSDATE   -- 회원 가입일
+//	MEMBER_GENDER           CHAR(1)         CHECK(MEMBER_GENDER IN ('M', 'F', 'X')), -- 性別('M' = 男, 'F' = 女, 'X' = 応答拒否) 
+//	MEMBER_ISDELETED        CHAR(1)         DEFAULT 'N' CHECK(MEMBER_ISDELETED IN ('Y', 'N')), -- 'Y' -> 削除済み
+//	MEMBER_REGDATE          DATE            DEFAULT SYSDATE
 
 public class MemberDTO {
 	private String member_email, member_pw, member_name1, member_name1_furigana, member_name2, member_name2_furigana,

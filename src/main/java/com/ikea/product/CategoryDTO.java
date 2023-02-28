@@ -1,9 +1,11 @@
 package com.ikea.product;
 
-//	CATEGORY_NAME           VARCHAR2(40)    NOT NULL,		-- 카테고리명
-//	CATEGORY_REF            VARCHAR2(40),					-- 상위 카테고리
-//	CATEGORY_DESC           VARCHAR2(500),   			    -- 카테고리 설명
-//	CATEGORY_IMAGE_FILENAME VARCHAR2(100)                   -- 이미지 파일명
+//	TABLE INFO
+
+//	CATEGORY_NAME           VARCHAR2(50)    NOT NULL, -- カテゴリー名
+//	CATEGORY_REF            VARCHAR2(40),			  -- 上位カテゴリー名
+//	CATEGORY_DESC           VARCHAR2(1000),   		  -- カテゴリー説明
+//	CATEGORY_IMAGE_FILENAME VARCHAR2(100)             -- イメージファイル名
 
 public class CategoryDTO {
 	private String category_name, category_ref, category_desc, category_image_filename;
